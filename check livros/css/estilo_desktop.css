@@ -1,0 +1,104 @@
+/*------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: 
+
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+-----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 992px) {
+	/* --- Estilos para desktop --- */
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+	/* -------- Estilo do menu -------- */
+	#nav-mobile-tablets {
+		display: none;
+	}
+	#nav-desktop {
+		display: block;
+	}
+	#desktopLinks {
+		list-style: none;
+		display: flex;
+		background-color: #FAFFFF;
+		justify-content: flex-end;
+		border-bottom: 0.1em solid #EDB91C;
+	}
+	#desktopLinks a {
+		display: block;
+		padding: 0.875em;
+		color: black;
+	}
+	#desktopLinks a:hover {
+		color: #EDB91C;
+	}
+	.logo-menu {
+		position: absolute; 
+		top: 0; 
+		left: 0;
+	}
+
+	/* -------- Estilo do rodapé -------- */
+	.footer {
+		background-color: #18546E;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		border-top: 0.1em solid black;
+	}
+	.footer-nav {
+		display: flex;
+	}
+	.footer-nav ul {
+		margin-left: 15%;
+	}
+	.p-footer {
+		color: white;
+		float: left;
+		font-weight: bold;
+		margin-bottom: 0.4em;
+	}
+	.a-footer {
+		color: white;
+		float: left;
+		margin-bottom: 0.4em;
+	}
+	.a-footer:hover {
+		color: #EDB91C;
+	}
+	.logo-container {
+		text-align: center;
+		color: white;
+		font-size: 90%;
+	}
+	.redes-container {
+		padding-left: 10%;
+	}
+	.redes-container p {
+		font-size: 1.4em;
+		display: inline;
+		color: white;
+	}
+	.redes-container i {
+		font-size: 1.8em;
+		color: white;
+	}
+
+	/* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
+	
+}

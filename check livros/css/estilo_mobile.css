@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: 
+
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+-----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+	/* --- Estilos para celulares --- */
+	.col-s-1 {width: 8.33%;}
+	.col-s-2 {width: 16.66%;}
+	.col-s-3 {width: 25%;}
+	.col-s-4 {width: 33.33%;}
+	.col-s-5 {width: 41.66%;}
+	.col-s-6 {width: 50%;}
+	.col-s-7 {width: 58.33%;}
+	.col-s-8 {width: 66.66%;}
+	.col-s-9 {width: 75%;}
+	.col-s-10 {width: 83.33%;}
+	.col-s-11 {width: 91.66%;}
+	.col-s-12 {width: 100%;}
+
+	/* -------- Estilo do menu -------- */
+	#nav-desktop {
+		display: none;
+	}
+	#nav-mobile-tablets {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		background-color: #FAFFFF;
+		border-bottom: 0.1em solid #EDB91C;
+	}
+	#nav-mobile-tablets #mobileLinks {
+		display: none;
+		border-bottom: 0.1em solid #EDB91C;
+	}
+	#nav-mobile-tablets a {
+		color: white;
+		padding: 0.875em 1em;
+		font-size: 1.0625em;
+		display: block;
+		color: black;
+	}
+	#nav-mobile-tablets a:hover {
+		background-color: white;
+		color: #EDB91C;
+	}
+	.icon-nav-mobile {
+		background-color: #FAFFFF;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.active {
+		background-color: #FAFFFF;
+		color: black;
+	}
+	
+	/* -------- Estilo do rodapé -------- */
+	.footer {
+		background-color: #18546E;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		position: absolute;
+		bottom: 0;
+	}
+	.footer-nav {
+		display: flex;
+	}
+	.footer-nav ul {
+		padding-left: 10%;
+		padding-right: 5%;
+		
+	}
+	.p-footer {
+		color: white;
+		float: left;
+		font-weight: bold;
+		margin-bottom: 0.7em;
+	}
+	.a-footer {
+		color: white;
+		float: left;
+		margin-bottom: 0.6em;
+		font-size: 98%;
+	}
+	.a-footer:hover {
+		color: #EDB91C;
+	}
+	.logo-container {
+		text-align: center;
+		color: white;
+		margin-bottom: 2em;
+	}
+	.redes-container {
+		text-align: center;
+		margin-top: 3em;
+	}
+	.redes-container p {
+		font-size: 1.4em;
+		display: inline;
+		color: white;
+	}
+	.redes-container i {
+		font-size: 1.8em;
+		color: white;
+	}
+	
+	/* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
+	
+}

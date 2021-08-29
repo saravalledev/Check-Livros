@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: 
+
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+-----------------------------------------------------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, sans-serif;
+}
+
+/*
+
+As fontes de letra do projeto são:
+Georgia ( para Títulos )
+Verdana ( para parágrafos e âncoras )
+
+Cores :
+Azul principal: #247BA0
+Azul rodapé: #18546E
+Branco azulado do menu: #FAFFFF
+Amarelo: #EDB91C
+Vermelho claro: #ED734C
+
+*/
+
+body {
+	font-size: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+h1 {
+  font-size: 2.5em; 
+	font-family: Georgia, serif;
+}
+
+h2 {
+  font-size: 1.8em; 
+	font-family: Georgia, serif;
+}
+
+p {
+  font-size:1.2em; 
+}
+
+[class*="col-"] {
+	float: left;
+}
+
+a {
+	text-decoration: none;
+	font-size: 1em;
+}
