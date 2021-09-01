@@ -25,7 +25,8 @@ Kaike Santos Coppola
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 
-	<body>
+	<body class="row">
+
 		<header class="col-s-12 col-m-12 col-12">
 
 			<nav id="nav-desktop">
@@ -50,8 +51,101 @@ Kaike Santos Coppola
 			</nav>
 		</header>
 
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="contato-container">
+
+			<h1>Em que podemos ajudar ?</h1><br/><br/>
+			<div class="sugerir-div" onclick="enableContactForm(1)">
+				<div>
+					<h2 class="sugerir-text">Sugestão de livros</h2>
+					<p>Aponte livros que ainda não constam em nossa plataforma</p>
+				</div>
+				<div>
+					<i class="fas fa-angle-right icon-contato"></i>
+				</div>
+			</div><br/><br/>
+
+			<div class="sugerir-div" onclick="enableContactForm(2)">
+				<div>
+					<h2 class="sugerir-text">Críticas e elogios</h2>
+					<p>Avalie-nos agora mesmo</p>
+				</div>
+				<div>
+					<i class="fas fa-angle-right icon-contato"></i>
+				</div>
+			</div><br/><br/>
+
+		</section>
+
+		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="form-1">
+			<h1>Sugestão de livros</h1><br/><br/>
+
+			<form action="action_page.php" method="post">
+
+				<label for="nome">Nome:</label>
+				<input type="text" name="nome" placeholder="Nome completo">
+
+				<label for="email">E-mail:</label>
+				<input type="text" name="email" placeholder="E-mail">
+
+				<label for="genero">Gênero do livro:</label>
+				<select name="genero">
+					<option>Administração, Negócios e Economia</option>
+					<option>Arte, Cinema e Fotografia</option>
+					<option>Autoajuda</option>
+					<option>Biografias e Histórias Reais</option>
+					<option>Ciências</option>
+					<option>Computação, Informática e Mídias Digitais</option>
+					<option>Crônicas, Humor e Entretenimento</option>
+					<option>Direito</option>
+					<option>Drama</option>
+					<option>Educação, Referência e Didáticos</option>
+					<option>Esportes e Lazer</option>
+					<option>Fantasia, Horror e Ficção Científica</option>
+					<option>Gastronomia e Culinária</option>
+					<option>História</option>
+					<option>HQs, Mangás e Graphic Novels</option>
+					<option>Infantil</option>
+					<option>Inglês e Outras Línguas</option>
+					<option>Literatura e Ficção</option>
+					<option>Medicina</option>
+					<option>Policial, Suspense e Mistério</option>
+					<option>Política, Filosofia e Ciências Sociais</option>
+					<option>Religião e Espiritualidade</option>
+					<option>Romance</option>
+					<option>Saúde, Família e Estilo de Vida</option>
+					<option>Turismo e Guias de Viagem</option>
+					<option>Outros</option>
+				</select>
+
+				<label for="sugestao">Sugestão de livro:</label>
+				<input type="text" name="sugestao" placeholder="Nome do livro">
+
+				<input type="submit" value="Enviar">
+
+			</form>
+
+		</section>
+
+		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="form-2">
+
+			<h1>Críticas e elogios</h1><br/><br/>
+
+			<form action="action_page.php" method="post">
+
+				<label for="nome">Nome:</label>
+				<input type="text" name="nome" placeholder="Nome completo">
+
+				<label for="email">E-mail:</label>
+				<input type="text" name="email" placeholder="E-mail">
+
+				<label for="feedBack">Feedback:</label>
+				<textarea name="feedBack" placeholder="Escreva sua crítica ou elogio" rows="10"></textarea>
+
+				<input type="submit" value="Enviar">
+
+			</form>
+
+		</section>
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
@@ -82,6 +176,7 @@ Kaike Santos Coppola
 				<a href="#"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
+		
 	</body>
-	<script type="text/javascript" src="js/functions.js"></script> 
+	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

@@ -63,14 +63,14 @@ Kaike Santos Coppola
 		background-color: #FAFFFF;
 		color: black;
 	}
-	
+
 	/* -------- Estilo do rodapé -------- */
 	.footer {
 		background-color: #18546E;
 		padding-top: 2em;
 		padding-bottom: 2em;
-		position: absolute;
-		bottom: 0;
+		border-top: 0.1em solid black;
+		margin-top: auto;
 	}
 	.footer-nav {
 		display: flex;
@@ -78,7 +78,7 @@ Kaike Santos Coppola
 	.footer-nav ul {
 		padding-left: 10%;
 		padding-right: 5%;
-		
+
 	}
 	.p-footer {
 		color: white;
@@ -113,7 +113,110 @@ Kaike Santos Coppola
 		font-size: 1.8em;
 		color: white;
 	}
-	
+
 	/* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
+
+	.fale-conosco-container {
+		padding: 5% 8%;
+	}
+	.fale-conosco-container h1 {
+		font-size: 1.4em;
+	}
+	.sugerir-div {
+		background-color: white;
+		border: 0.1em solid #EDB91C;
+		padding: 2.5% 5%;
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+	.sugerir-div:hover {
+		background-color: #FAFFFF;
+	}
+	.sugerir-div p {
+		font-size: 0.8em;
+	}
+	.sugerir-div h2 {
+		font-size: 1.2em;
+	}
+	.sugerir-text {
+		margin-bottom: 10px;
+	}
+	.icon-contato {
+		font-size: 3em;
+	}
+	#form-1, #form-2 {
+		display: none;
+	}
+
+	input[type=text], select, textarea, input[type=email], input[type=password] {
+		width: 100%;
+		padding: 0.75em;
+		border: 0.1em solid #ccc;
+		border-radius: 4px;
+		margin-top: 0.9em;
+		margin-bottom: 1.5em;
+		resize: none;
+	}
+	input[type=submit] {
+		background-color: #ED734C;
+		color: white;
+		padding: 0.75em 1.25em;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	input[type=submit]:hover {
+		background-color: #D64A3A;
+	}
+	input[type=checkbox] {
+		height: 1.5em;
+	}
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 2s;
+		animation-name: fade;
+		animation-duration: 2s;
+	}
+	@-webkit-keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+	@keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+
+	::-webkit-input-placeholder{/*WebKit browsers*/
+		color: rgb(0, 0, 0);
+	}
+	:-moz-placeholder{/*Mozilla Firefox 4 to 18*/
+		color: rgb(0, 0, 0);
+
+	}
+	:-moz-placeholder{/*Mozilla Firefox 19+ */
+		color: rgb(0, 0, 0);
+	}
+	:-moz-input-placeholder{
+		color:rgb(0, 0, 0);
+	}
+
+	.msg-geral {
+		width: 25em;
+		margin: 0.625em auto;
+		padding: 0.625em;
+		display: block;
+	}
+	.msg-sucesso{
+		background-color: rgba(50,205,50,.3);
+		border: 0.1em solid rgb(31, 212, 31);
+		color: rgb(10, 233, 10);
+	}
+	.msg-erro{
+		background-color: rgba(56, 6, 0, 0.3);
+		border: 0.1em solid rgb(110, 0, 0);
+		color: rgb(207, 1, 1);
+	}
 	
+
 }
