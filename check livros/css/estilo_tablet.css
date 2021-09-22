@@ -33,7 +33,7 @@ Kaike Santos Coppola
 	#nav-mobile-tablets {
 		display: block;
 		overflow: hidden;
-		background-color: #FAFFFF;
+		background-color: whitesmoke;
 		color: white;
 		position: relative;
 		border-bottom: 0.1em solid #EDB91C;
@@ -42,30 +42,29 @@ Kaike Santos Coppola
 		display: none;
 		border-bottom: 0.1em solid #EDB91C;
 	}
-	#nav-mobile-tablets a {
+	.nav-mobile-tablets-a {
 		color: white;
 		padding: 0.875em 1em;
 		font-size: 17px;
 		display: block;
 		color: black;
 	}
-	#nav-mobile-tablets a:hover {
-		background-color: white;
+	.nav-mobile-tablets-a:hover {
+		background-color: whitesmoke;
 		color: #EDB91C;
 	}
 	.icon-nav-mobile {
-		background-color: white;
+		background-color: whitesmoke;
 		display: block;
 		position: absolute;
 		right: 0;
 		top: 0;
 		color: #EDB91C;
 	}
-	.active {
-		background-color: #FAFFFF;
-		color: black;
+	.logo-menu {
+		display: inline;
 	}
-
+	.
 	/* -------- Estilo do rodapé -------- */
 	.footer {
 		background-color: #18546E;
@@ -76,9 +75,9 @@ Kaike Santos Coppola
 	}
 	.footer-nav {
 		display: flex;
+		justify-content: space-around;
 	}
 	.footer-nav ul {
-		margin-left: 7%;
 		line-height: 2em;
 	}
 	.p-footer {
@@ -105,20 +104,22 @@ Kaike Santos Coppola
 		margin-top: 3em;
 	}
 	.redes-container p {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		display: inline;
 		color: white;
 	}
 	.redes-container i {
-		font-size: 1.8em;
+		font-size: 1.6em;
 		color: white;
 	}
 
 	/* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
-	.fale-conosco-container {
+	.container {
 		padding: 5% 10%;
 	}
+
+	/* --------------- ⬇⬇ Fale conosco ⬇⬇ -----------------------*/
 	.fale-conosco-container h1 {
 		font-size: 2em;
 	}
@@ -134,26 +135,27 @@ Kaike Santos Coppola
 		background-color: #FAFFFF;
 	}
 	.sugerir-div p {
-		font-size: 1.1em;
+		font-size: 1em;
 	}
 	.sugerir-div h2 {
 		font-size: 1.5em;
 	}
 	.sugerir-text {
-		margin-bottom: 10px;
+		margin-bottom: 0.625em;
 	}
 	.icon-contato {
-		font-size: 3.5em;
+		margin-top: 0.4em;
+		font-size: 2.2em;
+		color: #F0cd65;
 	}
 	#form-1, #form-2 {
 		display: none;
 	}
-
 	input[type=text], select, textarea, input[type=email], input[type=password] {
 		width: 100%;
 		padding: 0.75em;
 		border: 0.1em solid #ccc;
-		border-radius: 4px;
+		border-radius: 0.25em;
 		margin-top: 0.9em;
 		margin-bottom: 1.5em;
 		resize: none;
@@ -163,40 +165,25 @@ Kaike Santos Coppola
 		color: white;
 		padding: 0.75em 1.25em;
 		border: none;
-		border-radius: 4px;
+		border-radius: 0.25em;
 		cursor: pointer;
 	}
 	input[type=submit]:hover {
 		background-color: #D64A3A;
 	}
-	.fade {
-		-webkit-animation-name: fade;
-		-webkit-animation-duration: 2s;
-		animation-name: fade;
-		animation-duration: 2s;
+	.voltar-btn {
+		background-color: white;
+		color: black;
+		padding: 0 1.25em 1em 0;
+		border: none;
+		border-radius: 0.25em;
+		cursor: pointer;
+		font-size: 1.4em;
 	}
-	@-webkit-keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
-	}
-	@keyframes fade {
-		from {opacity: .4}
-		to {opacity: 1}
+	.voltar-btn:hover {
+		color: #EDB91C;
 	}
 
-	::-webkit-input-placeholder{/*WebKit browsers*/
-		color: rgb(0, 0, 0);
-	}
-	:-moz-placeholder{/*Mozilla Firefox 4 to 18*/
-		color: rgb(0, 0, 0);
-
-	}
-	:-moz-placeholder{/*Mozilla Firefox 19+ */
-		color: rgb(0, 0, 0);
-	}
-	:-moz-input-placeholder{
-		color:rgb(0, 0, 0);
-	}
 
 	.msg-geral {
 		width: 25em;
@@ -213,6 +200,91 @@ Kaike Santos Coppola
 		background-color: rgba(56, 6, 0, 0.3);
 		border: 0.1em solid rgb(110, 0, 0);
 		color: rgb(207, 1, 1);
+	}
+
+	.mySlides {
+		display: none;
+	}
+	.mySlides img {
+		width: 100%;
+		height: 50vh;
+		margin: 0;
+		border-bottom: 0.1em solid black;
+	}
+	.slideshow-container {
+		position: relative;
+		margin: 0;
+	}
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		margin-top: -1.375em;
+		padding: 1em;
+		color: white;
+		font-weight: bold;
+		font-size: 1.1em;
+		transition: 0.6 ease;
+		border-radius: 0 0.2em 0.2em 0;
+		user-select: none;
+	}
+	.next {
+		right: 0;
+		border-radius: 0.2em 0 0 0.2em;
+	}
+	.dot {
+		cursor: pointer;
+		height: 1em;
+		width: 1em;
+		margin: 0;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6 ease;
+	}
+	.dots-container {
+		position: absolute;
+		bottom: 0;
+		margin: 0.5em 1em;
+	}
+	.active1, .dot:hover {
+		background-color:  #F0cd65;
+	}
+	.prev:hover, .next:hover {
+		background-color: rgba(0,0,0,0.8);
+		color: #EDB91C;
+	}
+	.text-block {
+		position: absolute;
+		bottom: 2.1em;
+		right: 2.1em;
+		background-color: #247BA0;
+		color: white;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+		border: 0.1em solid #EDB91C;
+	}
+
+	.beneficios-container {
+		padding: 2% 2%;
+	}
+	.beneficios {
+		display: flex;
+		background-color: white;
+		border-radius: 0.9em;
+		border: 0.15em solid #EDB91C;
+		color: black;
+	}
+	.beneficios p {
+		text-align: justify;
+	}
+	.beneficios-itens {
+		width: 50%;
+		padding: 2%;
+	}
+	.beneficios-container h1, .beneficios-container h2  {
+		text-align: center;
 	}
 
 }

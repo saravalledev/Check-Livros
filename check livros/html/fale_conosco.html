@@ -31,10 +31,10 @@ Kaike Santos Coppola
 
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="../index.html"  class="logo-menu">LOGO</a></li>
-					<li><a href="generos.html">Gêneros de livros</a></li>
-					<li><a href="fale_conosco.html">Fale conosco</a></li>
-					<li><a href="#">Cadastro | Login</a></li>
+					<li><a href="../index.html" class="logo-menu"><img src="../img/LogoSemFundoComcor%20(1).png" style="width: 100%"></a></li>
+					<li><a href="generos.html" class="a-desk">Gêneros de livros</a></li>
+					<li><a href="fale_conosco.html" class="a-desk">Fale conosco</a></li>
+					<li><a href="#" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
@@ -51,16 +51,16 @@ Kaike Santos Coppola
 			</nav>
 		</header>
 
-		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="contato-container">
+		<section class="col-s-12 col-m-12 col-12 container fade" id="contato-container">
 
-			<h1>Em que podemos ajudar ?</h1><br/><br/>
+			<h1 class="form-title">Em que podemos ajudar ?</h1><br/><br/>
 			<div class="sugerir-div" onclick="enableContactForm(1)">
 				<div>
 					<h2 class="sugerir-text">Sugestão de livros</h2>
 					<p>Aponte livros que ainda não constam em nossa plataforma</p>
 				</div>
 				<div>
-					<i class="fas fa-angle-right icon-contato"></i>
+					<i class="fas fa-check icon-contato"></i>
 				</div>
 			</div><br/><br/>
 
@@ -70,22 +70,23 @@ Kaike Santos Coppola
 					<p>Avalie-nos agora mesmo</p>
 				</div>
 				<div>
-					<i class="fas fa-angle-right icon-contato"></i>
+					<i class="fas fa-check icon-contato"></i>
 				</div>
 			</div><br/><br/>
 
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="form-1">
-			<h1>Sugestão de livros</h1><br/><br/>
+		<section class="col-s-12 col-m-12 col-12 container fade" id="form-1">
+			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
+			<h1 class="form-title">Sugestão de livros</h1><br/><br/>
 
-			<form action="action_page.php" method="post">
+			<form action="../php/fale_conosco.php" method="post">
 
 				<label for="nome">Nome:</label>
-				<input type="text" name="nome" placeholder="Nome completo">
+				<input type="text" name="nome1" placeholder="Nome completo" required>
 
 				<label for="email">E-mail:</label>
-				<input type="text" name="email" placeholder="E-mail">
+				<input type="email" name="email1" placeholder="E-mail" required>
 
 				<label for="genero">Gênero do livro:</label>
 				<select name="genero">
@@ -118,30 +119,30 @@ Kaike Santos Coppola
 				</select>
 
 				<label for="sugestao">Sugestão de livro:</label>
-				<input type="text" name="sugestao" placeholder="Nome do livro">
+				<input type="text" name="sugestao" placeholder="Nome do livro" required>
 
-				<input type="submit" value="Enviar">
+				<input type="submit" value="Enviar" name="enviar_form1">
 
 			</form>
 
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 fale-conosco-container fade" id="form-2">
+		<section class="col-s-12 col-m-12 col-12 container fade" id="form-2">
+			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
+			<h1 class="form-title">Críticas e elogios</h1><br/><br/>
 
-			<h1>Críticas e elogios</h1><br/><br/>
-
-			<form action="action_page.php" method="post">
+			<form action="../php/fale_conosco.php" method="post">
 
 				<label for="nome">Nome:</label>
-				<input type="text" name="nome" placeholder="Nome completo">
+				<input type="text" name="nome2" placeholder="Nome completo" required>
 
 				<label for="email">E-mail:</label>
-				<input type="text" name="email" placeholder="E-mail">
+				<input type="email" name="email2" placeholder="E-mail" required>
 
 				<label for="feedBack">Feedback:</label>
-				<textarea name="feedBack" placeholder="Escreva sua crítica ou elogio" rows="10"></textarea>
+				<textarea name="feedBack" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
 
-				<input type="submit" value="Enviar">
+				<input type="submit" value="Enviar" name="enviar_form2">
 
 			</form>
 
@@ -176,7 +177,7 @@ Kaike Santos Coppola
 				<a href="#"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
-		
+
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

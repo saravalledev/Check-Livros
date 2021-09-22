@@ -25,24 +25,24 @@ Kaike Santos Coppola
 		<link rel="stylesheet" href="css/estilo_mobile.css"/>
 	</head>
 
-	<body>
+	<body >
 		<header class="col-s-12 col-m-12 col-12">
 
 			<nav id="nav-desktop">
-				<ul id="desktopLinks">
-					<li><a href="index.html"  class="logo-menu">LOGO</a></li>
-					<li><a href="html/generos.html">Gêneros de livros</a></li>
-					<li><a href="html/fale_conosco.html">Fale conosco</a></li>
-					<li><a href="#">Cadastro | Login</a></li>
+				<ul id="desktopLinks" style="border-bottom: 0.15em solid #EDB91C;">
+					<li><a href="index.html" class="logo-menu"><img src="img/LogoSemFundoComcor%20(1).png" style="width: 100%"></a></li>
+					<li><a href="html/generos.html" class="a-desk">Gêneros de livros</a></li>
+					<li><a href="html/fale_conosco.html" class="a-desk">Fale conosco</a></li>
+					<li><a href="#" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="#" class="active">LOGO</a>
+				<a href="index.html" class="logo-menu"><img src="img/LogoSemFundoComcor%20(1).png" width="100%"></a>
 				<ul id="mobileLinks">
-					<li><a href="html/generos.html">Gêneros de livros</a></li>
-					<li><a href="html/fale_conosco.html">Fale conosco</a></li>
-					<li><a href="#">Cadastro | Login</a></li>
+					<li><a href="html/generos.html" class="nav-mobile-tablets-a">Gêneros de livros</a></li>
+					<li><a href="html/fale_conosco.html" class="nav-mobile-tablets-a">Fale conosco</a></li>
+					<li><a href="#" class="nav-mobile-tablets-a">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -50,9 +50,59 @@ Kaike Santos Coppola
 			</nav>
 		</header>
 
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<section class="col-s-12 col-m-12 col-12">
+			<div class="slideshow-container">
 
+				<div class="mySlides fade">
+					<img src="img/Banner.png">
+					<div class="text-block">
+						<h2>Título</h2>
+						<p>Lorem Ipsum</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<img src="img/genero_educacao.jpg">
+					<div class="text-block">
+						<h2>Título</h2>
+						<p>Lorem Ipsum</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<img src="img/genero_computacao.jpg">
+					<div class="text-block">
+						<h2>Título</h2>
+						<p>Lorem Ipsum</p>
+					</div>
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<div class="dots-container">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+				</div>
+			</div>
+		</section><br/>
+
+		<section class="col-s-12 col-m-12 col-12 beneficios-container">
+			<h1>É preciso que a leitura seja um ato de amor - Paulo Freire</h1><br/>
+			<div class="beneficios">
+
+				<div class="beneficios-itens">
+					<h2>Por Que Check Livros ?</h2><br/>
+					<p>Em razão do grande número de livros publicados, torna-se difícil a escolha de um bom exemplar. Sendo assim, surge a plataforma Check Livros com a finalidade de ajudar os leitores durante a busca por um bom livro e para promover a interação entre a comunidade literária.</p>
+				</div>
+				<div class="beneficios-itens">
+					<h2>Quem Somos</h2><br/>
+					<p>Somos uma equipe formada por três estudantes de Tecnologia da Informação, e como trabalho de conclusão de curso entramos em acordo e decidimos dar início a este importante e versátil projeto.</p>
+				</div>
+
+			</div>
+		</section>
+		
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
 				<h1>Check Livros</h1>

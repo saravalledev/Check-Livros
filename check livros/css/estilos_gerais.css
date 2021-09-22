@@ -26,7 +26,7 @@ Verdana ( para parágrafos e âncoras )
 Cores :
 Azul principal: #247BA0
 Azul rodapé: #18546E
-Branco azulado do menu: #FAFFFF
+cinza: #f5f5f5 ou whitesmoke
 Amarelo: #EDB91C
 Vermelho claro: #ED734C
 
@@ -46,17 +46,17 @@ ul {
 }
 
 h1 {
-	font-size: 2.5em; 
+	font-size: 2em; 
 	font-family: Georgia, serif;
 }
 
 h2 {
-	font-size: 1.8em; 
+	font-size: 1.25em; 
 	font-family: Georgia, serif;
 }
 
 p {
-	font-size:1.2em; 
+	font-size:1em; 
 }
 
 [class*="col-"] {
@@ -64,12 +64,41 @@ p {
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
 
 a {
 	text-decoration: none;
 	font-size: 1em;
+}
+
+/* animação fade */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	animation-name: fade;
+	animation-duration: 2s;
+}
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+::-webkit-input-placeholder{/*WebKit browsers*/
+	color: rgb(0, 0, 0);
+}
+:-moz-placeholder{/*Mozilla Firefox 4 to 18*/
+	color: rgb(0, 0, 0);
+
+}
+:-moz-placeholder{/*Mozilla Firefox 19+ */
+	color: rgb(0, 0, 0);
+}
+:-moz-input-placeholder{
+	color:rgb(0, 0, 0);
 }
