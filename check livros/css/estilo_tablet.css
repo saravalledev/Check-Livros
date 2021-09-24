@@ -36,35 +36,36 @@ Kaike Santos Coppola
 		background-color: whitesmoke;
 		color: white;
 		position: relative;
-		border-bottom: 0.1em solid #EDB91C;
+		border-bottom: 0.15em solid #EDB91C;
 	}
 	#nav-mobile-tablets #mobileLinks {
 		display: none;
 		border-bottom: 0.1em solid #EDB91C;
 	}
-	.nav-mobile-tablets-a {
+	.a-tablets {
 		color: white;
 		padding: 0.875em 1em;
-		font-size: 17px;
+		font-size: 1.1em;
 		display: block;
 		color: black;
 	}
-	.nav-mobile-tablets-a:hover {
-		background-color: whitesmoke;
+	.a-tablets:hover {
+		background-color: white;
 		color: #EDB91C;
 	}
 	.icon-nav-mobile {
 		background-color: whitesmoke;
 		display: block;
 		position: absolute;
+		padding: 3% 1em;
 		right: 0;
 		top: 0;
 		color: #EDB91C;
 	}
-	.logo-menu {
-		display: inline;
+	.nav-logo {
+		display: block;
+		width: 8vw;
 	}
-	.
 	/* -------- Estilo do rodapé -------- */
 	.footer {
 		background-color: #18546E;
@@ -132,7 +133,7 @@ Kaike Santos Coppola
 		cursor: pointer;
 	}
 	.sugerir-div:hover {
-		background-color: #FAFFFF;
+		background-color: whitesmoke;
 	}
 	.sugerir-div p {
 		font-size: 1em;
@@ -202,14 +203,14 @@ Kaike Santos Coppola
 		color: rgb(207, 1, 1);
 	}
 
+	/* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
 	.mySlides {
 		display: none;
 	}
 	.mySlides img {
 		width: 100%;
-		height: 50vh;
+		height: 60vh;
 		margin: 0;
-		border-bottom: 0.1em solid black;
 	}
 	.slideshow-container {
 		position: relative;
@@ -238,7 +239,7 @@ Kaike Santos Coppola
 		height: 1em;
 		width: 1em;
 		margin: 0;
-		background-color: #bbb;
+		background-color: whitesmoke;
 		border-radius: 50%;
 		display: inline-block;
 		transition: background-color 0.6 ease;
@@ -265,9 +266,8 @@ Kaike Santos Coppola
 		padding-right: 1.25em;
 		border: 0.1em solid #EDB91C;
 	}
-
 	.beneficios-container {
-		padding: 2% 2%;
+		padding: 5% 6% 5% 6%;
 	}
 	.beneficios {
 		display: flex;
@@ -286,5 +286,29 @@ Kaike Santos Coppola
 	.beneficios-container h1, .beneficios-container h2  {
 		text-align: center;
 	}
-
+	.beneficios-container h1 {
+		font-size: 1.3em;
+		margin-bottom: 3%;
+		font-style: italic;
+	}
+	.p-beneficios {
+		text-align: center;
+	}
+	.a-beneficios {
+		text-decoration: underline;
+		color: skyblue;
+	}
+	.autores-container {
+		background-color: #247BA0;
+	}
+	.autores-container h1 {
+		color: white;
+	}
+	.autores-div {
+		background-color: white;
+		border-radius: 0.9em;
+		padding: 2.5% 5%;
+		display: flex;
+		justify-content: space-between;
+	}
 }
