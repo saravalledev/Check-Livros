@@ -323,5 +323,35 @@ Kaike Santos Coppola
 		text-align: justify;
 		margin-bottom: 8%;
 	}
+
+	/* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
+	.sobre-sec {
+		background-color: white;
+		padding: 5% 2%;
+	}
+	.sobre-container {
+		display: grid;
+		grid-template-columns: 60% auto;
+		grid-template-rows: 50% auto;
+	}
+	.sobre-itens {
+		padding: 5%;
+		border: 0.1em solid #EDB91C;
+		border-radius: 0.9em;
+		background-color: white;
+	}
+	.item-1 {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		margin-right: 55%;
+		width: 90%;
+	}
+	.item-2 {
+		margin-bottom: 5%;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	
+	/* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
 	
 }

@@ -40,12 +40,11 @@ Kaike Santos Coppola
 	}
 	#nav-mobile-tablets #mobileLinks {
 		display: none;
-		border-bottom: 0.1em solid #EDB91C;
 	}
 	.a-tablets {
 		color: white;
 		padding: 0.875em 1em;
-		font-size: 1.1em;
+		font-size: 1em;
 		display: block;
 		color: black;
 	}
@@ -312,10 +311,11 @@ Kaike Santos Coppola
 	}
 	.ajuda-sec {
 		background-color: whitesmoke;
-		padding: 5% 15%;
+		padding: 5% 8%;
 	}
 	.ajuda-container {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
@@ -328,4 +328,19 @@ Kaike Santos Coppola
 		text-align: justify;
 		margin-bottom: 8%;
 	}
+
+	/* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
+	.sobre-sec {
+		background-color: white;
+		padding: 5% 2%;
+	}
+	.sobre-itens {
+		padding: 5%;
+		border: 0.1em solid #EDB91C;
+		border-radius: 0.9em;
+		background-color: white;
+		margin-bottom: 5%;
+	}
+	
+	/* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
 }

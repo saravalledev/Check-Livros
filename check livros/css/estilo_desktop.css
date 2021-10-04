@@ -170,6 +170,7 @@ Kaike Santos Coppola
 		color: #EDB91C;
 	}
 
+	/* --------------- ⬇⬇ Outros estilos ⬇⬇ -----------------------*/
 	.msg-geral {
 		width: 25em;
 		margin: 0.625em auto;
@@ -307,4 +308,54 @@ Kaike Santos Coppola
 		padding: 2%;
 		text-align: justify;
 	}
+
+	/* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
+	.sobre-sec {
+		background-color: white;
+		padding: 8%;
+	}
+	.sobre-container {
+		display: grid;
+		grid-template-columns: 60% auto;
+		grid-template-rows: 40% auto;
+	}
+	.sobre-itens {
+		padding: 5%;
+		border: 0.1em solid #EDB91C;
+		border-radius: 0.9em;
+		background-color: white;
+	}
+	.item-1 {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		margin-right: 55%;
+		width: 96%;
+	}
+	.item-2 {
+		margin-bottom: 5%;
+	}
+	.sobre-itens p {
+		text-align: justify;
+		text-indent: 0.3em;
+		line-height: 1.5em;
+	}
+	.sobre-itens ul {
+		list-style: disc;
+		margin-left: 5%;
+		margin-top: 2%;
+	}
+
+	/* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
+	.gen-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.gen-h1 {
+		text-align: center;
+		margin-top: 8%;
+	}
+	
+	
 }
