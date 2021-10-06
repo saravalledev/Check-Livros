@@ -1,24 +1,23 @@
 <!------------------------------------------------------------------------------------------------------
 Nome do projeto: Check Livros
-Descrição: Classe para efetuar cadastro / login
-Autores:
-Turma: 3TID
-Hebert Victor | número:
-Matheus Felix Carlos | número:                                                          Versão: 1.0
-Kaike Santos Coppola | número:                                                          Data://21 
+Descrição: 
 
-Altores externos: 
---------------------------------------------------------------------------------------------------------->
-<?php
-require_once 'CheckUsuarios.php'; //instanciando a classe
-$u = new Usuario;
-?>
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+----------------------------------------------------------------------------------------------------------->
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
 		<meta charset="utf-8"/>
 		<meta http-equiv="x-UA-compatible"content="ie=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Cadastro e Login</title>
+		<title>Gêneros Literários</title>
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
@@ -28,7 +27,6 @@ $u = new Usuario;
 	</head>
 
 	<body class="row">
-
 		<header class="col-s-12 col-m-12 col-12">
 
 			<nav id="nav-desktop">
@@ -42,7 +40,7 @@ $u = new Usuario;
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
@@ -54,16 +52,18 @@ $u = new Usuario;
 				</a>
 			</nav>
 		</header>
-
-		<section class="containerbtn col-s-12 col-m-12 col-12">
-			<div class="btnbox">
-				<a href="CheckCadastro.php"><button class="btncadlog">Cadastrar</button></a>
+		
+		<h1 class="gen-h1">Gêneros Literários</h1>
+		
+		<section class="col-s-12 col-m-12 col-12 container gen-container">
+			
+			<div class="gen-items">
+				<div class="overlay">
+					
+				</div>
 			</div>
-			<div class="btnbox">
-				<a href="CheckLogin.php"><button class="btncadlog">Entrar</button></a>
-			</div>
+			
 		</section>
-
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
@@ -72,7 +72,7 @@ $u = new Usuario;
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
 					<li><p class="p-footer">Início</p></li>
-					<li><a href="index.php" class="a-footer">Home</a></li>
+					<li><a href="../index.php" class="a-footer">Home</a></li>
 					<li><a href="generos.php" class="a-footer">Gêneros</a></li>
 				</ul>
 				<ul>
@@ -94,7 +94,6 @@ $u = new Usuario;
 				<a href="#"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
-
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

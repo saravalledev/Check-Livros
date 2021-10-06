@@ -32,21 +32,21 @@ Kaike Santos Coppola
 
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="../index.html" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
-					<li><a href="generos.html" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.html" class="a-desk">Fale conosco</a></li>
-					<li><a href="quem_somos.html" class="a-desk">Quem Somos</a></li>
-					<li><a href="../php/cad-log.php" class="a-desk">Cadastro | Login</a></li>
+					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
+					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
+					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
+					<li><a href="cad-log.php" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.html" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
-					<li><a href="generos.html" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.html" class="a-tablets">Fale Conosco</a></li>
-					<li><a href="quem_somos.html" class="a-tablets">Quem Somos</a></li>
-					<li><a href="../php/cad-log.php" class="a-tablets">Cadastro | Login</a></li>
+					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
+					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
+					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
+					<li><a href="cad-log.php" class="a-tablets">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -69,7 +69,7 @@ Kaike Santos Coppola
 
 			<div class="sugerir-div" onclick="enableContactForm(2)">
 				<div>
-					<h2 class="sugerir-text">Críticas e Elogios</h2>
+					<h2 class="sugerir-text">Ajude-nos a melhorar o Check Livros</h2>
 					<p>Avalie-nos agora mesmo</p>
 				</div>
 				<div>
@@ -83,7 +83,7 @@ Kaike Santos Coppola
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1 class="form-title">Sugestão de livros</h1><br/><br/>
 
-			<form action="../php/fale_conosco.php" method="post">
+			<form action="fale_conosco.php" method="post">
 
 				<label for="nome">Nome:</label>
 				<input type="text" name="nome1" placeholder="Nome completo" required>
@@ -117,7 +117,7 @@ Kaike Santos Coppola
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1 class="form-title">Críticas e elogios</h1><br/><br/>
 
-			<form action="../php/fale_conosco.php" method="post">
+			<form action="fale_conosco.php" method="post">
 
 				<label for="nome">Nome:</label>
 				<input type="text" name="nome2" placeholder="Nome completo" required>
@@ -141,18 +141,18 @@ Kaike Santos Coppola
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
 					<li><p class="p-footer">Início</p></li>
-					<li><a href="../index.html" class="a-footer">Home</a></li>
-					<li><a href="generos.html" class="a-footer">Gêneros</a></li>
+					<li><a href="../index.php" class="a-footer">Home</a></li>
+					<li><a href="generos.php" class="a-footer">Gêneros</a></li>
 				</ul>
 				<ul>
 					<li><p class="p-footer">Sobre</p></li>
-					<li><a href="quem_somos.html" class="a-footer">Quem  Somos</a></li>
-					<li><a href="fale_conosco.html" class="a-footer">Fale Conosco</a></li>
+					<li><a href="quem_somos.php" class="a-footer">Quem  Somos</a></li>
+					<li><a href="fale_conosco.php" class="a-footer">Fale Conosco</a></li>
 				</ul>
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
-					<li><a href="../php/cad-log.php" class="a-footer">Cadastro | Login</a></li>
+					<li><a href="cad-log.php" class="a-footer">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">
