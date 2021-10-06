@@ -170,22 +170,47 @@ Kaike Santos Coppola
 		color: #EDB91C;
 	}
 
-	/* --------------- ⬇⬇ Outros estilos ⬇⬇ -----------------------*/
+	/* --------------- ⬇⬇ Estilos cadastro - login ⬇⬇ -----------------------*/
+	.cad-sec {
+		padding: 10% 15%;
+	}
+	.cad-sec h1 {
+		text-align: center;
+	}
+	.btnbox {
+		height: 20em;
+		width: 20em;
+		display: inline-block;
+	}
+	.btncadlog {
+		height: 100%;
+		width: 100%;
+		font-size: 2em;
+		background-color: white;
+	}
+	.containerbtn {
+		padding: 13% 25%;
+	}
 	.msg-geral {
 		width: 25em;
 		margin: 0.625em auto;
 		padding: 0.625em;
 		display: block;
+		border-radius: 5em;
+		text-align: center;
 	}
-	.msg-sucesso{
-		background-color: rgba(50,205,50,.3);
-		border: 0.1em solid rgb(31, 212, 31);
-		color: rgb(10, 233, 10);
+	.msg-geral p {
+		font-size: 1em;
 	}
-	.msg-erro{
-		background-color: rgba(56, 6, 0, 0.3);
-		border: 0.1em solid rgb(110, 0, 0);
-		color: rgb(207, 1, 1);
+	.msg-sucesso {
+		background-color: #6cc2e7b6;
+		border: 0.1em solid #18546e;
+		color: #006c9b;
+	}
+	.msg_erro {
+		background-color: rgba(202, 63, 63, 0.287);
+		color: rgb(255, 47, 47);
+		border: 0.1em solid rgb(218, 3, 3);
 	}
 
 	/* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
@@ -244,7 +269,7 @@ Kaike Santos Coppola
 	}
 	.beneficios-container {
 		padding: 3% 15% 5% 15%;
-		background-color: whitesmoke;
+		background-color: white;
 	}
 	.beneficios {
 		display: flex;
@@ -308,6 +333,11 @@ Kaike Santos Coppola
 		padding: 2%;
 		text-align: justify;
 	}
+	.ajuda-sec p,a {
+		text-align: justify;
+		text-indent: 0.3em;
+		line-height: 1.5em;
+	}
 
 	/* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
 	.sobre-sec {
@@ -317,7 +347,7 @@ Kaike Santos Coppola
 	.sobre-container {
 		display: grid;
 		grid-template-columns: 60% auto;
-		grid-template-rows: 40% auto;
+		grid-template-rows: 60% auto;
 	}
 	.sobre-itens {
 		padding: 5%;
@@ -344,6 +374,9 @@ Kaike Santos Coppola
 		margin-left: 5%;
 		margin-top: 2%;
 	}
+	.p-sobre {
+		font-weight: bold;
+	}
 
 	/* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
 	.gen-container {
@@ -356,6 +389,6 @@ Kaike Santos Coppola
 		text-align: center;
 		margin-top: 8%;
 	}
-	
-	
+
+
 }
