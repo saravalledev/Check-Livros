@@ -64,7 +64,7 @@
 
 
 						if ($senha == $linha['senha']){
-
+							$_SESSION['nome'] = $linha['nome'];
 							$_SESSION['id_usuario']  = $linha['id_usuario']; 
 							header("location: indexTESTE.php");
 
