@@ -42,7 +42,7 @@ $u = new Usuario;
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>

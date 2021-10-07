@@ -12,10 +12,7 @@ Kaike Santos Coppola
 ----------------------------------------------------------------------------------------------------------->
 <?php
 	session_start();
-	if(!isset($_SESSION['id_usuario'])){
-		header('location: CheckLogin.php');
-		exit;
-	}
+	$username = $_SESSION['username'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -41,17 +38,33 @@ Kaike Santos Coppola
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-desk">Cadastro | Login</a></li>
+					<li>
+						<?php
+							if($username == ""){
+								echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
+							}else{
+								echo "<a href='perfil.php' class='a-desk'>Olá, ".$username."</a>";
+							}
+						?>
+					</li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-tablets">Cadastro | Login</a></li>
+					<li>
+						<?php
+							if($username == ""){
+								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
+							}else{
+								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a>";
+							}
+						?>
+					</li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>

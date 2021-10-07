@@ -1,5 +1,6 @@
 <?php
 session_start();
 unset($_SESSION['id_usuario']);
-header("location: CheckLogin.php");
+$_SESSION['username'] = "";
+header("location: ../index.php");
 ?>

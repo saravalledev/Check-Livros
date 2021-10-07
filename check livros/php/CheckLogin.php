@@ -26,7 +26,7 @@
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
@@ -64,9 +64,9 @@
 
 
 						if ($senha == $linha['senha']){
-							$_SESSION['nome'] = $linha['nome'];
+							$_SESSION['username'] = $linha['username'];
 							$_SESSION['id_usuario']  = $linha['id_usuario']; 
-							header("location: indexTESTE.php");
+							header("location: ../index.php");
 
 						}else{ 
 		?>

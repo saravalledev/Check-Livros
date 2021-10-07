@@ -11,8 +11,13 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
-	$username = $_SESSION['username'];
+	//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
+    session_start();
+    if(!isset($_SESSION['id_usuario'])){
+        header("location: CheckLogin.php");
+        exit;
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -34,37 +39,21 @@ Kaike Santos Coppola
 
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
-					<li><a href="php/generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-desk">Fale conosco</a></li>
-					<li><a href="php/quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li>
-							<?php
-								if($username == ""){
-									echo "<a href='php/cad-log.php' class='a-desk'>Cadastro | Login</a>";
-								}else{
-									echo "<a href='php/perfil.php' class='a-desk'>Olá, ".$username."</a>";
-								}
-							?>
-					</li>
+					<li><a href="index.html" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="html/generos.html" class="a-desk">Gêneros</a></li>
+					<li><a href="html/fale_conosco.html" class="a-desk">Fale conosco</a></li>
+					<li><a href="html/quem_somos.html" class="a-desk">Quem Somos</a></li>
+					<li><a href="php/cad-log.php" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.html" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
-					<li><a href="php/generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-tablets">Fale conosco</a></li>
-					<li><a href="php/quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li>
-						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a>";
-							}
-						?>
-					</li>
+					<li><a href="html/generos.html" class="a-tablets">Gêneros</a></li>
+					<li><a href="html/fale_conosco.html" class="a-tablets">Fale conosco</a></li>
+					<li><a href="html/quem_somos.html" class="a-tablets">Quem Somos</a></li>
+					<li><a href="#" class="a-tablets">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -111,7 +100,7 @@ Kaike Santos Coppola
 				</div>
 			</div>
 			<br/>
-			<p class="p-beneficios">Caso queira saber mais sobre nós e nosso projeto visite a página <a class="a-beneficios" href="quem_somos.php">Quem somos</a></p>
+			<p class="p-beneficios">Caso queira saber mais sobre nós e nosso projeto visite a página <a class="a-beneficios" href="html/quem_somos.html">Quem somos</a></p>
 
 		</section>
 
@@ -136,15 +125,15 @@ Kaike Santos Coppola
 			<div class="ajuda-container">
 				<div class="ajuda-item">
 					<h2>Resenhas</h2><br/>
-					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="#">Saiba mais...</a></p>
+					<p>É necessário ter um cadastro e estar logado para poder digitar e publicar novas resenhas. <a href="#">Saiba mais...</a></p>
 				</div>
 				<div class="ajuda-item">
 					<h2>Busca</h2><br/>
-					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="">Gêneros</a> literários para explorar os mais diversos assuntos</p>
+					<p>Caso não tenha um livro específico que deseja consultar, visite nossa página de <a href="">Gêneros literários</a> para explorar diversos assuntos</p>
 				</div>
 				<div class="ajuda-item">
 					<h2>Fale conosco</h2><br/>
-					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="">Fale conosco</a></p>
+					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, contate-nos através de nossa página <a href="">Fale conosco</a></p>
 				</div>
 			</div>
 		</section>
@@ -155,19 +144,18 @@ Kaike Santos Coppola
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
 					<li><p class="p-footer">Início</p></li>
-					<li><a href="index.php" class="a-footer">Home</a></li>
-					<li><a href="php/generos.php" class="a-footer">Gêneros</a></li>
+					<li><a href="index.html" class="a-footer">Home</a></li>
+					<li><a href="html/generos.html" class="a-footer">Gêneros</a></li>
 				</ul>
 				<ul>
 					<li><p class="p-footer">Sobre</p></li>
-					<li><a href="php/quem_somos.php" class="a-footer">Quem  Somos</a></li>
-					<li><a href="php/fale_conosco.php" class="a-footer">Fale Conosco</a></li>
+					<li><a href="html/quem_somos.html" class="a-footer">Quem  Somos</a></li>
+					<li><a href="html/fale_conosco.html" class="a-footer">Fale Conosco</a></li>
 				</ul>
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
 					<li><a href="php/cad-log.php" class="a-footer">Cadastro | Login</a></li>
-					<li><a href="php/sairlog.php" class="a-footer">Sair</a></li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">
