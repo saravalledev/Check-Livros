@@ -30,22 +30,28 @@ Kaike Santos Coppola
 	</head>
 
 	<body class="row">
-		<header class="col-s-12 col-m-12 col-12">
-
+	<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-desk">Fale conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li>
-						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-desk'>Olá, ".$username."</a>";
-							}
-						?>
+							<?php
+								if($username == ""){
+									echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
+								}else{
+									echo "
+									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+								}
+							?>
 					</li>
 				</ul>
 			</nav>
@@ -54,14 +60,15 @@ Kaike Santos Coppola
 				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-tablets">Fale conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
 					<li>
 						<?php
 							if($username == ""){
 								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
 							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a>";
+								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='sairlog.php' class='a-tablets'>Sair</a>";
 							}
 						?>
 					</li>
@@ -79,7 +86,7 @@ Kaike Santos Coppola
 
 				<div class="sobre-itens item-1">
 					<h2>Heróis da Literatura</h2><br/>
-					<p>A história do Check Livros começou em 2021 e desde então os desenvolvedores, Hebert, Matheus e Kaike, enfrentaram diversos desafios na construção desta magnífica plataforma. De começo, os estudantes de Tecnologia da Informação (TI) foram assolados pela terrível conexão de internet e pela falta de equipamentos de sua própria escola, assim, nossos três heróis foram obrigados a trazer suas próprias ferramentas e utensílios para esta desafiadora aventura: O desenvolvimento do site e aplicativo Check Livros.</p>
+					<p>A história do Check Livros começou em 2021 e desde então os desenvolvedores, Hebert, Matheus e Kaike, enfrentaram diversos desafios na construção deste magnífico portal de resenhas. De começo, os estudantes de Tecnologia da Informação (TI) foram assolados pela terrível conexão de internet e pela falta de equipamentos de sua própria escola, assim, nossos três heróis foram obrigados a trazer suas próprias ferramentas e utensílios para esta desafiadora aventura: O desenvolvimento do site e aplicativo Check Livros.</p>
 					<br/>
 					<p>No início, Matheus e Kaike estavam relutantes com a proposta da jornada, porém Hebert convenceu seus companheiros e aceitou a responsabilidade de liderar o grupo. Após uma semana de trabalho, o líder do grupo se deparou com um terrível problema que poderia acabar com a alegria de nossos aventureiros: O servidor. Para aqueles que são leigos e não entendem como funciona a informática aqui vai uma breve explicação: O servidor é a parte vital de qualquer site da internet e sem ele nenhum site ou aplicativo pode ser publicado. </p>
 					<br/>
@@ -88,7 +95,7 @@ Kaike Santos Coppola
 				</div>
 				<div class="sobre-itens item-2">
 					<h2>Nossa Visão</h2><br/>
-					<p>A plataforma Check Livros possuí como visão o desejo de facilitar a vida do público leitor durante a escolha e entendimento de livros, ou seja, nosso site preza pela: </p><br/>
+					<p>O portal Check Livros possuí como visão o desejo de facilitar a vida do público leitor durante a escolha e entendimento de livros, ou seja, nosso site preza pela: </p><br/>
 					<ul>
 						<li><p>Praticidade</p></li><br/>
 						<li><p>Interatividade</p></li><br/>
@@ -122,7 +129,13 @@ Kaike Santos Coppola
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
-					<li><a href="cad-log.php" class="a-footer">Cadastro | Login</a></li>
+					<li>
+						<?php
+							if($username == ""){
+								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
+							}
+						?>
+					</li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">

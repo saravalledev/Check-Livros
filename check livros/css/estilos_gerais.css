@@ -11,10 +11,10 @@ Kaike Santos Coppola
 
 -----------------------------------------------------------------------------------------------------------*/
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
 }
 
 /*
@@ -31,74 +31,85 @@ Amarelo: #EDB91C
 Vermelho claro: #ED734C
 
 */
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-	font-size: 100%;
-	display: flex;
-	flex-direction: column;
+  font-size: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 h1 {
-	font-size: 2em; 
-	font-family: Georgia, serif;
+  font-size: 2em;
+  font-family: Georgia, serif;
 }
 
 h2 {
-	font-size: 1.25em; 
-	font-family: Georgia, serif;
+  font-size: 1.25em;
+  font-family: Georgia, serif;
 }
 
 p {
-	font-size: 1em; 
+  font-size: 1em;
 }
 
 [class*="col-"] {
-	float: left;
+  float: left;
 }
 
 .row::after {
-	content: "";
-	clear: both;
-	display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 a {
-	text-decoration: none;
-	font-size: 1em;
+  text-decoration: none;
+  font-size: 1em;
 }
 
 /* animação fade */
 .fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 2s;
-	animation-name: fade;
-	animation-duration: 2s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
 }
 @-webkit-keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-::-webkit-input-placeholder{/*WebKit browsers*/
-	color: rgb(0, 0, 0);
+::-webkit-input-placeholder {
+  /*WebKit browsers*/
+  color: rgb(0, 0, 0);
 }
-:-moz-placeholder{/*Mozilla Firefox 4 to 18*/
-	color: rgb(0, 0, 0);
-
+:-moz-placeholder {
+  /*Mozilla Firefox 4 to 18*/
+  color: rgb(0, 0, 0);
 }
-:-moz-placeholder{/*Mozilla Firefox 19+ */
-	color: rgb(0, 0, 0);
+:-moz-placeholder {
+  /*Mozilla Firefox 19+ */
+  color: rgb(0, 0, 0);
 }
-:-moz-input-placeholder{
-	color:rgb(0, 0, 0);
+:-moz-input-placeholder {
+  color: rgb(0, 0, 0);
 }

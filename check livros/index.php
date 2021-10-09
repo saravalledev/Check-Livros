@@ -31,7 +31,6 @@ Kaike Santos Coppola
 
 	<body class="row">
 		<header class="col-s-12 col-m-12 col-12">
-
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
@@ -43,7 +42,14 @@ Kaike Santos Coppola
 								if($username == ""){
 									echo "<a href='php/cad-log.php' class='a-desk'>Cadastro | Login</a>";
 								}else{
-									echo "<a href='php/perfil.php' class='a-desk'>Olá, ".$username."</a>";
+									echo "
+									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
 								}
 							?>
 					</li>
@@ -61,7 +67,8 @@ Kaike Santos Coppola
 							if($username == ""){
 								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
 							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a>";
+								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='php/sairlog.php' class='a-tablets'>Sair</a>";
 							}
 						?>
 					</li>
@@ -148,6 +155,7 @@ Kaike Santos Coppola
 				</div>
 			</div>
 		</section>
+
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
 				<h1>Check Livros</h1>
@@ -166,8 +174,13 @@ Kaike Santos Coppola
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
-					<li><a href="php/cad-log.php" class="a-footer">Cadastro | Login</a></li>
-					<li><a href="php/sairlog.php" class="a-footer">Sair</a></li>
+					<li>
+						<?php
+							if($username == ""){
+								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
+							}
+						?>
+					</li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">

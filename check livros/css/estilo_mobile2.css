@@ -11,92 +11,85 @@ Kaike Santos Coppola
 
 -----------------------------------------------------------------------------------------------------------*/
 
-@media only screen and (min-width: 992px) {
-  /* --- Estilos para desktop --- */
-  .col-1 {
+@media only screen and (max-width: 600px) {
+  /* --- Estilos para celulares --- */
+  .col-s-1 {
     width: 8.33%;
   }
-  .col-2 {
+  .col-s-2 {
     width: 16.66%;
   }
-  .col-3 {
+  .col-s-3 {
     width: 25%;
   }
-  .col-4 {
+  .col-s-4 {
     width: 33.33%;
   }
-  .col-5 {
+  .col-s-5 {
     width: 41.66%;
   }
-  .col-6 {
+  .col-s-6 {
     width: 50%;
   }
-  .col-7 {
+  .col-s-7 {
     width: 58.33%;
   }
-  .col-8 {
+  .col-s-8 {
     width: 66.66%;
   }
-  .col-9 {
+  .col-s-9 {
     width: 75%;
   }
-  .col-10 {
+  .col-s-10 {
     width: 83.33%;
   }
-  .col-11 {
+  .col-s-11 {
     width: 91.66%;
   }
-  .col-12 {
+  .col-s-12 {
     width: 100%;
   }
 
   /* -------- Estilo do menu -------- */
-  #nav-mobile-tablets {
+  #nav-desktop {
     display: none;
   }
-  #nav-desktop {
+  #nav-mobile-tablets {
     display: block;
-  }
-  #desktopLinks {
-    list-style: none;
-    display: flex;
+    overflow: hidden;
     background-color: whitesmoke;
-    justify-content: flex-start;
-    align-items: center;
+    color: white;
+    position: relative;
     border-bottom: 0.15em solid #edb91c;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
   }
-  .a-desk {
+  #nav-mobile-tablets #mobileLinks {
+    display: none;
+  }
+  .a-tablets {
+    color: white;
+    padding: 0.875em 1em;
+    font-size: 1em;
     display: block;
-    padding: 0.875em;
     color: black;
   }
-  .a-desk:hover {
+  .a-tablets:hover {
+    background-color: white;
     color: #edb91c;
   }
-  .logo-menu {
-    display: block;
-    width: 4vw;
-    padding: 0;
-  }
-  .submenu {
-    position: absolute;
-    z-index: 1;
+  .icon-nav-mobile {
     background-color: whitesmoke;
-    display: none;
-    border-bottom: 0.2em solid #edb91c;
-  }
-  .submenu:hover {
     display: block;
+    position: absolute;
+    padding: 5.5% 1em;
+    right: 0;
+    top: 0;
+    color: #edb91c;
   }
-  #a-1-sub:hover + .submenu {
+  .nav-logo {
     display: block;
+    width: 15vw;
   }
-  .a-sub {
-    padding: 0.875em 3.3em;
-  }
+
   /* -------- Estilo do rodapé -------- */
   .footer {
     background-color: #18546e;
@@ -107,18 +100,24 @@ Kaike Santos Coppola
   }
   .footer-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-nav ul {
+    margin: 0.8em;
+    line-height: 1.5em;
   }
   .p-footer {
     color: white;
     float: left;
     font-weight: bold;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.7em;
   }
   .a-footer {
     color: white;
     float: left;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.6em;
+    font-size: 98%;
   }
   .a-footer:hover {
     color: #edb91c;
@@ -126,32 +125,31 @@ Kaike Santos Coppola
   .logo-container {
     text-align: center;
     color: white;
+    margin-bottom: 2em;
   }
   .redes-container {
-    padding-left: 10%;
+    text-align: center;
+    margin-top: 3em;
   }
   .redes-container p {
-    margin-left: 0.3em;
-    font-size: 1.1em;
+    font-size: 1.4em;
     display: inline;
     color: white;
   }
   .redes-container i {
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: white;
   }
 
   /* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
   .container {
-    padding: 5% 15%;
+    padding: 5% 8%;
   }
 
   /* --------------- ⬇⬇ Fale conosco ⬇⬇ -----------------------*/
-  #contato-container,
-  #form-1,
-  #form-2 {
-    margin-top: 3.5%;
+  .fale-conosco-container h1 {
+    font-size: 1.4em;
   }
   .sugerir-div {
     background-color: white;
@@ -165,19 +163,25 @@ Kaike Santos Coppola
     background-color: whitesmoke;
   }
   .sugerir-div p {
-    font-size: 1em;
+    font-size: 0.8em;
+  }
+  .sugerir-div h2 {
+    font-size: 1.2em;
   }
   .sugerir-text {
     margin-bottom: 0.625em;
   }
   .icon-contato {
-    margin-top: 0.2em;
-    font-size: 2.4em;
+    margin-top: 0.5em;
+    font-size: 1.8em;
     color: #f0cd65;
   }
   #form-1,
   #form-2 {
     display: none;
+  }
+  .form-title {
+    font-size: 1.4em;
   }
   input[type="text"],
   select,
@@ -203,6 +207,9 @@ Kaike Santos Coppola
   input[type="submit"]:hover {
     background-color: #d64a3a;
   }
+  input[type="checkbox"] {
+    height: 1.5em;
+  }
   .voltar-btn {
     background-color: white;
     color: black;
@@ -216,29 +223,10 @@ Kaike Santos Coppola
     color: #edb91c;
   }
 
-  /* --------------- ⬇⬇ Estilos cadastro - login ⬇⬇ -----------------------*/
-  .cad-sec {
-    padding: 7% 15%;
-  }
-  .cad-sec h1 {
-    text-align: center;
-  }
-  .btnbox {
-    height: 20em;
-    width: 20em;
-    display: inline-block;
-  }
-  .btncadlog {
-    height: 100%;
-    width: 100%;
-    font-size: 2em;
-    background-color: white;
-  }
-  .containerbtn {
-    padding: 13% 25%;
-  }
+  /* --------------- ⬇⬇ Cadastro e Login⬇⬇ -----------------------*/
+
   .msg-geral {
-    width: 50%;
+    width: 100%;
     margin: 0.005% auto;
     padding: 0.625em;
     display: block;
@@ -259,15 +247,19 @@ Kaike Santos Coppola
     color: rgb(255, 47, 47);
     border: 0.1em solid rgb(218, 3, 3);
   }
-
+  .cad-sec {
+    padding: 10% 5%;
+  }
+  .cad-sec h1 {
+    font-size: 1.4em;
+  }
   /* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
   .mySlides {
     display: none;
-    margin-top: 4.4%;
   }
   .mySlides img {
     width: 100%;
-    height: 80vh;
+    height: 40vh;
     margin: 0;
   }
   .slideshow-container {
@@ -284,7 +276,7 @@ Kaike Santos Coppola
     padding: 1em;
     color: white;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: 0.6 ease;
     border-radius: 0 0.2em 0.2em 0;
     user-select: none;
@@ -294,14 +286,7 @@ Kaike Santos Coppola
     border-radius: 0.2em 0 0 0.2em;
   }
   .dot {
-    cursor: pointer;
-    height: 1em;
-    width: 1em;
-    margin: 0;
-    background-color: whitesmoke;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6 ease;
+    display: none;
   }
   .dots-container {
     position: absolute;
@@ -318,24 +303,20 @@ Kaike Santos Coppola
     color: #edb91c;
   }
   .beneficios-container {
-    padding: 3% 15% 5% 15%;
-    background-color: white;
+    padding: 5% 3%;
   }
   .beneficios {
-    display: flex;
     background-color: white;
     border-radius: 0.9em;
-    border: 0.15em solid #edb91c;
+    border: 0.1em solid #edb91c;
     color: black;
   }
   .beneficios p {
     text-align: justify;
-    text-indent: 0.3em;
-    line-height: 1.5em;
   }
   .beneficios-itens {
-    width: 50%;
-    padding: 2%;
+    width: 100%;
+    padding: 8%;
   }
   .beneficios-container h1,
   .beneficios-container h2,
@@ -343,11 +324,13 @@ Kaike Santos Coppola
     text-align: center;
   }
   .beneficios-container h1 {
+    font-size: 1.3em;
     margin-bottom: 3%;
     font-style: italic;
   }
   .p-beneficios {
     text-align: center;
+    font-size: 0.9em;
   }
   .a-beneficios {
     text-decoration: underline;
@@ -355,25 +338,31 @@ Kaike Santos Coppola
   }
   .autores-container {
     background-color: #247ba0;
+    padding: 10%;
     border-bottom: 0.1em solid black;
     border-top: 0.1em solid black;
   }
   .autores-container h1 {
     color: white;
+    font-size: 1.3em;
+  }
+  .autores-container p {
+    font-size: 0.9em;
   }
   .autores-div {
     background-color: white;
     border-radius: 0.9em;
-    padding: 2.5% 5%;
+    padding: 3.5% 5%;
     display: flex;
     justify-content: space-between;
   }
   .ajuda-sec {
     background-color: whitesmoke;
-    padding: 5% 15%;
+    padding: 5% 8%;
   }
   .ajuda-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
   }
@@ -381,65 +370,24 @@ Kaike Santos Coppola
     background-color: white;
     border: 0.15em solid #edb91c;
     border-radius: 0.9em;
-    width: 30%;
+    width: 100%;
     padding: 2%;
     text-align: justify;
-  }
-  .ajuda-sec p,
-  a {
-    text-align: justify;
-    text-indent: 0.3em;
-    line-height: 1.5em;
+    margin-bottom: 8%;
   }
 
   /* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
   .sobre-sec {
     background-color: white;
-    padding: 8%;
-  }
-  .sobre-container {
-    display: grid;
-    grid-template-columns: 60% auto;
-    grid-template-rows: 60% auto;
+    padding: 5% 2%;
   }
   .sobre-itens {
     padding: 5%;
     border: 0.1em solid #edb91c;
     border-radius: 0.9em;
     background-color: white;
-  }
-  .item-1 {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    margin-right: 55%;
-    width: 96%;
-  }
-  .item-2 {
     margin-bottom: 5%;
-  }
-  .sobre-itens p {
-    text-align: justify;
-    text-indent: 0.3em;
-    line-height: 1.5em;
-  }
-  .sobre-itens ul {
-    list-style: disc;
-    margin-left: 5%;
-    margin-top: 2%;
-  }
-  .p-sobre {
-    font-weight: bold;
   }
 
   /* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
-  .gen-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .gen-h1 {
-    text-align: center;
-    margin-top: 8%;
-  }
 }

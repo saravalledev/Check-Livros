@@ -30,22 +30,28 @@ Kaike Santos Coppola
 	</head>
 
 	<body class="row">
-		<header class="col-s-12 col-m-12 col-12">
-
+	<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-desk">Fale conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li>
-						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-desk'>Olá, ".$username."</a>";
-							}
-						?>
+							<?php
+								if($username == ""){
+									echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
+								}else{
+									echo "
+									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+								}
+							?>
 					</li>
 				</ul>
 			</nav>
@@ -54,14 +60,15 @@ Kaike Santos Coppola
 				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-tablets">Fale conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
 					<li>
 						<?php
 							if($username == ""){
 								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
 							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a>";
+								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='sairlog.php' class='a-tablets'>Sair</a>";
 							}
 						?>
 					</li>
@@ -102,7 +109,13 @@ Kaike Santos Coppola
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
-					<li><a href="cad-log.php" class="a-footer">Cadastro | Login</a></li>
+					<li>
+						<?php
+							if($username == ""){
+								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
+							}
+						?>
+					</li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">

@@ -8,8 +8,8 @@
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
 		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
 	</head>
 
 	<body class="row">
@@ -39,7 +39,8 @@
 			</nav>
 		</header>
 
-	<?php
+		<section class="col-s-12 col-m-12 col-s-12 cad-sec">
+		<?php
 		session_start();
 		if (isset ($_POST["Logar"])) {
 
@@ -54,11 +55,11 @@
 				$numlinha=mysqli_num_rows($result);
 
 				if ($numlinha <= 0) {
-		?>
-		<div class="msg_erro msg-geral ">
-			<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
-		</div>
-		<?php
+					?>
+					<div class="msg-erro msg-geral ">
+						<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
+					</div>
+					<?php
 				}else{
 					while ($linha = mysqli_fetch_array($result)){
 
@@ -69,26 +70,23 @@
 							header("location: ../index.php");
 
 						}else{ 
-		?>
-		<div class="msg_erro msg-geral ">
-			<p>Falha no login. Senha incorreta ou vazia...</p>
-		</div>
-		<?php
+							?>
+							<div class="msg-erro msg-geral ">
+								<p>Falha no login. Senha incorreta ou vazia...</p>
+							</div>
+							<?php
 						}
 					}
 				}
 			}else{
-		?>
-		<div class="msg_erro msg-geral ">
-			<p>Preencha todos os campos, por gentileza!</p>
-		</div>
-		<?php
+				?>
+					<div class="msg-erro msg-geral ">
+						<p>Preencha todos os campos, por gentileza!</p>
+					</div>
+				<?php
 			}
-
 		}
 	?>
-
-		<section class="col-s-12 col-m-12 col-s-12 cad-sec">
 			<h1>Bem-vindo ao Check Livros</h1>
 			<br/><br/>
 			<form name="form-log" method="post" action="">
