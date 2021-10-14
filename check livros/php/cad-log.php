@@ -22,7 +22,7 @@ $u = new Usuario;
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
 		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
@@ -55,12 +55,12 @@ $u = new Usuario;
 			</nav>
 		</header>
 
-		<section class="containerbtn col-s-12 col-m-12 col-12">
-			<div class="btnbox">
-				<a href="CheckCadastro.php"><button class="btncadlog">Cadastrar</button></a>
+		<section class="containerbtn">
+			<div class="box_cad_log">
+				<a href="CheckCadastro.php"><img src="../img/cad-log/img-cad.jpg" class="img_cad_log"></a>
 			</div>
-			<div class="btnbox">
-				<a href="CheckLogin.php"><button class="btncadlog">Entrar</button></a>
+			<div class="box_cad_log">
+				<a href="CheckLogin.php"><img src="../img/cad-log/img-logboa.jpg" class="img_cad_log"></a>
 			</div>
 		</section>
 

@@ -223,20 +223,26 @@ Kaike Santos Coppola
   .cad-sec h1 {
     text-align: center;
   }
-  .btnbox {
-    height: 20em;
-    width: 20em;
-    display: inline-block;
-    background-color: palevioletred;
+  .box_cad_log {
+    float: left;
+    height: 33em;
+    width: 45%;
+    margin-left: 3.3%;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 0.4em 0 rgba(0, 0, 0, 0.9), 0 0 5em 0 rgba(0, 0, 0, 0.19);
   }
-  .btncadlog {
-    height: 100%;
+  .img_cad_log {
     width: 100%;
-    font-size: 2em;
-    background-color: white;
+    height: 100%;
+    opacity: 0.5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  }
+  .img_cad_log:hover {
+    opacity: 1;
+    border: 0.2em solid #edb91c;
   }
   .containerbtn {
-    padding: 13% 25%;
+    padding: 10% 1%;
   }
   .msg-geral {
     width: 50%;
