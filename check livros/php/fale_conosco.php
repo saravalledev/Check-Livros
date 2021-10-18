@@ -13,6 +13,9 @@ Kaike Santos Coppola
 <?php
 	session_start();
 	$username = $_SESSION['username'];
+
+	require_once 'CheckUsuarios.php';
+	$u = new Usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,14 +27,13 @@ Kaike Santos Coppola
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
 		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
 	</head>
 
 	<body class="row">
-
-	<header class="col-s-12 col-m-12 col-12">
+		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
@@ -79,8 +81,70 @@ Kaike Santos Coppola
 				</a>
 			</nav>
 		</header>
-		<section class="col-s-12 col-m-12 col-12 container fade" id="contato-container">
 
+		<section class="col-s-12 col-m-12 col-12 container fade" id="contato-container">
+			<?php
+				if(isset($_POST['enviar_form1'])){
+					$nome = addslashes($_POST['nome1']);
+					$email = addslashes($_POST['email1']);
+					$genero = addslashes($_POST['genero']);
+					$sugestao = addslashes($_POST['sugestao']);
+
+					if(!empty($nome) && !empty($email) && !empty($sugestao)){
+						$u->conectar("check_livros","localhost","root","");
+						//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
+						if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
+							?>
+							<div class="msg-geral msg-sucesso">
+								<p>Sugestão enviada com sucesso :)</p>
+							</div>
+							<?php
+						}else{
+							?>
+							<div class="msg-geral msg-erro">
+								<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
+							</div>
+							<?php
+						}
+					}else{
+						?>
+						<div class="msg-geral msg-erro">
+							<p>Preencha todos os campos!</p>
+						</div>
+						<?php
+					}
+				}
+
+				if(isset($_POST['enviar_form2'])){
+					$nome = addslashes($_POST['nome2']);
+					$email = addslashes($_POST['email2']);
+					$feedback = addslashes($_POST['feedback']);
+
+					if(!empty($nome) && !empty($email) && !empty($feedback)){
+						$u->conectar("check_livros","localhost","root","");
+						//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
+						if($u->cad_feedback($nome, $email, $feedback)){
+							?>
+							<div class="msg-geral msg-sucesso">
+								<p>Feedback enviada com sucesso :)</p>
+							</div>
+							<?php
+						}else{
+							?>
+							<div class="msg-geral msg-erro">
+								<p>Perdão, erro ao enviar seu feedback. Envie novamente mais tarde, por gentileza!</p>
+							</div>
+							<?php
+						}
+					}else{
+						?>
+						<div class="msg-geral msg-erro">
+							<p>Preencha todos os campos!</p>
+						</div>
+						<?php
+					}
+				}
+			?>
 			<h1 class="form-title">Em que podemos ajudar ?</h1><br/><br/>
 			<div class="sugerir-div" onclick="enableContactForm(1)">
 				<div>
@@ -105,6 +169,8 @@ Kaike Santos Coppola
 		</section>
 
 		<section class="col-s-12 col-m-12 col-12 container fade" id="form-1">
+
+			
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1 class="form-title">Sugestão de livros</h1><br/><br/>
 
@@ -150,8 +216,8 @@ Kaike Santos Coppola
 				<label for="email">E-mail:</label>
 				<input type="email" name="email2" placeholder="E-mail" required>
 
-				<label for="feedBack">Feedback:</label>
-				<textarea name="feedBack" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
+				<label for="feedback">Feedback:</label>
+				<textarea name="feedback" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
 
 				<input type="submit" value="Enviar" name="enviar_form2">
 

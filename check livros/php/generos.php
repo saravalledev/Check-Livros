@@ -24,13 +24,13 @@ Kaike Santos Coppola
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
 	</head>
 
 	<body class="row">
-	<header class="col-s-12 col-m-12 col-12">
+		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>

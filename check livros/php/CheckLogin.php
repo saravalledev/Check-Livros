@@ -7,7 +7,7 @@
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
 		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
 		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
 	</head>
@@ -95,7 +95,7 @@
 				<input type="email" name="email" maxlength="40">
 
 				<label for="senha">Senha:</label>
-				<input type="password" id="S3" name="senha">
+				<input type="password" id="pwd" name="senha">
 
 				<div style="margin-bottom: 1em">
 					<input type="checkbox" onclick="mostrarOcultarSenha()">

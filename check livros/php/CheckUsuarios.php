@@ -21,6 +21,8 @@ Class Usuario{
 	public $pdo; 
 	public $msgErro = "";
 
+	//------------------ Conecta Base de Dados ------------------//
+
 	public function conectar($nome, $host, $usuario, $senha){ 
 		global $pdo;
 		global $msgErro;
@@ -32,7 +34,10 @@ Class Usuario{
 		}
 
 	}
-	public function cadastrar($username, $cpf, $email, $senha){
+
+	//------------------ Cadastrar Usuário ------------------//
+
+	public function cadastrar($username, $email, $senha){
 		global $pdo;
 		//Verificar se o email ja está cadastro
 		$sql = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email = :e"); 
@@ -45,37 +50,44 @@ Class Usuario{
 			return false; 
 
 		} else {    
-			$sql = $pdo->prepare("INSERT INTO usuario (username, cpf, email, senha) VALUE (:n, :c, :e, :s)");
+			$sql = $pdo->prepare("INSERT INTO usuario (username, email, senha) VALUE (:n, :e, :s)");
 
 			$sql->bindValue(":n",$username);
-			$sql->bindValue(":c",$cpf);
 			$sql->bindValue(":e",$email);
 			$sql->bindValue(":s",md5($senha)); 
 			$sql->execute();
 			return true;
-		} 
-	}
-	public function logar($email, $senha){
-		echo $email;
-		echo $senha;
-		global $pdo;
-		$sql->bindValue(":e",$email);
-		$sql->bindValue(":s",md5($senha));
-		//verificar se o email e senha estao cadastrados, se sim:
-		$sql = "SELECT id_usuario FROM usuario WHERE email = :e AND senha = :s";
-
-		$sql1 = mysqli_query(conectar(),$sql);
-		echo $sql->rowCount();
-		if($sql1->rowCount() > 0){
-			//entrar no sistema (sessao):
-			$dado = $sql->fetch(); //"fetch" transforma as informações do BD em um array
-			echo $dado['email'];
-			session_start();
-			$_SESSION['id_usuario'] = $dado['id_usuario'];
-			return true; //logado com sucesso
-		}else{
-			return false; //erro no login
 		}
+	}
+
+	//------------------ Cadastrar Sugestão de Livros  ------------------//
+
+	public function cad_sugestao($nome, $email, $genero, $sugestao){
+		global $pdo;
+		
+		$sql = $pdo->prepare("INSERT INTO sugestoes_livros (nome, email, genero_livro, sugestoes) VALUE (:n, :e, :g, :s)");
+
+		$sql->bindValue(":n",$nome);
+		$sql->bindValue(":e",$email);
+		$sql->bindValue(":g",$genero);
+		$sql->bindValue(":s",$sugestao);
+		$sql->execute();
+		return true;
+		
+	}
+
+	//------------------ Cadastrar FeedBack  ------------------//
+
+	public function cad_feedback($nome, $email, $feedback){
+		global $pdo;
+
+		$sql = $pdo->prepare("INSERT INTO feedback (nome, email, feedback_site) VALUE (:n, :e, :f)");
+
+		$sql->bindValue(":n",$nome);
+		$sql->bindValue(":e",$email);
+		$sql->bindValue(":f",$feedback);
+		$sql->execute();
+		return true;
 	}
 }
 

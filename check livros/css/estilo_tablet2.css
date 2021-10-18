@@ -215,9 +215,35 @@ Kaike Santos Coppola
   }
 
   /* --------------- ⬇⬇ Cadastro e Login⬇⬇ -----------------------*/
-
+  .cad-sec {
+    padding: 7% 15%;
+  }
+  .cad-sec h1 {
+    text-align: center;
+  }
+  .box_cad_log {
+    float: left;
+    height: 33em;
+    width: 45%;
+    margin-left: 3.3%;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 0.4em 0 rgba(0, 0, 0, 0.9), 0 0 5em 0 rgba(0, 0, 0, 0.19);
+  }
+  .img_cad_log {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  }
+  .img_cad_log:hover {
+    opacity: 1;
+    border: 0.2em solid #edb91c;
+  }
+  .container_cad_log {
+    padding: 10% 1%;
+  }
   .msg-geral {
-    width: 70%;
+    width: 50%;
     margin: 0.005% auto;
     padding: 0.625em;
     display: block;
@@ -237,9 +263,6 @@ Kaike Santos Coppola
     background-color: rgba(202, 63, 63, 0.287);
     color: rgb(255, 47, 47);
     border: 0.1em solid rgb(218, 3, 3);
-  }
-  .cad-sec {
-    padding: 5% 10%;
   }
   /* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
   .mySlides {

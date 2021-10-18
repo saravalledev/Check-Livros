@@ -26,9 +26,9 @@ $u = new Usuario;
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
 	</head>
 
 	<body class="row">
@@ -62,58 +62,40 @@ $u = new Usuario;
 	<?php
 		if (isset($_POST['username'])){
 			$username = addslashes($_POST['username']);
-			$cpf = addslashes($_POST['cpf']);
 			$email = addslashes($_POST['email']);
 			$senha = addslashes($_POST['senha']);
 			$confsenha = addslashes($_POST['confsenha']);
 
-			if(!empty($username) && !empty($cpf) && !empty($email) && !empty($senha) && !empty($confsenha)){
+			if(!empty($username) && !empty($email) && !empty($senha) && !empty($confsenha)){
 
 				$u->conectar("check_livros","localhost","root","");
-				if($u->msgErro == ""){
 
-					if($senha == $confsenha){
+				if($senha == $confsenha){
 
-						if($u->cadastrar($username, $cpf, $email, $senha)){
-		?>
+					if($u->cadastrar($username, $email, $senha)){
 
-		<div class="msg-geral msg-sucesso">
-			<p>Cadastrado com sucesso! <br> Agora é só logar ;)</p>
-		</div>
-
-		<?php
-
-						}else{
-		?>
-		<div class="msg-geral msg_erro">
-			<p>Email já cadastrado!</p>
-		</div>
-		<?php
-						}
-
+						header("Location: CheckLogin.php");
 					}else{
-		?>
-		<div class="msg-geral msg_erro">
-			<p>Senha e Confirmar Senha não correspondem!</p>
-		</div>
-		<?php
+						?>
+						<div class="msg-geral msg-erro">
+							<p>Email já cadastrado!</p>
+						</div>
+						<?php
 					}
 
-
 				}else{
-		?>
-		<div class="msg-geral msg_erro">
-			<?php echo "Erro: ".$u->msgErro;?>
-		</div>
-		<?php
-
+					?>
+					<div class="msg-geral msg-erro">
+						<p>Senha e Confirmar Senha não correspondem!</p>
+					</div>
+					<?php
 				}
 			}else{
-		?>
-		<div class="msg-geral msg_erro">
-			<p>Preencha todos os campos!</p>
-		</div>
-		<?php
+				?>
+				<div class="msg-geral msg-erro">
+					<p>Preencha todos os campos!</p>
+				</div>
+				<?php
 			}
 		}
 	?>
@@ -125,9 +107,6 @@ $u = new Usuario;
 				<label for="username">Nome de usuário:</label>
 				<input type="text" required min="3" name="username">
 
-				<label for="cpf">CPF:</label>
-				<input type="text" name="cpf" title="Digite seu CPF. Exemplo: XXX.XXX.XXX-XX">
-
 				<label for="email">E-mail:</label>
 				<input type="email" name="email">
 
@@ -135,13 +114,12 @@ $u = new Usuario;
 				<input type="password" id="pwd" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="32">
 
 				<label for="confsenha">Confirmar senha:</label>
-				<input type="password" id="pwd2" name="confsenha">
+				<input type="password" id="S3" name="confsenha">
 
 				<div style="margin-bottom: 1em">
 					<input type="checkbox" onclick="mostrarOcultarSenha()">
-					<label>Mostrar/Ocultar senha</label><br/>
-					<input type="checkbox" onclick="#">
-					<label>Termos de uso</label><br/> 
+					<label>Mostrar/Ocultar senha</label>
+					<br/>
 				</div>
 
 				<input type="submit" name="Cadastrar" value="Cadastrar">
