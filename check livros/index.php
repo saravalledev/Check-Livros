@@ -11,8 +11,13 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
+session_start();
+if($_SESSION['username'] != ""){
 	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,14 +40,14 @@ Kaike Santos Coppola
 				<ul id="desktopLinks">
 					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="php/generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-desk">Fale conosco</a></li>
+					<li><a href="php/fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="php/quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li>
-							<?php
-								if($username == ""){
-									echo "<a href='php/cad-log.php' class='a-desk'>Cadastro | Login</a>";
-								}else{
-									echo "
+						<?php
+						if($username == ""){
+							echo "<a href='php/cad_log.php' class='a-desk'>Cadastro | Login</a>";
+						}else{
+							echo "
 									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
@@ -50,8 +55,8 @@ Kaike Santos Coppola
 										</li>
 									</ul>
 									";
-								}
-							?>
+						}
+						?>
 					</li>
 				</ul>
 			</nav>
@@ -60,16 +65,16 @@ Kaike Santos Coppola
 				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="php/generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-tablets">Fale conosco</a></li>
+					<li><a href="php/fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="php/quem_somos.php" class="a-tablets">Quem Somos</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='php/sairlog.php' class='a-tablets'>Sair</a>";
-							}
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-tablets'>Cadastro | Login</a>";
+						}else{
+							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='php/sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
+						}
 						?>
 					</li>
 				</ul>
@@ -83,15 +88,15 @@ Kaike Santos Coppola
 			<div class="slideshow-container">
 
 				<div class="mySlides fade">
-					<img src="img/teste.jpg">
+					<img src="img/banner.png">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/BannerDefinitivo.png">
+					<img src="img/banner.png">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/Banner.png">
+					<img src="img/banner.png">
 				</div>
 
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -114,11 +119,11 @@ Kaike Santos Coppola
 				</div>
 				<div class="beneficios-itens">
 					<h2>Quem Somos</h2><br/>
-					<p>Somos uma equipe formada por três estudantes de Tecnologia da Informação, e como trabalho de conclusão de curso entramos em acordo e decidimos dar início a este importante e versátil projeto.</p>
+					<p>A história do Check Livros começou em 2021 e desde então os desenvolvedores, Hebert, Matheus e Kaike, enfrentaram diversos desafios na construção deste magnífico portal de resenhas. De começo, os estudantes de Tecnologia da Informação (TI) foram assolados pela terrível ...</p>
 				</div>
 			</div>
 			<br/>
-			<p class="p-beneficios">Caso queira saber mais sobre nós e nosso projeto visite a página <a class="a-beneficios" href="quem_somos.php">Quem somos</a></p>
+			<p class="p-beneficios">Caso queira saber mais sobre nós e nosso projeto visite a página <a class="a-beneficios" href="php/quem_somos.php">Quem somos</a></p>
 
 		</section>
 
@@ -143,15 +148,15 @@ Kaike Santos Coppola
 			<div class="ajuda-container">
 				<div class="ajuda-item">
 					<h2>Resenhas</h2><br/>
-					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="#">Saiba mais...</a></p>
+					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="php/cad_log.php">Saiba mais...</a></p>
 				</div>
 				<div class="ajuda-item">
 					<h2>Busca</h2><br/>
-					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="">Gêneros</a> literários para explorar os mais diversos assuntos</p>
+					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="php/generos.php">Gêneros</a> literários para explorar os mais diversos assuntos</p>
 				</div>
 				<div class="ajuda-item">
 					<h2>Fale conosco</h2><br/>
-					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="">Fale conosco</a></p>
+					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="php/fale_conosco.php">Fale conosco</a></p>
 				</div>
 			</div>
 		</section>
@@ -173,12 +178,12 @@ Kaike Santos Coppola
 				</ul>
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
-					<li><a href="#" class="a-footer">Perfil</a></li>
+					<li><a href="php/perfil.php" class="a-footer">Perfil</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
-							}
+						if($username == ""){
+							echo "<a href='php/cad_log.php' class='a-footer'>Cadastro | Login</a>";
+						}
 						?>
 					</li>
 				</ul>

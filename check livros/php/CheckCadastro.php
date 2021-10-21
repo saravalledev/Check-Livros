@@ -9,11 +9,18 @@ Hebert Victor | número:                                                        
 Matheus Felix Carlos | número:                                                Data:
 Kaike Santos Coppola | número: 
 
-Altores externos: 
+Autores externos: 
 (Processamento do Cadastro e login e parte do CSS) -> Miriam TechCod: 
 https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
 --------------------------------------------------------------------------------------------------------->
 <?php
+session_start();
+if($_SESSION['username'] != ""){
+	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
 require_once 'CheckUsuarios.php';
 $u = new Usuario;
 ?>
@@ -26,9 +33,9 @@ $u = new Usuario;
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 
 	<body class="row">
@@ -37,7 +44,7 @@ $u = new Usuario;
 
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="../index.php" class="logo-menu"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -46,7 +53,7 @@ $u = new Usuario;
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
@@ -59,7 +66,7 @@ $u = new Usuario;
 			</nav>
 		</header>
 
-	<?php
+		<?php
 		if (isset($_POST['username'])){
 			$username = addslashes($_POST['username']);
 			$email = addslashes($_POST['email']);
@@ -76,29 +83,29 @@ $u = new Usuario;
 
 						header("Location: CheckLogin.php");
 					}else{
-						?>
-						<div class="msg-geral msg-erro">
-							<p>Email já cadastrado!</p>
-						</div>
-						<?php
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Email já cadastrado!</p>
+		</div>
+		<?php
 					}
 
 				}else{
-					?>
-					<div class="msg-geral msg-erro">
-						<p>Senha e Confirmar Senha não correspondem!</p>
-					</div>
-					<?php
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Senha e Confirmar Senha não correspondem!</p>
+		</div>
+		<?php
 				}
 			}else{
-				?>
-				<div class="msg-geral msg-erro">
-					<p>Preencha todos os campos!</p>
-				</div>
-				<?php
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Preencha todos os campos!</p>
+		</div>
+		<?php
 			}
 		}
-	?>
+		?>
 
 		<section class="col-s-12 col-m-12 col-12 cad-sec">
 			<h1>Cadastre-se em nossa plataforma</h1><br/><br/>

@@ -52,36 +52,26 @@ function mostrarOcultarSenha() {
 	}
 }
 
-var slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-	showSlides(slideIndex += n);
-}
 
-// Thumbnail image controls
-function currentSlide(n) {
-	showSlides(slideIndex = n);
-}
+var slideIndex1 = 0;
+showSlides1();
 
-function showSlides(n) {
+function showSlides1() {
 	var i;
-	var slides = document.getElementsByClassName("mySlides");
-	var dots = document.getElementsByClassName("dot");
-	if (n > slides.length) {slideIndex = 1}
-	if (n < 1) {slideIndex = slides.length}
+	var slides = document.getElementsByClassName("mySlides1");
 	for (i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	}
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active1", "");
-	}
-	slides[slideIndex-1].style.display = "block";
-	dots[slideIndex-1].className += " active1";
+	slideIndex1++;
+	if (slideIndex1 > slides.length) {slideIndex1 = 1}
+	slides[slideIndex1-1].style.display = "block";
+	setTimeout(showSlides1, 4000); 
 }
+
+
 function checkform(form) {
-            
+
 	if(form.CPF.value !=""){
 		var numero = form.CPF.value.replace(/[^0-9]/g,'');
 		var cont, soma, dig, resto, dv1, dv2;
@@ -113,7 +103,7 @@ function checkform(form) {
 
 			else 
 				dig = 11 - resto;
-			
+
 			if(dig != dv2){
 				alert("CPF Inválido!");
 				form.CPF.focus();
@@ -130,10 +120,11 @@ function checkform(form) {
 		}  
 	}
 	if(form.pwd1.value != form.pwd2.value){
-	alert("Senhas não conferem!\nPor favor, vefique se as senhas estão escritas de forma correta e identica  ;)");
-	form.pwd1.focus();
-	return false;
+		alert("Senhas não conferem!\nPor favor, vefique se as senhas estão escritas de forma correta e identica  ;)");
+		form.pwd1.focus();
+		return false;
 	}else{
 		return true;
 	}
 }
+

@@ -11,8 +11,13 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
+session_start();
+if($_SESSION['username'] != ""){
 	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,25 +29,25 @@ Kaike Santos Coppola
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 
 	<body class="row">
-	<header class="col-s-12 col-m-12 col-12">
+		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="../index.php" class="logo-menu"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-desk">Fale conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li>
-							<?php
-								if($username == ""){
-									echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
-								}else{
-									echo "
+						<?php
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-desk'>Cadastro | Login</a>";
+						}else{
+							echo "
 									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
@@ -50,26 +55,26 @@ Kaike Santos Coppola
 										</li>
 									</ul>
 									";
-								}
-							?>
+						}
+						?>
 					</li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-tablets">Fale conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='sairlog.php' class='a-tablets'>Sair</a>";
-							}
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-tablets'>Cadastro | Login</a>";
+						}else{
+							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
+						}
 						?>
 					</li>
 				</ul>
@@ -81,7 +86,7 @@ Kaike Santos Coppola
 
 		<section class="col-s-12 col-m-12 col-12 sobre-sec">
 
-			<h1>Quem Somos</h1><br/><br/>
+			<h1>Nossa História</h1><br/><br/>
 			<div class="sobre-container">
 
 				<div class="sobre-itens item-1">
@@ -103,12 +108,18 @@ Kaike Santos Coppola
 						<li><p>Objetividade</p></li>
 					</ul>
 				</div>
-				<div class="sobre-itens">
+				<div class="sobre-itens item-3 slideshow-container1">
 
+						<div class="mySlides1 fade">
+							<img src="../img/quem_somos/quem_somos1.jpeg">
+						</div>
+
+						<div class="mySlides1 fade">
+							<img src="../img/quem_somos/quem_somos2.jpeg">
+						</div>
+						
 				</div>
-
 			</div>
-
 		</section>
 
 		<footer class="col-s-12 col-m-12 col-12 footer">
@@ -131,9 +142,9 @@ Kaike Santos Coppola
 					<li><a href="#" class="a-footer">Perfil</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
-							}
+						if($username == ""){
+							echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
+						}
 						?>
 					</li>
 				</ul>

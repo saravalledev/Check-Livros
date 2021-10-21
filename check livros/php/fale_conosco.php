@@ -11,11 +11,15 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
+session_start();
+if($_SESSION['username'] != ""){
 	$username = $_SESSION['username'];
-
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
+require_once 'CheckUsuarios.php';
+$u = new Usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -23,29 +27,29 @@ Kaike Santos Coppola
 		<meta charset="utf-8"/>
 		<meta http-equiv="x-UA-compatible"content="ie=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Fale conosco</title>
+		<title>Fale Conosco</title>
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
-		<link rel="stylesheet" href="../css/estilo_desktop2.css"/>
-		<link rel="stylesheet" href="../css/estilo_tablet2.css"/>
-		<link rel="stylesheet" href="../css/estilo_mobile2.css"/>
+		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
+		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
+		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 
 	<body class="row">
 		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="../index.php" class="logo-menu"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a></li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-desk">Fale conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li>
-							<?php
-								if($username == ""){
-									echo "<a href='cad-log.php' class='a-desk'>Cadastro | Login</a>";
-								}else{
-									echo "
+						<?php
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-desk'>Cadastro | Login</a>";
+						}else{
+							echo "
 									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
@@ -53,26 +57,26 @@ Kaike Santos Coppola
 										</li>
 									</ul>
 									";
-								}
-							?>
+						}
+						?>
 					</li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-tablets">Fale conosco</a></li>
+					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='cad-log.php' class='a-tablets'>Cadastro | Login</a>";
-							}else{
-								echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='sairlog.php' class='a-tablets'>Sair</a>";
-							}
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-tablets'>Cadastro | Login</a>";
+						}else{
+							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+									<li><a href='sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
+						}
 						?>
 					</li>
 				</ul>
@@ -84,66 +88,66 @@ Kaike Santos Coppola
 
 		<section class="col-s-12 col-m-12 col-12 container fade" id="contato-container">
 			<?php
-				if(isset($_POST['enviar_form1'])){
-					$nome = addslashes($_POST['nome1']);
-					$email = addslashes($_POST['email1']);
-					$genero = addslashes($_POST['genero']);
-					$sugestao = addslashes($_POST['sugestao']);
+			if(isset($_POST['enviar_form1'])){
+				$nome = addslashes($_POST['nome1']);
+				$email = addslashes($_POST['email1']);
+				$genero = addslashes($_POST['genero']);
+				$sugestao = addslashes($_POST['sugestao']);
 
-					if(!empty($nome) && !empty($email) && !empty($sugestao)){
-						$u->conectar("check_livros","localhost","root","");
-						//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
-						if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
-							?>
-							<div class="msg-geral msg-sucesso">
-								<p>Sugestão enviada com sucesso :)</p>
-							</div>
-							<?php
-						}else{
-							?>
-							<div class="msg-geral msg-erro">
-								<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
-							</div>
-							<?php
-						}
+				if(!empty($nome) && !empty($email) && !empty($sugestao)){
+					$u->conectar("check_livros","localhost","root","");
+					//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
+					if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
+			?>
+			<div class="msg-geral msg-sucesso">
+				<p>Sugestão enviada com sucesso :)</p>
+			</div>
+			<?php
 					}else{
-						?>
-						<div class="msg-geral msg-erro">
-							<p>Preencha todos os campos!</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
+			</div>
+			<?php
 					}
+				}else{
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Preencha todos os campos!</p>
+			</div>
+			<?php
 				}
+			}
 
-				if(isset($_POST['enviar_form2'])){
-					$nome = addslashes($_POST['nome2']);
-					$email = addslashes($_POST['email2']);
-					$feedback = addslashes($_POST['feedback']);
+			if(isset($_POST['enviar_form2'])){
+				$nome = addslashes($_POST['nome2']);
+				$email = addslashes($_POST['email2']);
+				$feedback = addslashes($_POST['feedback']);
 
-					if(!empty($nome) && !empty($email) && !empty($feedback)){
-						$u->conectar("check_livros","localhost","root","");
-						//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
-						if($u->cad_feedback($nome, $email, $feedback)){
-							?>
-							<div class="msg-geral msg-sucesso">
-								<p>Feedback enviada com sucesso :)</p>
-							</div>
-							<?php
-						}else{
-							?>
-							<div class="msg-geral msg-erro">
-								<p>Perdão, erro ao enviar seu feedback. Envie novamente mais tarde, por gentileza!</p>
-							</div>
-							<?php
-						}
+				if(!empty($nome) && !empty($email) && !empty($feedback)){
+					$u->conectar("check_livros","localhost","root","");
+					//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
+					if($u->cad_feedback($nome, $email, $feedback)){
+			?>
+			<div class="msg-geral msg-sucesso">
+				<p>Feedback enviada com sucesso :)</p>
+			</div>
+			<?php
 					}else{
-						?>
-						<div class="msg-geral msg-erro">
-							<p>Preencha todos os campos!</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Perdão, erro ao enviar seu feedback. Envie novamente mais tarde, por gentileza!</p>
+			</div>
+			<?php
 					}
+				}else{
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Preencha todos os campos!</p>
+			</div>
+			<?php
 				}
+			}
 			?>
 			<h1 class="form-title">Em que podemos ajudar ?</h1><br/><br/>
 			<div class="sugerir-div" onclick="enableContactForm(1)">
@@ -170,7 +174,7 @@ Kaike Santos Coppola
 
 		<section class="col-s-12 col-m-12 col-12 container fade" id="form-1">
 
-			
+
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1 class="form-title">Sugestão de livros</h1><br/><br/>
 
@@ -242,12 +246,12 @@ Kaike Santos Coppola
 				</ul>
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
-					<li><a href="#" class="a-footer">Perfil</a></li>
+					<li><a href="perfil.php" class="a-footer">Perfil</a></li>
 					<li>
 						<?php
-							if($username == ""){
-								echo "<a href='php/cad-log.php' class='a-footer'>Cadastro | Login</a>";
-							}
+						if($username == ""){
+							echo "<a href='cad_log.php' class='a-footer'>Cadastro | Login</a>";
+						}
 						?>
 					</li>
 				</ul>
