@@ -88,7 +88,7 @@ if($_SESSION['username'] != ""){
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 
-					<img src="../img/generos/generos_ciencias-biologicas.jpg"/>
+			<a href="#"><img src="../img/generos/generos_ciencias-biologicas.jpg"/></a>
 
 					<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
 				

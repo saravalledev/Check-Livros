@@ -428,14 +428,17 @@ Kaike Santos Coppola
 	.item-3 {
 		padding: 0;
 		overflow: hidden;
-		border: 0.15em solid #edb91c;
+		border: 0;
+		box-shadow: 0;
 	}
 	.mySlides1 {
 		display: none;
 	}
 	.mySlides1 img {
+		border-radius: 0.9em;
+		box-shadow: 0.3125em 0.625em 1.125em #888888;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		margin: 0;
 	}
 

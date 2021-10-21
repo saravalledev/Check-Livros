@@ -108,7 +108,7 @@ if($_SESSION['username'] != ""){
 						<li><p>Objetividade</p></li>
 					</ul>
 				</div>
-				<div class="sobre-itens item-3 slideshow-container1">
+				<div class="sobre-itens item-3">
 
 						<div class="mySlides1 fade">
 							<img src="../img/quem_somos/quem_somos1.jpeg">
