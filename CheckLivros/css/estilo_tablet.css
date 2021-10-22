@@ -1,0 +1,463 @@
+/*------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: 
+
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+-----------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  /* --- Estilos para tablets --- */
+  .col-m-1 {
+    width: 8.33%;
+  }
+  .col-m-2 {
+    width: 16.66%;
+  }
+  .col-m-3 {
+    width: 25%;
+  }
+  .col-m-4 {
+    width: 33.33%;
+  }
+  .col-m-5 {
+    width: 41.66%;
+  }
+  .col-m-6 {
+    width: 50%;
+  }
+  .col-m-7 {
+    width: 58.33%;
+  }
+  .col-m-8 {
+    width: 66.66%;
+  }
+  .col-m-9 {
+    width: 75%;
+  }
+  .col-m-10 {
+    width: 83.33%;
+  }
+  .col-m-11 {
+    width: 91.66%;
+  }
+  .col-m-12 {
+    width: 100%;
+  }
+
+  /* -------- Estilo do menu -------- */
+  #nav-desktop {
+    display: none;
+  }
+  #nav-mobile-tablets {
+    display: block;
+    overflow: hidden;
+    background-color: whitesmoke;
+    color: white;
+    position: relative;
+    border-bottom: 0.15em solid #edb91c;
+  }
+  #nav-mobile-tablets #mobileLinks {
+    display: none;
+    border-bottom: 0.1em solid #edb91c;
+  }
+  .a-tablets {
+    color: white;
+    padding: 0.875em 1em;
+    font-size: 1.1em;
+    display: block;
+    color: black;
+  }
+  .a-tablets:hover {
+    background-color: white;
+    color: #edb91c;
+  }
+  .icon-nav-mobile {
+    background-color: whitesmoke;
+    display: block;
+    position: absolute;
+    padding: 3% 1em;
+    right: 0;
+    top: 0;
+    color: #edb91c;
+    font-size: 1.2em;
+  }
+  .nav-logo {
+    display: block;
+    width: 8vw;
+  }
+
+  /* -------- Estilo do rodapé -------- */
+  .footer {
+    background-color: #18546e;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border-top: 0.1em solid black;
+    margin-top: auto;
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-nav ul {
+    line-height: 2em;
+  }
+  .p-footer {
+    color: white;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+  }
+  .a-footer {
+    color: white;
+    float: left;
+    margin-bottom: 0.4em;
+  }
+  .a-footer:hover {
+    color: #edb91c;
+  }
+  .logo-container {
+    text-align: center;
+    color: white;
+    font-size: 75%;
+  }
+  .redes-container {
+    text-align: center;
+    margin-top: 3em;
+  }
+  .redes-container p {
+    font-size: 1.2em;
+    display: inline;
+    color: white;
+  }
+  .redes-container i {
+    font-size: 1.6em;
+    color: white;
+  }
+  .img_f {
+    width: 90%;
+  }
+  /* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
+
+  .container {
+    padding: 5% 10%;
+  }
+
+  /* --------------- ⬇⬇ Fale conosco ⬇⬇ -----------------------*/
+  .fale-conosco-container h1 {
+    font-size: 2em;
+  }
+  .sugerir-div {
+    background-color: white;
+    border: 0.15em solid #edb91c;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+    padding: 2.5% 5%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .sugerir-div:hover {
+    background-color: whitesmoke;
+  }
+  .sugerir-div p {
+    font-size: 1em;
+  }
+  .sugerir-div h2 {
+    font-size: 1.5em;
+  }
+  .sugerir-text {
+    margin-bottom: 0.625em;
+  }
+  .icon-contato {
+    margin-top: 0.4em;
+    font-size: 2.2em;
+    color: #f0cd65;
+  }
+  #form-1,
+  #form-2 {
+    display: none;
+  }
+  input[type="text"],
+  select,
+  textarea,
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.25em;
+    margin-top: 0.9em;
+    margin-bottom: 1.5em;
+    resize: none;
+  }
+  input[type="submit"] {
+    background-color: #ed734c;
+    color: white;
+    padding: 0.75em 1.25em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #d64a3a;
+  }
+  .voltar-btn {
+    background-color: white;
+    color: black;
+    padding: 0 1.25em 1em 0;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    font-size: 1.4em;
+  }
+  .voltar-btn:hover {
+    color: #edb91c;
+  }
+
+  /* --------------- ⬇⬇ Cadastro e Login⬇⬇ -----------------------*/
+  .cad-sec {
+    padding: 7% 15%;
+  }
+  .cad-sec h1 {
+    text-align: center;
+  }
+  .box_cad_log {
+    float: left;
+    height: 33em;
+    width: 45%;
+    margin-left: 3.3%;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 0.4em 0 rgba(0, 0, 0, 0.9), 0 0 5em 0 rgba(0, 0, 0, 0.19);
+  }
+  .img_cad_log {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  }
+  .img_cad_log:hover {
+    opacity: 1;
+    border: 0.2em solid #edb91c;
+  }
+  .container_cad_log {
+    padding: 10% 1%;
+  }
+  .msg-geral {
+    width: 50%;
+    margin: 0.005% auto;
+    padding: 0.625em;
+    display: block;
+    border-radius: 5em;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  .msg-geral p {
+    font-size: 1em;
+  }
+  .msg-sucesso {
+    background-color: #6cc2e7b6;
+    border: 0.1em solid #18546e;
+    color: #006c9b;
+  }
+  .msg-erro {
+    background-color: rgba(202, 63, 63, 0.287);
+    color: rgb(255, 47, 47);
+    border: 0.1em solid rgb(218, 3, 3);
+  }
+
+  /* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
+  .mySlides {
+    display: none;
+  }
+  .mySlides img {
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+  }
+  .slideshow-container {
+    position: relative;
+    margin: 0;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -1.375em;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.6 ease;
+    border-radius: 0 0.2em 0.2em 0;
+    user-select: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 0.2em 0 0 0.2em;
+  }
+  .dot {
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    margin: 0;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6 ease;
+  }
+  .dots-container {
+    position: absolute;
+    bottom: 0;
+    margin: 0.5em 1em;
+  }
+  .active1,
+  .dot:hover {
+    background-color: #f0cd65;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #edb91c;
+  }
+  .beneficios-container {
+    padding: 5% 5% 5% 5%;
+    background-color: white;
+  }
+  .beneficios {
+    display: flex;
+    background-color: white;
+    border-radius: 0.9em;
+    border: 0.15em solid #edb91c;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+    color: black;
+  }
+  .beneficios p {
+    text-align: justify;
+  }
+  .beneficios-itens {
+    width: 50%;
+    padding: 2%;
+  }
+  .beneficios-container h1,
+  .beneficios-container h2,
+  .ajuda-sec h1 {
+    text-align: center;
+  }
+  .beneficios-container h1 {
+    font-size: 1.3em;
+    margin-bottom: 3%;
+    font-style: italic;
+  }
+  .p-beneficios {
+    text-align: center;
+  }
+  .a-beneficios {
+    text-decoration: underline;
+    color: skyblue;
+  }
+  .autores-container {
+    background-color: #247ba0;
+    padding: 10%;
+    border-bottom: 0.1em solid black;
+    border-top: 0.1em solid black;
+  }
+  .autores-container h1 {
+    color: white;
+  }
+  .autores-div {
+    background-color: white;
+    border-radius: 0.9em;
+    padding: 2.5% 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ajuda-sec {
+    background-color: white;
+    padding: 5% 15%;
+  }
+  .ajuda-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .ajuda-item {
+    background-color: white;
+    border: 0.15em solid #edb91c;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+    border-radius: 0.9em;
+    width: 100%;
+    padding: 2%;
+    text-align: justify;
+    margin-bottom: 8%;
+  }
+
+  /* --------------- ⬇⬇ Quem somos ⬇⬇ -----------------------*/
+  .sobre-sec {
+    background-color: white;
+    padding: 5% 2%;
+  }
+  .sobre-sec h1 {
+    text-align: center;
+    font-size: 2em;
+  }
+  .sobre-itens {
+    padding: 5%;
+    border: 0.1em solid #edb91c;
+    border-radius: 0.9em;
+    background-color: white;
+    margin-bottom: 5%;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+  }
+  .sobre-itens p {
+    text-align: justify;
+    text-indent: 0.3em;
+    line-height: 1.5em;
+  }
+  .sobre-itens ul {
+    list-style: disc;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  .p-sobre {
+    font-weight: bold;
+  }
+  .item-3 {
+    padding: 0;
+    overflow: hidden;
+    border: 0.15em solid #edb91c;
+  }
+  .mySlides1 {
+    display: none;
+  }
+  .mySlides1 img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  /* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
+  .gen-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5% 5%;
+  }
+  .gen-h1 {
+    text-align: center;
+    margin-top: 6%;
+    font-size: 2em;
+  }
+  .gen-container img {
+    width: 30%;
+    height: auto;
+    margin-bottom: 8%;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+  }
+}
