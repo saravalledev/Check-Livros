@@ -39,6 +39,11 @@ if($_SESSION['username'] != ""){
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="../index.php" class="logo-menu">
+							<img src="../img/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -88,29 +93,29 @@ if($_SESSION['username'] != ""){
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 
+			<a href="#"><img src="../img/generos/generos_Ciencias-Humanas2.jpg"/></a>
+
+			<a href="#"><img src="../img/generos/generos_Ciencias-Exatas.jpg"/></a>
+
 			<a href="#"><img src="../img/generos/generos_ciencias-biologicas.jpg"/></a>
 
-					<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
-				
-					<img src="../img/generos/generos_Autoajuda.jpg"/>
+			<a href="#"><img src="../img/generos/generos_Lit-Nacional.png"/></a>
 
-					<img src="../img/generos/generos_Lit-Estrangeira.jpg"/>
+			<a href="#"><img src="../img/generos/generos_Lit-InfantoJuvenil.jpg"/></a>
 
-					<img src="../img/generos/generos_Lit-InfantoJuvenil.jpg"/>
+			<a href="#"><img src="../img/generos/generos_Lit-Estrangeira.jpg"/></a>
 
-					<img src="../img/generos/generos_Lit-Nacional.png"/>
+			<a href="#"><img src="../img/generos/generos_HKS-Mangas.jpg"/></a>
 
-					<img src="../img/generos/generos_ciencias-biologicas.jpg"/>
+			<a href="#"><img src="../img/generos/generos_Autoajuda.jpg"/></a>
 
-					<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
-
-					<img src="../img/generos/generos_Autoajuda.jpg"/>
+			<a href="#"><img src="../img/generos/Outros-.png"/></a>
 
 		</section>
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="../img/Check-LivrosB.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>

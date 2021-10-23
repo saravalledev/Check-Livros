@@ -141,6 +141,9 @@ Kaike Santos Coppola
     font-size: 1.8em;
     color: white;
   }
+	.img_f {
+    width: 95%;
+  }
 
   /* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
@@ -460,5 +463,8 @@ Kaike Santos Coppola
 		height: auto;
 		margin-bottom: 10%;
 		box-shadow: 0.3125em 0.625em 1.125em #888888;
+	}
+	.gen-container a {
+		display: contents;
 	}
 }

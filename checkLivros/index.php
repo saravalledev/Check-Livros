@@ -39,6 +39,11 @@ if($_SESSION['username'] != ""){
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="index.php" class="logo-menu">
+							<img src="img/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="php/generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="php/fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="php/quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -163,7 +168,7 @@ if($_SESSION['username'] != ""){
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="img/Check-LivrosB.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
@@ -197,5 +202,5 @@ if($_SESSION['username'] != ""){
 			</aside>
 		</footer>
 	</body>
-	<script type="text/javascript" src="js/functions.js"></script> 
+	<script type="text/javascript" src="js/slideshow.js"></script> 
 </html>
