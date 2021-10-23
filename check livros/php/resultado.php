@@ -26,6 +26,11 @@
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="../index.php" class="logo-menu">
+							<img src="../img/logo/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -74,30 +79,114 @@
         <h1 class="gen-h1">Escolha um livro e desfute...</h1>
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
+			<?php
+				$conexao = mysqli_connect("localhost","root", "", "check_livros");
+				if(isset($_GET['id']) == 1){
+					$genero1 = "CB";
+
+					$sql1 = "SELECT * FROM livro WHERE genero_livro = '$genero1'";
+					$result1 = mysqli_query($conexao,$sql1);
+					echo mysqli_num_rows($result1);
+					while($linha1 = mysqli_fetch_array($result1)){
+						if($linha1['genero_livro'] == "CB"){
+							echo $linha1['titulo_livro'];
+							echo $genero1."<br>";
+						}
+					}
+				}else{
+					if(isset($_GET['id']) == 2){
+						$genero = "CE";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+							if($linha['genero_livro'] == "CE"){
+								echo $linha['titulo_livro'];
+								echo $genero."<br>";
+							}
+						}
+					}
+					if(isset($_GET['id']) == "CH"){
+						$genero = "CH";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "LE"){
+						$genero = "LE";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "LJ"){
+						$genero = "LJ";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "LN"){
+						$genero = "LN";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "HQ"){
+						$genero = "HQ";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "OU"){
+						$genero = "OU";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+					if(isset($_GET['id']) == "AJ"){
+						$genero = "AJ";
+	
+						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+						$result = mysqli_query($conexao,$sql);
+						echo mysqli_num_rows($result);
+						while($linha = mysqli_fetch_array($result)){
+						echo $linha['titulo_livro'];
+						}
+					}
+
+				}
 				
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-			<img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-
-            <img src="../img/generos/generos_Lit-Nacional.png"/>
-				
+			
+			?>
 		</section>
 
         <footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="../img/logo/Titulosemfundo.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>

@@ -38,7 +38,12 @@ if($_SESSION['username'] != ""){
 		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
-					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
+					<li><a href="index.php" class="logo-menu"><img src="img/logo/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="index.php" class="logo-menu">
+							<img src="img/logo/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="php/generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="php/fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="php/quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -62,7 +67,7 @@ if($_SESSION['username'] != ""){
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/logo/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li><a href="php/generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="php/fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
@@ -163,7 +168,7 @@ if($_SESSION['username'] != ""){
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="img/logo/Titulosemfundo.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>

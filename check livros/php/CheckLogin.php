@@ -19,10 +19,15 @@
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="../index.php" class="logo-menu">
+							<img src="../img/logo/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-desk">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
@@ -32,7 +37,7 @@
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-tablets">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-tablets">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -108,7 +113,7 @@
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="../img/logo/Titulosemfundo.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
@@ -124,7 +129,7 @@
 				<ul>
 					<li><p class="p-footer">Minha Conta</p></li>
 					<li><a href="#" class="a-footer">Perfil</a></li>
-					<li><a href="cad-log.php" class="a-footer">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-footer">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">

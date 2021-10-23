@@ -103,7 +103,6 @@ Kaike Santos Coppola
     background-color: #18546e;
     padding-top: 2em;
     padding-bottom: 2em;
-    border-top: 0.1em solid black;
     margin-top: auto;
   }
   .footer-nav {
@@ -141,7 +140,15 @@ Kaike Santos Coppola
     font-size: 1.6em;
     color: white;
   }
-
+  .img_f {
+    width: 80%;
+  }
+  .img_l {
+    width: 10em;
+  }
+  .img_m {
+    width: 25%;
+  }
   /* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
   .container {

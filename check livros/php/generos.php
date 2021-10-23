@@ -39,6 +39,11 @@ Kaike Santos Coppola
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/logo/LogoSemNome.png" style="width: 100%"></a></li>
+					<li class="img_m">
+						<a href="../index.php" class="logo-menu">
+							<img src="../img/logo/Titulosemfundo.png" class="img_l">
+						</a>
+					</li>
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
@@ -83,17 +88,17 @@ Kaike Santos Coppola
 				</a>
 			</nav>
 		</header>
-
+		
 		<h1 class="gen-h1">Selecione um Gênero Literário</h1>
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 				<div>
-					<a href="resultado.php" id="CB">
+					<a href="resultado.php?id=1">
 						<img src="../img/generos/generos_ciencias-biologicas.jpg">
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php" id="CE">
+					<a href="resultado.php?id=2">
 						<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
 					</a>
 				</div>
@@ -133,10 +138,10 @@ Kaike Santos Coppola
 					</a>
 				</div>
 		</section>
-
+		
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<h1>Check Livros</h1>
+				<img class="img_f" src="../img/logo/Titulosemfundo.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>

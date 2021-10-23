@@ -85,13 +85,13 @@ Kaike Santos Coppola
     right: 0;
     top: 0;
     color: #edb91c;
-	  font-size: 1.2em;
+    font-size: 1.2em;
   }
   .nav-logo {
     display: block;
     width: 8vw;
   }
-	
+
   /* -------- Estilo do rodapé -------- */
   .footer {
     background-color: #18546e;
@@ -139,7 +139,9 @@ Kaike Santos Coppola
     font-size: 1.6em;
     color: white;
   }
-
+  .img_f {
+    width: 90%;
+  }
   /* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
   .container {
@@ -153,7 +155,7 @@ Kaike Santos Coppola
   .sugerir-div {
     background-color: white;
     border: 0.15em solid #edb91c;
-  	box-shadow: 0.3125em 0.625em 1.125em #888888;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
     padding: 2.5% 5%;
     display: flex;
     justify-content: space-between;
@@ -267,7 +269,7 @@ Kaike Santos Coppola
     color: rgb(255, 47, 47);
     border: 0.1em solid rgb(218, 3, 3);
   }
-	
+
   /* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
   .mySlides {
     display: none;
@@ -333,7 +335,7 @@ Kaike Santos Coppola
     background-color: white;
     border-radius: 0.9em;
     border: 0.15em solid #edb91c;
-		box-shadow: 0.3125em 0.625em 1.125em #888888;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
     color: black;
   }
   .beneficios p {
@@ -388,7 +390,7 @@ Kaike Santos Coppola
   .ajuda-item {
     background-color: white;
     border: 0.15em solid #edb91c;
-		box-shadow: 0.3125em 0.625em 1.125em #888888;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
     border-radius: 0.9em;
     width: 100%;
     padding: 2%;
@@ -401,64 +403,61 @@ Kaike Santos Coppola
     background-color: white;
     padding: 5% 2%;
   }
-	.sobre-sec h1 {
-		text-align: center;
-		font-size: 2em;
-	}
+  .sobre-sec h1 {
+    text-align: center;
+    font-size: 2em;
+  }
   .sobre-itens {
     padding: 5%;
     border: 0.1em solid #edb91c;
     border-radius: 0.9em;
     background-color: white;
     margin-bottom: 5%;
-	  box-shadow: 0.3125em 0.625em 1.125em #888888;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
   }
-	.sobre-itens p {
-		text-align: justify;
-		text-indent: 0.3em;
-		line-height: 1.5em;
-	}
-	.sobre-itens ul {
-		list-style: disc;
-		margin-left: 5%;
-		margin-top: 2%;
-	}
-	.p-sobre {
-		font-weight: bold;
-	}
-	.item-3 {
-		padding: 0;
-		overflow: hidden;
-		border: 0.15em solid #edb91c;
-	}
-	.mySlides1 {
-		display: none;
-	}
-	.mySlides1 img {
-		width: 100%;
-		height: auto;
-		margin: 0;
-	}
-	.slideshow-container1 {
-		
-	}
+  .sobre-itens p {
+    text-align: justify;
+    text-indent: 0.3em;
+    line-height: 1.5em;
+  }
+  .sobre-itens ul {
+    list-style: disc;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+  .p-sobre {
+    font-weight: bold;
+  }
+  .item-3 {
+    padding: 0;
+    overflow: hidden;
+    border: 0.15em solid #edb91c;
+  }
+  .mySlides1 {
+    display: none;
+  }
+  .mySlides1 img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
 
   /* --------------- ⬇⬇ Gêneros de livros ⬇⬇ -----------------------*/
-	.gen-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		padding: 5% 5%;
-	}
-	.gen-h1 {
-		text-align: center;
-		margin-top: 6%;
-		font-size: 2em;
-	}
-	.gen-container img {
-		width: 30%;
-		height: auto;
-		margin-bottom: 8%;
-		box-shadow: 0.3125em 0.625em 1.125em #888888;
-	}
+  .gen-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5% 5%;
+  }
+  .gen-h1 {
+    text-align: center;
+    margin-top: 6%;
+    font-size: 2em;
+  }
+  .gen-container img {
+    width: 30%;
+    height: auto;
+    margin-bottom: 8%;
+    box-shadow: 0.3125em 0.625em 1.125em #888888;
+  }
 }
