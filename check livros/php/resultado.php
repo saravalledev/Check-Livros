@@ -1,4 +1,8 @@
 <?php
+
+	require_once 'CheckUsuarios.php';
+	$u = new Usuario;
+
     session_start();
     if($_SESSION['username'] != ""){
         $username = $_SESSION['username'];
@@ -6,6 +10,8 @@
         $_SESSION['username'] = "";
         $username = $_SESSION['username'];
     }
+
+	$genero = $_GET['genero'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -80,107 +86,40 @@
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 			<?php
+				//echo $genero;
+				//$u->conectar("check_livros","localhost","root","");
 				$conexao = mysqli_connect("localhost","root", "", "check_livros");
-				if(isset($_GET['id']) == 1){
-					$genero1 = "CB";
+				if(isset($_GET['genero']) == $genero){
 
-					$sql1 = "SELECT * FROM livro WHERE genero_livro = '$genero1'";
-					$result1 = mysqli_query($conexao,$sql1);
-					echo mysqli_num_rows($result1);
-					while($linha1 = mysqli_fetch_array($result1)){
-						if($linha1['genero_livro'] == "CB"){
-							echo $linha1['titulo_livro'];
-							echo $genero1."<br>";
-						}
-					}
-				}else{
-					if(isset($_GET['id']) == 2){
-						$genero = "CE";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-							if($linha['genero_livro'] == "CE"){
-								echo $linha['titulo_livro'];
-								echo $genero."<br>";
-							}
-						}
-					}
-					if(isset($_GET['id']) == "CH"){
-						$genero = "CH";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "LE"){
-						$genero = "LE";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "LJ"){
-						$genero = "LJ";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "LN"){
-						$genero = "LN";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "HQ"){
-						$genero = "HQ";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "OU"){
-						$genero = "OU";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
-					if(isset($_GET['id']) == "AJ"){
-						$genero = "AJ";
-	
-						$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-						$result = mysqli_query($conexao,$sql);
-						echo mysqli_num_rows($result);
-						while($linha = mysqli_fetch_array($result)){
-						echo $linha['titulo_livro'];
-						}
-					}
+					$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+					$result = mysqli_query($conexao,$sql);
+ 
+					?>
+						<div>
+							<?php
+								echo "Numero de resultados: ".mysqli_num_rows($result)."<br><br>";
+							?>
+						</div>
+					<?php
 
+					while($linha = mysqli_fetch_array($result)){
+						if($linha['genero_livro'] == $genero){
+							?>
+								<div>
+									<?php
+									echo "Imagem: ".$linha['img_href']."<br>";
+									echo "Gênero: ".$linha['genero_livro']."<br>";
+									echo "Titulo: ".$linha['titulo_livro']."<br>";
+									echo "Autor: ".$linha['autor']."<br>";
+									echo "Editora: ".$linha['editora']."<br>";
+									echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
+									?>
+								</div>
+							<?php
+						
+						}
+					}
 				}
-				
-			
 			?>
 		</section>
 

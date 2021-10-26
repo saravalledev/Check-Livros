@@ -93,47 +93,47 @@ Kaike Santos Coppola
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 				<div>
-					<a href="resultado.php?id=1">
+					<a href="resultado.php?genero=bio">
 						<img src="../img/generos/generos_ciencias-biologicas.jpg">
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php?id=2">
+					<a href="resultado.php?genero=exat">
 						<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php" id="CH">
+					<a href="resultado.php?genero=human">
 						<img src="../img/generos/generos_Autoajuda.jpg"/>
 					</a>
-				</div>ok
+				</div>
 				<div>
-					<a href="resultado.php" id="LE">
+					<a href="resultado.php?genero=estra">
 						<img src="../img/generos/generos_Lit-Estrangeira.jpg"/>
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php" id="LJ">
+					<a href="resultado.php?genero=juven">
 						<img src="../img/generos/generos_Lit-InfantoJuvenil.jpg"/>
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php" id="LN">
+					<a href="resultado.php?genero=nacio">
 						<img src="../img/generos/generos_Lit-Nacional.png"/>
 					</a>
 				</div>
 				<div>
-					<a href="resultado.php" id="HQ">
+					<a href="resultado.php?genero=hq">
 						<img src="../img/generos/generos_ciencias-biologicas.jpg"/>
 					</a>
 				</div>
 				</div>
-					<a href="resultado.php" id="OU">
+					<a href="resultado.php?genero=hq">
 						<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
 					</a>
 				</div>
 				</div>
-					<a href="resultado.php" id="AJ">
+					<a href="resultado.php?genero=auto">
 						<img src="../img/generos/generos_Autoajuda.jpg"/>
 					</a>
 				</div>
