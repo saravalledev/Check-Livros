@@ -1,3 +1,18 @@
+<!------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: Classe para efetuar cadastro / login
+
+Autores:
+
+Turma: 2TID
+Hebert Victor | número:                                                        Versão: 1.0
+Matheus Felix Carlos | número:                                                Data:
+Kaike Santos Coppola | número: 
+
+Autores externos: 
+(Processamento do Cadastro e login e parte do CSS) -> Miriam TechCod: 
+https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
+--------------------------------------------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="pt-br"> 
 	<head>
@@ -27,7 +42,7 @@
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-desk">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
@@ -37,7 +52,7 @@
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-tablets">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-tablets">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -46,53 +61,54 @@
 		</header>
 
 		<section class="col-s-12 col-m-12 col-s-12 cad-sec">
-		<?php
-		session_start();
-		if (isset ($_POST["Logar"])) {
+			<?php
+			session_start();
+			if (isset ($_POST["Logar"])) {
 
-			$email= addslashes($_POST['email']);
-			$senha= md5($_POST['senha']); //! Como colocar addslaches nesse campo com o md5 aqui???
+				$email= addslashes($_POST['email']);
+				$senha= md5($_POST['senha']); //! Como colocar addslaches nesse campo com o md5 aqui???
 
-			if(!empty($email) && !empty($senha)){ 
-				$conexao= mysqli_connect("localhost","root","","check_livros");
+				if(!empty($email) && !empty($senha)){ 
+					$conexao= mysqli_connect("localhost","root","","check_livros");
 
-				$sql=" SELECT * FROM usuario WHERE email='$email'";
-				$result= mysqli_query($conexao,$sql);
-				$numlinha=mysqli_num_rows($result);
+					$sql=" SELECT * FROM usuario WHERE email='$email'";
+					$result= mysqli_query($conexao,$sql);
+					$numlinha=mysqli_num_rows($result);
 
-				if ($numlinha <= 0) {
-					?>
-					<div class="msg-erro msg-geral ">
-						<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
-					</div>
-					<?php
-				}else{
-					while ($linha = mysqli_fetch_array($result)){
+					if ($numlinha <= 0) {
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
+			</div>
+			<?php
+					}else{
+						while ($linha = mysqli_fetch_array($result)){
 
 
-						if ($senha == $linha['senha']){
-							$_SESSION['username'] = $linha['username'];
-							$_SESSION['id_usuario']  = $linha['id_usuario']; 
-							header("location: ../index.php");
+							if ($senha == $linha['senha']){
+								$_SESSION['username'] = $linha['username'];
+								$_SESSION['id_usuario']  = $linha['id_usuario']; 
+								header("location: ../index.php");
 
-						}else{ 
-							?>
-							<div class="msg-erro msg-geral ">
-								<p>Falha no login. Senha incorreta ou vazia...</p>
-							</div>
-							<?php
+							}else{ 
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Falha no login. Senha incorreta ou vazia...</p>
+			</div>
+			<?php
+							}
 						}
 					}
+				}else{
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Preencha todos os campos, por gentileza!</p>
+			</div>
+			<?php
 				}
-			}else{
-				?>
-					<div class="msg-erro msg-geral ">
-						<p>Preencha todos os campos, por gentileza!</p>
-					</div>
-				<?php
 			}
-		}
-	?>
+			?>
+			<br/>
 			<h1>Bem-vindo ao Check Livros</h1>
 			<br/><br/>
 			<form name="form-log" method="post" action="">

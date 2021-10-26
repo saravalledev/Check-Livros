@@ -49,7 +49,7 @@ $u = new Usuario;
 					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-desk">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-desk">Cadastro | Login</a></li>
 				</ul>
 			</nav>
 
@@ -59,7 +59,7 @@ $u = new Usuario;
 					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li><a href="cad-log.php" class="a-tablets">Cadastro | Login</a></li>
+					<li><a href="cad_log.php" class="a-tablets">Cadastro | Login</a></li>
 				</ul>
 				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
 					<i class="fa fa-bars"></i>
@@ -67,13 +67,14 @@ $u = new Usuario;
 			</nav>
 		</header>
 
+		<h1 class="h1-cad-log">Escolha um Caminho</h1>
+
 		<section class="container_cad_log col-s-12 col-m-12 col-12">
-			<div class="box_cad_log">
+			
 				<a href="CheckCadastro.php"><img src="../img/cad_log/img-cad.jpg" class="img_cad_log"></a>
-			</div>
-			<div class="box_cad_log">
-				<a href="CheckLogin.php"><img src="../img/cad_log/img-logboa.jpg" class="img_cad_log"></a>
-			</div>
+			
+				<a href="CheckLogin.php"><img src="../img/cad_log/img-log.jpg" class="img_cad_log"></a>
+			
 		</section>
 
 

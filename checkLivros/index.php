@@ -93,15 +93,15 @@ if($_SESSION['username'] != ""){
 			<div class="slideshow-container">
 
 				<div class="mySlides fade">
-					<img src="img/banner.png">
+					<img src="img/banner.jpg">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/banner.png">
+					<img src="img/resenha2.png">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/banner.png">
+					<img src="img/resenha1.png">
 				</div>
 
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
