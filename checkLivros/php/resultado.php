@@ -1,23 +1,17 @@
-<!------------------------------------------------------------------------------------------------------
-Nome do projeto: Check Livros
-Descrição: 
-
-Autores:
-
-Turma: 3TID
-Matheus Felix Carlos                                                         Versão: 1.0                    
-Hebert Victor Saravalle                                                      Data:20/06/21
-Kaike Santos Coppola 
-
------------------------------------------------------------------------------------------------------------>
 <?php
-session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
+
+	require_once 'CheckUsuarios.php';
+	$u = new Usuario;
+
+    session_start();
+    if($_SESSION['username'] != ""){
+        $username = $_SESSION['username'];
+    } else {
+        $_SESSION['username'] = "";
+        $username = $_SESSION['username'];
+    }
+
+	$genero = $_GET['genero'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -33,9 +27,8 @@ if($_SESSION['username'] != ""){
 		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
-
-	<body class="row">
-		<header class="col-s-12 col-m-12 col-12">
+    <body>
+        <header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
@@ -89,31 +82,38 @@ if($_SESSION['username'] != ""){
 			</nav>
 		</header>
 
-		<h1 class="gen-h1">Selecione um Gênero Literário</h1>
+        <h1 class="gen-h1">Escolha um livro e desfute...</h1>
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
+			<?php
+				$conexao = mysqli_connect("localhost","root", "", "check_livros");
+				if(isset($_GET['genero']) == $genero){
 
-			<a href="resultado.php?genero=human"><img src="../img/generos/generos_Ciencias-Humanas2.jpg"/></a>
-
-			<a href="resultado.php?genero=exat"><img src="../img/generos/generos_Ciencias-Exatas.jpg"/></a>
-
-			<a href="resultado.php?genero=bio"><img src="../img/generos/generos_ciencias-biologicas.jpg"/></a>
-
-			<a href="resultado.php?genero=nacio"><img src="../img/generos/generos_Lit-Nacional.png"/></a>
-
-			<a href="resultado.php?genero=juven"><img src="../img/generos/generos_Lit-InfantoJuvenil.jpg"/></a>
-
-			<a href="resultado.php?genero=estra"><img src="../img/generos/generos_Lit-Estrangeira.jpg"/></a>
-
-			<a href="resultado.php?genero=hq"><img src="../img/generos/generos_HKS-Mangas.jpg"/></a>
-
-			<a href="resultado.php?genero=auto"><img src="../img/generos/generos_Autoajuda.jpg"/></a>
-
-			<a href="resultado.php?genero=ou"><img src="../img/generos/Outros-.png"/></a>
-
+					$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+					$result = mysqli_query($conexao,$sql);
+ 
+					while($linha = mysqli_fetch_array($result)){
+						if($linha['genero_livro'] == $genero){
+							?>
+								<div>
+									<?php
+									echo "Imagem: ".$linha['img_href']."<br>";
+									echo "Gênero: ".$linha['genero_livro']."<br>";
+									echo "Titulo: ".$linha['titulo_livro']."<br>";
+									echo "Autor: ".$linha['autor']."<br>";
+									echo "Editora: ".$linha['editora']."<br>";
+									echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
+									?>
+								</div>
+							<?php
+						
+						}
+					}
+				}
+			?>
 		</section>
 
-		<footer  class="col-s-12 col-m-12 col-12 footer">
+        <footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
 				<img class="img_f" src="../img/Check-LivrosB.png">
 			</aside>
@@ -148,6 +148,6 @@ if($_SESSION['username'] != ""){
 				<a href="#"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
-	</body>
-	<script type="text/javascript" src="../js/functions.js"></script> 
+    </body>
+    <script type="text/javascript" src="../js/functions.js"></script> 
 </html>
