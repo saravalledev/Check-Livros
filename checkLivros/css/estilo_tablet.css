@@ -91,6 +91,9 @@ Kaike Santos Coppola
 		display: block;
 		width: 8vw;
 	}
+	.search-container {
+		padding: 2% 1% 0 1%;
+	}
 
 	/* -------- Estilo do rodapé -------- */
 	.footer {
@@ -471,5 +474,9 @@ Kaike Santos Coppola
 	}
 	.gen-container a {
 		display: contents;
+	}
+	.search-container input {
+		margin: 0;
+	  width: 100%;
 	}
 }

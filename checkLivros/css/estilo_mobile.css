@@ -143,6 +143,9 @@ Kaike Santos Coppola
 	.img_f {
 		width: 95%;
 	}
+	.search-container {
+		padding: 3% 1% 0 1%;
+	}
 
 	/* --------------- ⬇⬇ Estilos ⬇⬇ -----------------------*/
 
@@ -243,7 +246,7 @@ Kaike Santos Coppola
 	.img_cad_log {
 		width: 100%;
 		height: auto;
-	  box-shadow: 0.3125em 0.625em 1.125em #888888; 
+		box-shadow: 0.3125em 0.625em 1.125em #888888; 
 		border-radius: 0.5em;
 		border: 0.15em solid transparent;
 		margin-bottom: 5%;
@@ -487,5 +490,9 @@ Kaike Santos Coppola
 	}
 	.gen-container a {
 		display: contents;
+	}
+	.search-container input {
+		margin: 0;
+	  width: 100%;
 	}
 }

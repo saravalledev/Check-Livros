@@ -1,17 +1,17 @@
 <?php
 
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
+require_once 'CheckUsuarios.php';
+$u = new Usuario;
 
-    session_start();
-    if($_SESSION['username'] != ""){
-        $username = $_SESSION['username'];
-    } else {
-        $_SESSION['username'] = "";
-        $username = $_SESSION['username'];
-    }
+session_start();
+if($_SESSION['username'] != ""){
+	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
 
-	$genero = $_GET['genero'];
+$genero = $_GET['genero'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -27,8 +27,8 @@
 		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
-    <body>
-        <header class="col-s-12 col-m-12 col-12">
+	<body>
+		<header class="col-s-12 col-m-12 col-12">
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
@@ -56,6 +56,12 @@
 						}
 						?>
 					</li>
+					<li class="search-container">
+						<form action="resultado.php" method="get">
+							<input type="text" placeholder="Buscar livros..." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</li>
 				</ul>
 			</nav>
 
@@ -82,38 +88,38 @@
 			</nav>
 		</header>
 
-        <h1 class="gen-h1">Escolha um livro e desfute...</h1>
+		<h1 class="gen-h1">Escolha um livro e desfute...</h1>
 
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 			<?php
-				$conexao = mysqli_connect("localhost","root", "", "check_livros");
-				if(isset($_GET['genero']) == $genero){
+			$conexao = mysqli_connect("localhost","root", "", "check_livros");
+			if(isset($_GET['genero']) == $genero){
 
-					$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-					$result = mysqli_query($conexao,$sql);
- 
-					while($linha = mysqli_fetch_array($result)){
-						if($linha['genero_livro'] == $genero){
-							?>
-								<div>
-									<?php
-									echo "Imagem: ".$linha['img_href']."<br>";
-									echo "Gênero: ".$linha['genero_livro']."<br>";
-									echo "Titulo: ".$linha['titulo_livro']."<br>";
-									echo "Autor: ".$linha['autor']."<br>";
-									echo "Editora: ".$linha['editora']."<br>";
-									echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
-									?>
-								</div>
-							<?php
-						
-						}
+				$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+				$result = mysqli_query($conexao,$sql);
+
+				while($linha = mysqli_fetch_array($result)){
+					if($linha['genero_livro'] == $genero){
+			?>
+			<div>
+				<?php
+						echo "Imagem: ".$linha['img_href']."<br>";
+						echo "Gênero: ".$linha['genero_livro']."<br>";
+						echo "Titulo: ".$linha['titulo_livro']."<br>";
+						echo "Autor: ".$linha['autor']."<br>";
+						echo "Editora: ".$linha['editora']."<br>";
+						echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
+				?>
+			</div>
+			<?php
+
 					}
 				}
+			}
 			?>
 		</section>
 
-        <footer  class="col-s-12 col-m-12 col-12 footer">
+		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
 				<img class="img_f" src="../img/Check-LivrosB.png">
 			</aside>
@@ -148,6 +154,6 @@
 				<a href="#"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
-    </body>
-    <script type="text/javascript" src="../js/functions.js"></script> 
+	</body>
+	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

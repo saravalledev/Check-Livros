@@ -63,12 +63,23 @@ if($_SESSION['username'] != ""){
 						}
 						?>
 					</li>
+					<li class="search-container">
+						<form action="php/resultado.php" method="get">
+							<input type="text" placeholder="Buscar livros..." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</li>
 				</ul>
 			</nav>
 
 			<nav id="nav-mobile-tablets">
 				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
+					<li class="search-container">
+						<form action="php/resultado.php" method="get">
+							<input type="text" placeholder="Buscar livros..." name="search">
+						</form>
+					</li>
 					<li><a href="php/generos.php" class="a-tablets">Gêneros</a></li>
 					<li><a href="php/fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
 					<li><a href="php/quem_somos.php" class="a-tablets">Quem Somos</a></li>

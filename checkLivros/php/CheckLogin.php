@@ -43,6 +43,12 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
 					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
 					<li><a href="cad_log.php" class="a-desk">Cadastro | Login</a></li>
+					<li class="search-container">
+						<form action="resultado.php" method="get">
+							<input type="text" placeholder="Buscar livros..." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</li>
 				</ul>
 			</nav>
 

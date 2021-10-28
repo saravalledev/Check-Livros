@@ -65,6 +65,12 @@ $u = new Usuario;
 						}
 						?>
 					</li>
+					<li class="search-container">
+						<form action="resultado.php" method="get">
+							<input type="text" placeholder="Buscar livros..." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
+						</form>
+					</li>
 				</ul>
 			</nav>
 
