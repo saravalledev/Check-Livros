@@ -11,7 +11,9 @@
         $username = $_SESSION['username'];
     }
 
-	$genero = $_GET['genero'];
+	$genero = $_GET['genero'] ?? "";
+	$search = $_GET['search'] ?? "";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -83,36 +85,57 @@
 		</header>
 
         <h1 class="gen-h1">Escolha um livro e desfrute...</h1>
-		<!--img src="../img/capa_livro/img-pequeno-principe.jpg" alt=""-->
+		
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 			<?php
 				$conexao = mysqli_connect("localhost","root", "", "check_livros");
-				if(isset($_GET['genero']) == $genero){
 
+				if(isset($_GET['genero'])){
+					
 					$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
 					$result = mysqli_query($conexao,$sql);
  
 					while($linha = mysqli_fetch_array($result)){
-						if($linha['genero_livro'] == $genero){
-							$imge = $linha['img_href']; // Passa a img para uma var
-							?>
-								<div>
-									
-									<img src="<?php echo $imge;?>"/> <!--Chama a var com a img-->
 
-									<?php
+						$imge = $linha['img_href']; // Passa a img para uma var
+						?>
+							<div>
+								<img src="<?php echo $imge;?>"/> <!--Chama a var com a img-->
+								<?php
+								echo "<br>Gênero: ".$linha['genero_livro']."<br>";
+								echo "Titulo: ".$linha['titulo_livro']."<br>";
+								echo "Autor: ".$linha['autor']."<br>";
+								echo "Editora: ".$linha['editora']."<br>";
+								echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
+								?>
+							</div>
+						<?php
+					}
+				}
+
+				if(isset($_GET['search'])){
+					
+				$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
+				$result = mysqli_query($conexao,$sql);
+ 
+					while($linha = mysqli_fetch_array($result)){
+
+						$imge = $linha['img_href'];// Passa a img para uma var
+						?>
+							<div>
+								<img src="<?php echo $imge;?>"/><!--Chama a var com a img-->
+								<?php
 									echo "<br>Gênero: ".$linha['genero_livro']."<br>";
 									echo "Titulo: ".$linha['titulo_livro']."<br>";
 									echo "Autor: ".$linha['autor']."<br>";
 									echo "Editora: ".$linha['editora']."<br>";
 									echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
-									?>
-								</div>
-							<?php
-						
-						}
+								?>
+							</div>
+						<?php
 					}
 				}
+				
 			?>
 		</section>
 
