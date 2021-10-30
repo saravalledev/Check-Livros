@@ -64,7 +64,7 @@ if($_SESSION['username'] != ""){
 						?>
 					</li>
 					<li class="search-container">
-						<form action="php/resultado.php" method="get">
+						<form action="php/resultado.php" method="GET">
 							<input type="text" placeholder="Buscar livros..." name="search">
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>

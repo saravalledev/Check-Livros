@@ -1,5 +1,18 @@
-<?php
+<!------------------------------------------------------------------------------------------------------
+Nome do projeto: Check Livros
+Descrição: 
 
+Autores:
+
+Turma: 3TID
+Matheus Felix Carlos                                                         Versão: 1.0                    
+Hebert Victor Saravalle                                                      Data:20/06/21
+Kaike Santos Coppola 
+
+Fontes:
+(Modal) https://www.youtube.com/watch?v=fu-enUG2VEE
+----------------------------------------------------------------------------------------------------------->
+<?php
 	require_once 'CheckUsuarios.php';
 	$u = new Usuario;
 
@@ -13,7 +26,6 @@
 
 	$genero = $_GET['genero'] ?? "";
 	$search = $_GET['search'] ?? "";
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -30,59 +42,7 @@
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
     <body>
-        <header class="col-s-12 col-m-12 col-12">
-			<nav id="nav-desktop">
-				<ul id="desktopLinks">
-					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
-					<li class="img_m">
-						<a href="../index.php" class="logo-menu">
-							<img src="../img/Titulosemfundo.png" class="img_l">
-						</a>
-					</li>
-					<li><a href="generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-desk">Fale Conosco</a></li>
-					<li><a href="quem_somos.php" class="a-desk">Quem Somos</a></li>
-					<li>
-						<?php
-						if($username == ""){
-							echo "<a href='cad_log.php' class='a-desk'>Cadastro | Login</a>";
-						}else{
-							echo "
-									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
-									<ul class='submenu'>
-										<li>
-											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
-										</li>
-									</ul>
-									";
-						}
-						?>
-					</li>
-				</ul>
-			</nav>
-
-			<nav id="nav-mobile-tablets">
-				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
-				<ul id="mobileLinks">
-					<li><a href="generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
-					<li><a href="quem_somos.php" class="a-tablets">Quem Somos</a></li>
-					<li>
-						<?php
-						if($username == ""){
-							echo "<a href='cad_log.php' class='a-tablets'>Cadastro | Login</a>";
-						}else{
-							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
-						}
-						?>
-					</li>
-				</ul>
-				<a href="#" class="icon-nav-mobile" onclick="enableMobileNav()">
-					<i class="fa fa-bars"></i>
-				</a>
-			</nav>
-		</header>
+        <?php include("menu.php"); ?>
 
         <h1 class="gen-h1">Escolha um livro e desfrute...</h1>
 		
@@ -100,7 +60,7 @@
 						$imge = $linha['img_href']; // Passa a img para uma var
 						?>
 							<div>
-								<img src="<?php echo $imge;?>"/> <!--Chama a var com a img-->
+								<img class="capa" src="<?php echo $imge;?>"/> <!--Chama a var com a img-->
 								<?php
 								echo "<br>Gênero: ".$linha['genero_livro']."<br>";
 								echo "Titulo: ".$linha['titulo_livro']."<br>";
@@ -123,7 +83,7 @@
 						$imge = $linha['img_href'];// Passa a img para uma var
 						?>
 							<div>
-								<img src="<?php echo $imge;?>"/><!--Chama a var com a img-->
+								<img class="capa" src="<?php echo $imge;?>"/><!--Chama a var com a img-->
 								<?php
 									echo "<br>Gênero: ".$linha['genero_livro']."<br>";
 									echo "Titulo: ".$linha['titulo_livro']."<br>";
@@ -137,43 +97,75 @@
 				}
 				
 			?>
+
 		</section>
 
-        <footer  class="col-s-12 col-m-12 col-12 footer">
-			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<img class="img_f" src="../img/Check-LivrosB.png">
-			</aside>
-			<nav class="col-s-12 col-m-8 col-5 footer-nav">
-				<ul>
-					<li><p class="p-footer">Início</p></li>
-					<li><a href="../index.php" class="a-footer">Home</a></li>
-					<li><a href="generos.php" class="a-footer">Gêneros</a></li>
-				</ul>
-				<ul>
-					<li><p class="p-footer">Sobre</p></li>
-					<li><a href="quem_somos.php" class="a-footer">Quem  Somos</a></li>
-					<li><a href="fale_conosco.php" class="a-footer">Fale Conosco</a></li>
-				</ul>
-				<ul>
-					<li><p class="p-footer">Minha Conta</p></li>
-					<li><a href="perfil.php" class="a-footer">Perfil</a></li>
-					<li>
-						<?php
-						if($username == ""){
-							echo "<a href='cad_log.php' class='a-footer'>Cadastro | Login</a>";
+        <?php include("fooder.php"); ?>
+
+		<!--Por questões de relevancia do google, é mais correto colocar o modal no final da página, para que não seja confundido como parte mais importante -->
+		<section id="modal_resenha" class="modal_container">
+			<div class="modal">
+				<button id="btn_fechar">x</button>
+				<h3>Resenhas</h3>
+				<?php 
+					$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
+					$result = mysqli_query($conexao,$sql);
+	 
+						while($linha = mysqli_fetch_array($result)){
+	
+							$imge = $linha['img_href'];// Passa a img para uma var
+							?>
+								<div>
+									<div class="div_capa">
+										<img class="capa_modal" onclick=" iniciaModal(modalID)" src="<?php echo $imge;?>"/><!--Chama a var com a img-->
+									</div>
+									<?php
+										echo "<br>Gênero: ".$linha['genero_livro']."<br>";
+										echo "Titulo: ".$linha['titulo_livro']."<br>";
+										echo "Autor: ".$linha['autor']."<br>";
+										echo "Editora: ".$linha['editora']."<br>";
+										echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
+									?>
+								</div>
+							<?php
 						}
+
+					$sql2 = "SELECT *FROM resenha WHERE titulo_livro LIKE ('%$search%')";
+					$result2 = mysqli_query($conexao, $sql2);
+					
+					while($linha2 = mysqli_fetch_array($result2)){
 						?>
-					</li>
-				</ul>
-			</nav>
-			<aside class="col-s-12 col-m-12 col-4 redes-container">
-				<br/>
-				<a href="#"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-github"></i></a>
-			</aside>
-		</footer>
+						<div>
+							<?php
+							echo "<br>Username: ".$linha2['username']."<br><br>";
+							echo "Resenha: ".$linha2['resenha']."<br>";
+							?>
+							
+						</div>
+						<?php
+					}
+					
+				?>
+			</div>
+		</section>
+
     </body>
+	<script> //É preciso levar para o doc js
+		function iniciaModal(modalID){
+			const modal = document.getElementById(modalID);
+			if(modal){
+				modal.classList.add('mostrar');
+				modal.addEventListener('click', (e) => {
+					if(e.target.id == modalID || e.target.id == 'btn_fechar'){
+						modal.classList.remove('mostrar'); //removando a class 'mostrar' quando clicado no id de algum item, para tirar a visualização do modal.
+					}
+				});
+			}		
+		}							
+		
+		const capa = document.querySelector('.capa'); //seleciona a class como se fosse no CSS
+		capa.addEventListener('click', () => iniciaModal('modal_resenha')); //add um evento	
+		
+	</script>
     <script type="text/javascript" src="../js/functions.js"></script> 
 </html>
