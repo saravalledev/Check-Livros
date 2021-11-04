@@ -89,6 +89,18 @@ Class Usuario{
 		$sql->execute();
 		return true;
 	}
+
+	//------------------ Cadastrar Resenha  ------------------//
+	public function cad_resenha($username, $resenha){
+		global $pdo;
+		//buscar como cadastrar o titulo_livro, com a relação de tabelas.
+		$sql = $pdo->prepare("INSERT INTO resenhas (username, resenha) VALUE (:n, :r)");
+
+		$sql->bindValue(":n",$username);
+		$sql->bindValue(":r",$resenha);
+		$sql->execute();
+		return true;
+	}
 }
 
 ?>
