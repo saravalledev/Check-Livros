@@ -64,7 +64,7 @@ if($_SESSION['username'] != ""){
 						?>
 					</li>
 					<li class="search-container">
-						<form action="php/resultado.php" method="get">
+						<form action="php/resultado.php" method="GET">
 							<input type="text" placeholder="Buscar livros..." name="search">
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
@@ -209,7 +209,7 @@ if($_SESSION['username'] != ""){
 				<a href="#"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
 				<a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
 				<a href="#"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-github"></i></a>
+				<a href="https://github.com/Kira01010110/Check-Livros.git"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
 	</body>
