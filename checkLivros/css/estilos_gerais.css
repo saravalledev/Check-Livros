@@ -30,7 +30,10 @@ cinza: #f5f5f5 ou whitesmoke
 Amarelo: #EDB91C
 Vermelho claro: #ED734C
 
-*/
+
+html{
+	scroll-behavior: smooth;
+}*/
 html,
 body {
 	height: 100%;

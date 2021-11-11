@@ -91,16 +91,42 @@ Class Usuario{
 	}
 
 	//------------------ Cadastrar Resenha  ------------------//
-	public function cad_resenha($username, $resenha){
-		global $pdo;
-		//buscar como cadastrar o titulo_livro, com a relação de tabelas.
-		$sql = $pdo->prepare("INSERT INTO resenhas (username, resenha) VALUE (:n, :r)");
+	
+		public function cad_resenha( $idlivro, $username, $resenha){
 
+			$conexao = mysqli_connect("localhost","root", "", "check_livros");
+			$sql = "INSERT INTO resenhas (id_livro, username, resenha) 
+			VALUES ('$idlivro', '$username', '$resenha')";
+
+			$result = mysqli_query($conexao, $sql);
+			return true;
+			
+		}
+		
+		
+		//global $pdo;
+
+		//buscar como cadastrar o titulo_livro, com a relação de tabelas.
+		/*$sql = $pdo->prepare("INSERT INTO resenhas (id_resenha, id_livro, username, resenha) VALUE (:id, :n, :r)");
+
+		$sql->bindValue(":id",$idlivro);
 		$sql->bindValue(":n",$username);
 		$sql->bindValue(":r",$resenha);
+		$sql->execute();
+		return true;*/
+	
+	public function cad_like_des($id_resenha, $like, $deslike){
+		global $pdo;
+	
+		$sql = $pdo->prepare("INSERT INTO avaliacoes (id_resenha, positivo, negativo) VALUE (:id, :p, :n)");
+	
+		$sql->bindValue(":id",$id_resenha);
+		$sql->bindValue(":p",$like);
+		$sql->bindValue(":n",$deslike);
 		$sql->execute();
 		return true;
 	}
 }
+
 
 ?>

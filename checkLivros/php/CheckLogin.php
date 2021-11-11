@@ -101,7 +101,7 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 			</form>
 		</section>
 
-		<?php include("fooder.php"); ?>
+		<?php include("footer.php"); ?>
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

@@ -67,4 +67,13 @@ function showSlides1() {
 	setTimeout(showSlides1, 4000); 
 }
 
+function changeBtnCollor(x){
+	if (x == 1) {
+		document.getElementById("like").style.color = "#12ff00";
+	} else {
+		document.getElementById("deslike").style.color = "#ED734C";
+	}
+}
+
+
 

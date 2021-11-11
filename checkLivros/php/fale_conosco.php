@@ -181,7 +181,7 @@ Kaike Santos Coppola
 
 		</section>
 
-		<?php include("fooder.php"); ?>
+		<?php include("footer.php"); ?>
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

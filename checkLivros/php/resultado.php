@@ -14,19 +14,19 @@ Fontes:
 (Relacionamento do tables) 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
+require_once 'CheckUsuarios.php';
+$u = new Usuario;
 
-    session_start();
-    if($_SESSION['username'] != ""){
-        $username = $_SESSION['username'];
-    } else {
-        $_SESSION['username'] = "";
-        $username = $_SESSION['username'];
-    }
+session_start();
+if($_SESSION['username'] != ""){
+	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
 
-	$genero = $_GET['genero'] ?? "";
-	$search = $_GET['search'] ?? "";
+$genero = $_GET['genero'] ?? "";
+$search = $_GET['search'] ?? "";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -34,7 +34,7 @@ Fontes:
 		<meta charset="utf-8"/>
 		<meta http-equiv="x-UA-compatible"content="ie=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Gêneros Literários</title>
+		<title>Livros</title>
 
 		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
@@ -42,178 +42,194 @@ Fontes:
 		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
-    <body>
-        <?php include("menu.php"); ?>
+	<body>
+		<?php include("menu.php"); ?>
 
-        <h1 class="gen-h1">Escolha um livro e desfrute...</h1>
-		
+		<h1 class="gen-h1">Escolha um livro e desfrute...</h1>
+
 		<section class="col-s-12 col-m-12 col-12 gen-container">
 			<?php
-				$conexao = mysqli_connect("localhost","root", "", "check_livros");
-				
-				//--------------- Busca o genero ---------------//
-				if(isset($_GET['genero'])){
-					
-					$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
-					$result = mysqli_query($conexao,$sql);
- 
-					while($linha = mysqli_fetch_array($result)){
+			$conexao = mysqli_connect("localhost","root", "", "check_livros");
+			mysqli_set_charset($conexao, 'utf8');
 
-						$imge = $linha['img_href']; // Passa a img para uma var
-						?>
-							<div>
-								<img class="capa" src="<?php echo $imge;?>"/> <!--Chama a var com a img-->
-								<?php
-								echo "<br>Gênero: ".$linha['genero_livro']."<br>";
-								echo "Titulo: ".$linha['titulo_livro']."<br>";
-								echo "Autor: ".$linha['autor']."<br>";
-								echo "Editora: ".$linha['editora']."<br>";
-								echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
-								?>
-							</div>
-						<?php
-					}
+			//--------------- Busca o genero ---------------//
+			if(isset($_GET['genero'])){
+
+				$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+				$result = mysqli_query($conexao,$sql);
+
+				while($linha = mysqli_fetch_array($result)){
+
+					$imge = $linha['img_href'];
+					?>
+					<div class="livro-resultado">
+						<img class="capa" src="<?php echo $imge;?>"/> 
+					</div>
+					<?php
 				}
+			}
 
-				//--------------- Busca o titulo_livro na Barra ---------------//
-				if(isset($_GET['search'])){
+			//--------------- Publica a ressenha EXPORTAR---------------//
+			if(isset($_POST['Publicar'])){
 					
-					$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
-					$result = mysqli_query($conexao,$sql);
- 
-					while($linha = mysqli_fetch_array($result)){
-
-						$imge = $linha['img_href'];// Passa a img para uma var
-						?>
-							<div>
-								<img class="capa" src="<?php echo $imge;?>"/><!--Chama a var com a img-->
-								<?php
-									echo "<br>Gênero: ".$linha['genero_livro']."<br>";
-									echo "Titulo: ".$linha['titulo_livro']."<br>";
-									echo "Autor: ".$linha['autor']."<br>";
-									echo "Editora: ".$linha['editora']."<br>";
-									echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
-								?>
-							</div>
-						<?php
-					}
-				}
+				$resenha = addslashes($_POST['nova_resenha']);
+				$idlivro = $_SESSION['id_livro'];
 				
-				//--------------- Publica a ressenha ---------------//
-				/*if(isset($_POST['Publicar'])){
-					
-					$username;
-					$resenha = addslashes($_POST['nova_resenha']);
+				//echo $resenha;
+				
+				if(!empty($resenha)){
 
-					//echo $username;
-					//echo $resenha;
-					
-					if(!empty($resenha)){
-
-						if($u->cad_resenha($username, $resenha)){
-							?>
-							<div class="msg-geral msg-sucesso">
-								<p>Sugestão enviada com sucesso :)</p>
-							</div>
-							<?php
-						}else{
-							?>
-							<div class="msg-geral mgs-erro">
-								<p>Perdão, houve um erro ao enviar sua resenha... </p>
-							</div>
-							<?php
-						}
+					if($u->cad_resenha($idlivro, $username, $resenha)){
+						?>
+						<div class="msg-geral msg-sucesso">
+							<p>Sugestão enviada com sucesso :)</p>
+						</div>
+						<?php
 					}else{
 						?>
 						<div class="msg-geral mgs-erro">
-							<p>Preencha todos os campos! </p>
+							<p>Perdão, houve um erro ao enviar sua resenha... </p>
 						</div>
 						<?php
 					}
+				}else{
+					?>
+					<div class="msg-geral mgs-erro">
+						<p> Preencha todos os campos! </p>
+					</div>
+					<?php
+				}
+			}
 
-					/*$sql3 = "SELECT * FROM resenha JOIN livro on 'resenha.id_resenha' = 'livro.id_livro'";
-					$result3 = mysqli_query($conexao,$sql3);
+			//--------------- Busca o titulo_livro na Barra ---------------//
+			if(isset($_GET['search'])){
 
-					while ($linha3 = mysqli_fetch_array($result3)){
-						//echo $linha3['titulo_livro']."<br>";
-						//echo $linha3['resenha']."<br>";
-						//echo $username;
-						echo "Conectando tabelas";
-					}TENTATIVA DE UNIÃO DE TABELAS PARA PEGAR O NOME DO LIVRO QUE ESTÁ SENDO USADO PARA CADASTRAR A RESENHA
+				$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
+				$result = mysqli_query($conexao,$sql);
 
-				}*/
+				while($linha = mysqli_fetch_array($result)){
+
+					$imge = $linha['img_href'];
+					?>
+					<div class="livro-resultado">
+						<img class="capa" src="<?php echo $imge;?>"/>
+					</div>
+					<?php
+				}
+			}
+			//--------------- Btn like ---------------//
+			if(isset($_POST['like'])){
+						
+				$id_resenha;
+				$like = 1;
+				$deslike = 0;
+
+				echo $like;
+			}
+			if(isset($_POST['deslike'])){
+
+				$id_resenha;
+				$deslike = 1;
+				$like = 0;
+				
+				$u-> cad_like_des();
+			}
 			?>
 
 		</section>
 
-        <?php include("fooder.php"); ?>
+		<?php include("footer.php"); ?>
 
 		<!--Por questões de relevancia do google, é mais correto colocar o modal no final da página, para que não seja confundido como parte mais importante -->
 		<section id="modal_resenha" class="modal_container">
-			<div class="modal">
-				<button id="btn_fechar">x</button>
-				<h3>Resenhas</h3>
-				<?php 
 
-					//--------------- Busca o Livro no Modal ---------------//
+			<div class="modal" style="border: 0.1em solid #EDB91C;">
+				<button id="btn_fechar">x</button>
+
+				<div class="modal-content">
+					<?php 
+
+					//--------------- Busca o Livro ---------------//
 					$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
 					$result = mysqli_query($conexao,$sql);
-						
-						while($linha = mysqli_fetch_array($result)){
-	
-							$imge = $linha['img_href'];// Passa a img para uma var
-							$t_livro = $linha['titulo_livro'];
-							?>
-								<div>
-									<div class="div_capa">
-										<img class="capa_modal" onclick=" iniciaModal(modalID)" src="<?php echo $imge;?>"/><!--Chama a var com a img-->
-									</div>
-									<?php
-										echo "<br>Gênero: ".$linha['genero_livro']."<br>";
-										echo "Titulo: ".$linha['titulo_livro']."<br>";
-										echo "Autor: ".$linha['autor']."<br>";
-										echo "Editora: ".$linha['editora']."<br>";
-										echo "Ano de publicação: ".$linha['ano_publicado']."<br>";
-									?>
-								</div>
-							<?php
-						}
-					
-					//--------------- Busca o resenha no Modal---------------//
-					$sql2 = "SELECT * FROM resenhas WHERE titulo_livro LIKE ('%$search%')";
-					$result2 = mysqli_query($conexao, $sql2);
-					
-					while($linha2 = mysqli_fetch_array($result2)){
-					
+
+					while($linha = mysqli_fetch_array($result)){
+
+						$_SESSION['id_livro'] = $linha['id_livro'];
+
+						$imge = $linha['img_href'];
+						$t_livro = $linha['titulo_livro'];
 						?>
-						<!--(PRIORIDADE) 
-						1- Fazer a inserção da resenha
-						2- Privatizar
-						-->
-						<div class="div_nova_resenha">
-							<br>
-							<form name="form_nova_resenha" action="" method="POST">
-								<label for="nova_resenha"><?php echo $username ?></label> 
-								<input type="text" required max="1000" name="nova_resenha">
-								<input type="submit" name="Publicar" value="Publicar">
-							</form>
-							<br>
+
+						<div class="div_capa">
+							<img class="capa_modal" onclick=" iniciaModal(modalID)" src="<?php echo $imge;?>"/>
 						</div>
-						<div>
-							<?php
-							echo "<br>Username: ".$linha2['username']."<br><br>";
-							echo "Resenha: ".$linha2['resenha']."<br>";
-							?>
-							
+						<br/>
+						<br/>
+						<div class="dados-livro">
+						<?php
+							echo "<p>Titulo: ".$linha['titulo_livro']."</p>";
+							echo "<p>Autor: ".$linha['autor']."</p>";
+							echo "<p>Editora: ".$linha['editora']."</p>";
+							echo "<p>Ano de publicação: ".$linha['ano_publicado']."</p>";
+						?>
 						</div>
+						<br/><hr/><br/><br/>
+						<h2>Escreva uma nova resenha</h2>
+
 						<?php
 					}
-				?>
+
+					$idlivro = $_SESSION['id_livro'];
+
+					//--------------- Busca o resenha no Modal---------------//
+					$sql2 = "SELECT * FROM resenhas WHERE id_livro = '$idlivro'";
+					$result2 = mysqli_query($conexao, $sql2);
+					
+					?>
+					<div class="div_nova_resenha">
+						<br>
+						<form name="form_nova_resenha" action="" method="POST">
+							<?php  
+								echo "<h2>@".$username."</h2>";
+							?>
+							<textarea type="text" required rows="10" name="nova_resenha"></textarea>
+							<input type="submit" name="Publicar" value="Publicar">
+						</form>
+						<br/><br/>
+						<hr/><br/><br/><br/>
+					</div>
+					<?php
+					echo "<h3>Resenhas do livro ".$t_livro."</h3>"; 
+					while($linha2 = mysqli_fetch_array($result2)){
+
+						$_SESSION['id_resenha'] = $linha2['id_resenha'];
+
+						?>
+						<br/><br/>
+					<div class="resenha-user">
+						<?php
+						echo "<br/><h2>@".$linha2['username']."</h2><br/><br/>";
+						echo "<p>".$linha2['resenha']."</p><br/>";
+						?>
+
+						<form action="" method="POST">
+							<button type="submit" class="btn_machete" name="like" id="like" onclick="changeBtnCollor(1)"><i class="far fa-thumbs-up"></i></button>
+							&nbsp;&nbsp;&nbsp;
+							<button type="submit" class="btn_machete" name="deslike" id="deslike" onclick="changeBtnCollor(2)"><i class="far fa-thumbs-down" style="transform: scaleX(-1);"></i></button>
+						</form>
+					</div>
+					<?php
+					
+					}
+					$id_resenha = $_SESSION['id_resenha'];
+					?>
+				</div>
 			</div>
 		</section>
 
-    </body>
-	<script> //É preciso levar para o doc js
+	</body>
+	<script> 
 		function iniciaModal(modalID){
 			const modal = document.getElementById(modalID);
 			if(modal){
@@ -225,10 +241,10 @@ Fontes:
 				});
 			}		
 		}							
-		
-		const capa = document.querySelector('.capa'); //seleciona a class como se fosse no CSS
-		capa.addEventListener('click', () => iniciaModal('modal_resenha')); //add um evento	
-		
+
+		const capa = document.querySelector('.capa'); 
+		capa.addEventListener('click', () => iniciaModal('modal_resenha')); 
+
 	</script>
-    <script type="text/javascript" src="../js/functions.js"></script> 
+	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

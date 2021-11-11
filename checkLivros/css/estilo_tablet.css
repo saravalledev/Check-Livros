@@ -239,7 +239,7 @@ Kaike Santos Coppola
 	.img_cad_log {
 		width: 48%;
 		height: auto;
-	  box-shadow: 0.3125em 0.625em 1.125em #888888; 
+		box-shadow: 0.3125em 0.625em 1.125em #888888; 
 		border-radius: 0.5em;
 		border: 0.15em solid transparent;
 	}
@@ -477,6 +477,82 @@ Kaike Santos Coppola
 	}
 	.search-container input {
 		margin: 0;
-	  width: 100%;
+		width: 100%;
+	}
+
+
+	/* --------------- ⬇⬇ Resultados ⬇⬇ -----------------------*/
+
+	.modal_container {
+		display: none; 
+		position: fixed; 
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%; 
+		height: 100%; 
+		background-color: rgba(0,0,0,0.4); 
+	}
+	.modal {
+		background-color: #fefefe;
+		margin: 5% auto; 
+		overflow: auto;
+		border: 0.1em solid #888;
+		width: 85%; 
+	}
+	.modal-content {
+		padding: 2% 5%;
+	}
+	.modal h3 {
+		text-align: center;
+	}
+	#btn_fechar {
+		position: fixed;
+		right: 6%;
+		top: 5%;
+		background-color: #EDB91C;
+		color: white;
+		cursor: pointer;
+		border-radius: 10%;
+		font-size: 1.5em;
+		border: 0;
+		padding: 0 0.3em 0.15em 0.3em;
+		font-weight: bold;
+	}
+	.modal_container.mostrar {
+		display: flex;
+	}
+	.div_capa {
+		display: contents;
+		margin: 0 auto;
+	}
+	.capa_modal {
+		width: 30%;
+		height: auto;
+		margin: 0 35%;
+	}
+	.dados-livro {
+		background-color: #247BA0;
+		padding: 2%;
+		box-shadow: 0.3125em 0.625em 1.125em #888888;
+		color: white;
+	}
+	.resenha-user {
+		background-color: white;
+		padding: 2%;
+		box-shadow: 0.3125em 0.625em 1.125em #888888;
+		margin-bottom: 5%;
+	}
+	.livro-resultado {
+		display: contents;
+	}
+	.resenha-user p {
+		font-size: 1em;
+		text-indent: 0.5em;
+	}
+	.btn_machete{
+		display: contents;
+		border: 0;
+		cursor: pointer;
 	}
 }
