@@ -44,13 +44,13 @@ if($_SESSION['username'] != ""){
 							<img src="img/Titulosemfundo.png" class="img_l">
 						</a>
 					</li>
-					<li><a href="php/generos.php" class="a-desk">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-desk">Fale Conosco</a></li>
-					<li><a href="php/quem_somos.php" class="a-desk">Quem Somos</a></li>
+					<li><a href="php/generos.php" class="a-desk">GÊNEROS</a></li>
+					<li><a href="php/fale_conosco.php" class="a-desk">CONTATO</a></li>
+					<li><a href="php/quem_somos.php" class="a-desk">SOBRE</a></li>
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-desk'>Cadastro | Login</a>";
+							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
 						}else{
 							echo "
 									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
@@ -80,15 +80,15 @@ if($_SESSION['username'] != ""){
 							<input type="text" placeholder="Buscar livros..." name="search">
 						</form>
 					</li>
-					<li><a href="php/generos.php" class="a-tablets">Gêneros</a></li>
-					<li><a href="php/fale_conosco.php" class="a-tablets">Fale Conosco</a></li>
-					<li><a href="php/quem_somos.php" class="a-tablets">Quem Somos</a></li>
+					<li><a href="php/generos.php" class="a-tablets">GÊNEROS</a></li>
+					<li><a href="php/fale_conosco.php" class="a-tablets">CONTATO</a></li>
+					<li><a href="php/quem_somos.php" class="a-tablets">SOBRE</a></li>
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-tablets'>Cadastro | Login</a>";
+							echo "<a href='php/cad_log.php' class='a-tablets'>CONTA</a>";
 						}else{
-							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
+							echo "<a href='php/perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
 									<li><a href='php/sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
 						}
 						?>
@@ -104,15 +104,15 @@ if($_SESSION['username'] != ""){
 			<div class="slideshow-container">
 
 				<div class="mySlides fade">
-					<img src="img/banner.jpg">
+					<img src="img/imagem1.jpg">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/resenha2.png">
+					<img src="img/cafe_livros.jpg">
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/resenha1.png">
+					<img src="img/city.jpg">
 				</div>
 
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -143,8 +143,8 @@ if($_SESSION['username'] != ""){
 
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 container autores-container">
-			<h1>Top Livros da Semana</h1><br/>
+		<section class="col-s-12 col-m-12 col-12 autores-container">
+			<h1>Ranking de Livros</h1><br/>
 			<div class="autores-div">
 				<h2>1º</h2>
 				<p>Lorem Ipsum</p>
@@ -160,18 +160,18 @@ if($_SESSION['username'] != ""){
 		</section>
 
 		<section class="col-s-12 col-m-12 col-12 ajuda-sec">
-			<h1>Ajuda</h1><br/><br/>
+			<h1>Tutorial</h1><br/><br/>
 			<div class="ajuda-container">
 				<div class="ajuda-item">
-					<h2>Resenhas</h2><br/>
+					<h2>Passo 1 -</h2><br/>
 					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="php/cad_log.php">Saiba mais...</a></p>
 				</div>
 				<div class="ajuda-item">
-					<h2>Busca</h2><br/>
+					<h2>Passo 2 -</h2><br/>
 					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="php/generos.php">Gêneros</a> literários para explorar os mais diversos assuntos</p>
 				</div>
 				<div class="ajuda-item">
-					<h2>Fale conosco</h2><br/>
+					<h2>Passo 3 -</h2><br/>
 					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="php/fale_conosco.php">Fale conosco</a></p>
 				</div>
 			</div>
@@ -183,22 +183,19 @@ if($_SESSION['username'] != ""){
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
-					<li><p class="p-footer">Início</p></li>
-					<li><a href="index.php" class="a-footer">Home</a></li>
-					<li><a href="php/generos.php" class="a-footer">Gêneros</a></li>
+					<li><a href="index.php" class="a-footer">HOME</a></li>
+					<li><a href="php/generos.php" class="a-footer">GÊNEROS</a></li>
 				</ul>
 				<ul>
-					<li><p class="p-footer">Sobre</p></li>
-					<li><a href="php/quem_somos.php" class="a-footer">Quem  Somos</a></li>
-					<li><a href="php/fale_conosco.php" class="a-footer">Fale Conosco</a></li>
+					<li><a href="php/quem_somos.php" class="a-footer">SOBRE</a></li>
+					<li><a href="php/fale_conosco.php" class="a-footer">CONTATO</a></li>
 				</ul>
 				<ul>
-					<li><p class="p-footer">Minha Conta</p></li>
-					<li><a href="php/perfil.php" class="a-footer">Perfil</a></li>
+					<li><a href="php/perfil.php" class="a-footer">MINHA CONTA</a></li>
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-footer'>Cadastro | Login</a>";
+							echo "<a href='php/cad_log.php' class='a-footer'>CADASTRO | LOGIN</a>";
 						}
 						?>
 					</li>

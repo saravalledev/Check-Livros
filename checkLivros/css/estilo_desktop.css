@@ -63,7 +63,8 @@ Kaike Santos Coppola
 		background-color: whitesmoke;
 		justify-content: flex-start;
 		align-items: center;
-		border-bottom: 0.15em solid #edb91c;
+		border-bottom: 0.1em solid #edb91c;
+		box-shadow: 0.2em 0.1em 2em black;
 		width: 100%;
 		position: fixed;
 		z-index: 1;
@@ -72,13 +73,14 @@ Kaike Santos Coppola
 		display: block;
 		padding: 0.875em;
 		color: black;
+		letter-spacing: 0.1em;
 	}
 	.a-desk:hover {
 		color: #edb91c;
 	}
 	.logo-menu {
 		display: block;
-		width: 4vw;
+		width: 3vw;
 		padding: 0;
 	}
 	.submenu {
@@ -98,13 +100,13 @@ Kaike Santos Coppola
 		padding: 0.875em 3.3em;
 	}
 	.img_l {
-		width: 10em;
+		width: 8em;
 	}
 	.img_m {
-		width: 17%;
+		width: 20%;
 	}
 	.search-container {
-		width: 25%;
+		width: 38%;
 	}
 	.search-container form {
 		display: flex;
@@ -119,6 +121,7 @@ Kaike Santos Coppola
 		border: none;
 		cursor: pointer;
 	}
+	
 	/* -------- Estilo do rodapé -------- */
 	.footer {
 		background-color: #18546e;
@@ -130,16 +133,12 @@ Kaike Santos Coppola
 		display: flex;
 		justify-content: space-around;
 	}
-	.p-footer {
-		color: white;
-		float: left;
-		font-weight: bold;
-		margin-bottom: 0.4em;
-	}
 	.a-footer {
 		color: white;
 		float: left;
 		margin-bottom: 0.4em;
+		font-size: 0.95em;
+		letter-spacing: 0.1em;
 	}
 	.a-footer:hover {
 		color: #edb91c;
@@ -198,9 +197,6 @@ Kaike Santos Coppola
 	}
 	.sugerir-div:hover {
 		background-color: whitesmoke;
-	}
-	.sugerir-div p {
-		font-size: 1em;
 	}
 	.sugerir-text {
 		margin-bottom: 0.625em;
@@ -291,9 +287,6 @@ Kaike Santos Coppola
 		text-align: center;
 		margin-bottom: 2em;
 	}
-	.msg-geral p {
-		font-size: 1em;
-	}
 	.msg-sucesso {
 		background-color: #6cc2e7b6;
 		border: 0.1em solid #18546e;
@@ -308,11 +301,11 @@ Kaike Santos Coppola
 	/* --------------- ⬇⬇ index - home ⬇⬇ -----------------------*/
 	.mySlides {
 		display: none;
-		margin-top: 4.4%;
+		margin-top: 4%;
 	}
 	.mySlides img {
 		width: 100%;
-		height: 80vh;
+		height: 90vh;
 		margin: 0;
 	}
 	.slideshow-container {
@@ -363,20 +356,20 @@ Kaike Santos Coppola
 		color: #edb91c;
 	}
 	.beneficios-container {
-		padding: 3% 15% 5% 15%;
+		padding: 6% 10% 7% 10%;
 		background-color: white;
 	}
 	.beneficios {
 		display: flex;
 		background-color: white;
 		border-radius: 0.9em;
-		border: 0.15em solid #edb91c;
+		border: 0.1em solid #edb91c;
 		box-shadow: 0.3125em 0.625em 1.125em #888888;
 		color: black;
 	}
 	.beneficios p {
 		text-align: justify;
-		text-indent: 0.3em;
+		text-indent: 0.2em;
 		line-height: 1.5em;
 	}
 	.beneficios-itens {
@@ -389,7 +382,7 @@ Kaike Santos Coppola
 		text-align: center;
 	}
 	.beneficios-container h1 {
-		margin-bottom: 3%;
+		margin-bottom: 5%;
 		font-style: italic;
 	}
 	.p-beneficios {
@@ -401,11 +394,12 @@ Kaike Santos Coppola
 	}
 	.autores-container {
 		background-color: #247ba0;
-		border-bottom: 0.1em solid black;
-		border-top: 0.1em solid black;
+		padding: 6% 10% 7% 10%;
 	}
 	.autores-container h1 {
 		color: white;
+		text-align: center;
+		margin-bottom: 2%;
 	}
 	.autores-div {
 		background-color: white;
@@ -416,7 +410,10 @@ Kaike Santos Coppola
 	}
 	.ajuda-sec {
 		background-color: white;
-		padding: 5% 15%;
+		padding: 6% 10% 7% 10%;
+	}
+	.ajuda-sec h1 {
+		margin-bottom: 2%;
 	}
 	.ajuda-container {
 		display: flex;
@@ -425,7 +422,7 @@ Kaike Santos Coppola
 	}
 	.ajuda-item {
 		background-color: white;
-		border: 0.15em solid #edb91c;
+		border: 0.1em solid #edb91c;
 		border-radius: 0.9em;
 		width: 30%;
 		padding: 2%;

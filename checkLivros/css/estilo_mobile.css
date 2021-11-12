@@ -50,6 +50,19 @@ Kaike Santos Coppola
 		width: 100%;
 	}
 
+	h1 {
+		font-size: 1.6em;
+		font-family: Georgia, serif;
+	}
+
+	h2 {
+		font-size: 0.9em;
+		font-family: Georgia, serif;
+	}
+	p {
+		font-size: 0.8em;
+	}
+	
 	/* -------- Estilo do menu -------- */
 	#nav-desktop {
 		display: none;
@@ -68,9 +81,10 @@ Kaike Santos Coppola
 	.a-tablets {
 		color: white;
 		padding: 0.875em 1em;
-		font-size: 1em;
+		font-size: 0.8em;
 		display: block;
 		color: black;
+		letter-spacing: 0.1em;
 	}
 	.a-tablets:hover {
 		background-color: white;
@@ -107,17 +121,12 @@ Kaike Santos Coppola
 		margin: 0.8em;
 		line-height: 1.5em;
 	}
-	.p-footer {
-		color: white;
-		float: left;
-		font-weight: bold;
-		margin-bottom: 0.7em;
-	}
 	.a-footer {
 		color: white;
 		float: left;
 		margin-bottom: 0.6em;
-		font-size: 98%;
+		font-size: 1em;
+		letter-spacing: 0.1em;
 	}
 	.a-footer:hover {
 		color: #edb91c;
@@ -141,7 +150,7 @@ Kaike Santos Coppola
 		color: white;
 	}
 	.img_f {
-		width: 95%;
+		width: 90%;
 	}
 	.search-container {
 		padding: 3% 1% 0 1%;
@@ -168,9 +177,6 @@ Kaike Santos Coppola
 	}
 	.sugerir-div:hover {
 		background-color: whitesmoke;
-	}
-	.sugerir-div p {
-		font-size: 0.8em;
 	}
 	.sugerir-div h2 {
 		font-size: 1.2em;
@@ -268,9 +274,6 @@ Kaike Santos Coppola
 		text-align: center;
 		margin-bottom: 2em;
 	}
-	.msg-geral p {
-		font-size: 1em;
-	}
 	.msg-sucesso {
 		background-color: #6cc2e7b6;
 		border: 0.1em solid #18546e;
@@ -332,7 +335,7 @@ Kaike Santos Coppola
 		color: #edb91c;
 	}
 	.beneficios-container {
-		padding: 5% 3%;
+		padding: 15% 3%;
 		background-color: white;
 	}
 	.beneficios {
@@ -369,16 +372,14 @@ Kaike Santos Coppola
 	}
 	.autores-container {
 		background-color: #247ba0;
-		padding: 10%;
-		border-bottom: 0.1em solid black;
-		border-top: 0.1em solid black;
+		padding: 15% 10%;
+		
 	}
 	.autores-container h1 {
 		color: white;
 		font-size: 1.3em;
-	}
-	.autores-container p {
-		font-size: 0.9em;
+		margin-bottom: 4%;
+		text-align: center;
 	}
 	.autores-div {
 		background-color: white;
@@ -389,7 +390,7 @@ Kaike Santos Coppola
 	}
 	.ajuda-sec {
 		background-color: white;
-		padding: 5% 8%;
+		padding: 15% 8%;
 	}
 	.ajuda-container {
 		display: flex;
