@@ -12,14 +12,21 @@ Kaike Santos Coppola
 ----------------------------------------------------------------------------------------------------------->
 <?php
 session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
-require_once 'CheckUsuarios.php';
-$u = new Usuario;
+	if($_SESSION['username'] != ""){
+		$username = $_SESSION['username'];
+	} else {
+		$_SESSION['username'] = "";
+		$username = $_SESSION['username'];
+	}
+	
+	if($_SESSION['tipo_conta'] != ""){
+		$type_cont = $_SESSION['tipo_conta'];
+	}else{
+		$_SESSION['tipo_conta'] = "";
+		$type_cont = $_SESSION['tipo_conta'];
+	}
+	require_once 'CheckUsuarios.php';
+	$u = new Usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

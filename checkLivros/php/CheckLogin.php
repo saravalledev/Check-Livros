@@ -61,6 +61,7 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 							if ($senha == $linha['senha']){
 								$_SESSION['username'] = $linha['username'];
 								$_SESSION['id_usuario']  = $linha['id_usuario']; 
+								$_SESSION['tipo_conta'] = $linha['tipo_conta'];
 								header("location: ../index.php");
 
 							}else{ 

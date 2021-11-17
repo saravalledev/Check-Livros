@@ -13,9 +13,22 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='CheckLogin.php' class='a-desk'>CONTA</a>";
+							echo "<a href='cad_log.php' class='a-desk'>CONTA</a>";
 						}else{
-							echo "
+							if($type_cont == "adm"){
+								echo "
+									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='adm.php' class='a-desk a-sub'>Administrativa</a>
+										<li>
+										<li>
+											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}else{
+								echo "
 									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
@@ -23,6 +36,7 @@
 										</li>
 									</ul>
 									";
+							}
 						}
 						?>
 					</li>
@@ -49,10 +63,30 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='CheckLogin.php' class='a-tablets'>CONTA</a>";
+							echo "<a href='cad_log.php' class='a-desk'>CONTA</a>";
 						}else{
-							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
+							if($type_cont == "adm"){
+								echo "
+									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='adm.php' class='a-desk a-sub'>Administrativa</a>
+										<li>
+										<li>
+											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}else{
+								echo "
+									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}
 						}
 						?>
 					</li>

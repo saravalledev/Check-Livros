@@ -18,6 +18,13 @@ if($_SESSION['username'] != ""){
 	$_SESSION['username'] = "";
 	$username = $_SESSION['username'];
 }
+
+if($_SESSION['tipo_conta'] != ""){
+	$type_cont = $_SESSION['tipo_conta'];
+}else{
+	$_SESSION['tipo_conta'] = "";
+	$type_cont = $_SESSION['tipo_conta'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

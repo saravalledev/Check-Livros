@@ -40,6 +40,7 @@ Class Usuario{
 	public function cadastrar($username, $email, $senha){
 		global $pdo;
 		//Verificar se o email ja está cadastro
+		
 		$sql = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email = :e"); 
 
 		$sql->bindValue(":e",$email);
@@ -58,20 +59,17 @@ Class Usuario{
 			$sql->execute();
 			return true;
 		}
+		
 	}
 
 	//------------------ Cadastrar Sugestão de Livros  ------------------//
 
 	public function cad_sugestao($nome, $email, $genero, $sugestao){
-		global $pdo;
 		
-		$sql = $pdo->prepare("INSERT INTO sugestoes_livros (nome, email, genero_livro, sugestoes) VALUE (:n, :e, :g, :s)");
+		$conexao = mysqli_connect("localhost","root", "", "check_livros");
+		$sql = "INSERT INTO sugestoes_livros (nome, email, genero_livro, sugestoes) VALUE ('$nome', '$email', '$genero', '$sugestao')";
 
-		$sql->bindValue(":n",$nome);
-		$sql->bindValue(":e",$email);
-		$sql->bindValue(":g",$genero);
-		$sql->bindValue(":s",$sugestao);
-		$sql->execute();
+		$result = mysqli_query($conexao, $sql);
 		return true;
 		
 	}
@@ -79,14 +77,11 @@ Class Usuario{
 	//------------------ Cadastrar FeedBack  ------------------//
 
 	public function cad_feedback($nome, $email, $feedback){
-		global $pdo;
+	
+		$conexao = mysqli_connect("localhost","root", "", "check_livros");
+		$sql = "INSERT INTO feedback (nome, email, feedback_site) VALUE ('$nome', '$email', '$feedback')";
 
-		$sql = $pdo->prepare("INSERT INTO feedback (nome, email, feedback_site) VALUE (:n, :e, :f)");
-
-		$sql->bindValue(":n",$nome);
-		$sql->bindValue(":e",$email);
-		$sql->bindValue(":f",$feedback);
-		$sql->execute();
+		$result = mysqli_query($conexao, $sql);
 		return true;
 	}
 
@@ -95,8 +90,7 @@ Class Usuario{
 		public function cad_resenha( $idlivro, $username, $resenha){
 
 			$conexao = mysqli_connect("localhost","root", "", "check_livros");
-			$sql = "INSERT INTO resenhas (id_livro, username, resenha) 
-			VALUES ('$idlivro', '$username', '$resenha')";
+			$sql = "INSERT INTO resenhas (id_livro, username, resenha) VALUES ('$idlivro', '$username', '$resenha')";
 
 			$result = mysqli_query($conexao, $sql);
 			return true;
@@ -115,6 +109,16 @@ Class Usuario{
 		$sql->execute();
 		return true;*/
 	
+	public function cad_livro( $titulo, $autor, $editora, $ano_publi, $genero){
+
+		$conexao = mysqli_connect("localhost","root", "", "check_livros");
+		$sql = "INSERT INTO livros (titulo_livro, autor, editora, ano_publicado, genero_livro) 
+		VALUES ('$titulo', '$autor', '$editora', '$ano_publi', '$genero')";
+
+		$result = mysqli_query($conexao, $sql);
+		return true;
+	}
+
 	public function cad_like_des($id_resenha, $like, $deslike){
 		global $pdo;
 	

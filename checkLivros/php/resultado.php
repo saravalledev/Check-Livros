@@ -18,12 +18,19 @@ require_once 'CheckUsuarios.php';
 $u = new Usuario;
 
 session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
+	if($_SESSION['username'] != ""){
+		$username = $_SESSION['username'];
+	} else {
+		$_SESSION['username'] = "";
+		$username = $_SESSION['username'];
+	}
+	
+	if($_SESSION['tipo_conta'] != ""){
+		$type_cont = $_SESSION['tipo_conta'];
+	}else{
+		$_SESSION['tipo_conta'] = "";
+		$type_cont = $_SESSION['tipo_conta'];
+	}
 
 $genero = $_GET['genero'] ?? "";
 $search = $_GET['search'] ?? "";

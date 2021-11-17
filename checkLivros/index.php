@@ -18,6 +18,13 @@ if($_SESSION['username'] != ""){
 	$_SESSION['username'] = "";
 	$username = $_SESSION['username'];
 }
+
+if($_SESSION['tipo_conta'] != ""){
+	$type_cont = $_SESSION['tipo_conta'];
+}else{
+	$_SESSION['tipo_conta'] = "";
+	$type_cont = $_SESSION['tipo_conta'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -50,16 +57,30 @@ if($_SESSION['username'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/CheckLogin.php' class='a-desk'>CONTA</a>";
+							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
 						}else{
-							echo "
+							if($type_cont == "adm"){
+								echo "
 									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair <i class='fas fa-sign-out-alt'></i></a>
+											<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
+										<li>
+										<li>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
 										</li>
 									</ul>
 									";
+							}else{
+								echo "
+									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}
 						}
 						?>
 					</li>
@@ -86,10 +107,30 @@ if($_SESSION['username'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/CheckLogin.php' class='a-tablets'>CONTA</a>";
+							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
 						}else{
-							echo "<a href='php/perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
-									<li><a href='php/sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
+							if($type_cont == "adm"){
+								echo "
+									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
+										<li>
+										<li>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}else{
+								echo "
+									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<ul class='submenu'>
+										<li>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+										</li>
+									</ul>
+									";
+							}
 						}
 						?>
 					</li>
