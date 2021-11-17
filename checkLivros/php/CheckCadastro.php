@@ -14,10 +14,10 @@ Autores externos:
 https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISLkWS
 --------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
-	$username = "";
+session_start();
+require_once 'CheckUsuarios.php';
+$u = new Usuario;
+$username = "";
 ?>
 <html lang="pt-BR">
 	<head>
@@ -35,75 +35,75 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 
 	<body class="row">
 		<?php
-			include("menu.php");
 
-			if (isset($_POST['username'])){
-				$username = addslashes($_POST['username']);
-				$email = addslashes($_POST['email']);
-				$senha = addslashes($_POST['senha']);
-				$confsenha = addslashes($_POST['confsenha']);
+		if (isset($_POST['username'])){
+			$username = addslashes($_POST['username']);
+			$email = addslashes($_POST['email']);
+			$senha = addslashes($_POST['senha']);
+			$confsenha = addslashes($_POST['confsenha']);
 
-				if(!empty($username) && !empty($email) && !empty($senha) && !empty($confsenha)){
+			if(!empty($username) && !empty($email) && !empty($senha) && !empty($confsenha)){
 
-					$u->conectar("check_livros","localhost","root","");
+				$u->conectar("check_livros","localhost","root","");
 
-					if($senha == $confsenha){
+				if($senha == $confsenha){
 
-						if($u->cadastrar($username, $email, $senha)){
+					if($u->cadastrar($username, $email, $senha)){
 
-							header("Location: CheckLogin.php");
-						}else{
-							?>
-							<div class="msg-geral msg-erro">
-								<p>Email já cadastrado!</p>
-							</div>
-							<?php
-						}
-
+						header("Location: CheckLogin.php");
 					}else{
-						?>
-						<div class="msg-geral msg-erro">
-							<p>Senha e Confirmar Senha não correspondem!</p>
-						</div>
-						<?php
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Email já cadastrado!</p>
+		</div>
+		<?php
 					}
+
 				}else{
-					?>
-					<div class="msg-geral msg-erro">
-						<p>Preencha todos os campos!</p>
-					</div>
-					<?php
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Senha e Confirmar Senha não correspondem!</p>
+		</div>
+		<?php
 				}
+			}else{
+		?>
+		<div class="msg-geral msg-erro">
+			<p>Preencha todos os campos!</p>
+		</div>
+		<?php
 			}
+		}
 		?>
 
-		<section class="col-s-12 col-m-12 col-12 cad-sec">
-			<h1>Cadastre-se em nossa plataforma</h1><br/><br/>
-			<form method="POST">
+		<section class="col-s-12 col-m-12 col-12 cad-section">
+			<div class="cad-div">
+				<h1>Criar uma nova conta</h1><br/><br/>
+				<form method="POST" action="">
 
-				<label for="username">Nome de usuário:</label>
-				<input type="text" required min="3" name="username">
+					<p>Nome de usuário:</p>
+					<input type="text" required min="3" name="username">
 
-				<label for="email">E-mail:</label>
-				<input type="email" name="email">
+					<p>E-mail:</p>
+					<input type="email" name="email">
 
-				<label for="senha">Senha:</label>
-				<input type="password" id="pwd" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="32">
+					<p>Senha:</p>
+					<input type="password" id="pwd" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="32">
 
-				<label for="confsenha">Confirmar senha:</label>
-				<input type="password" id="S3" name="confsenha">
+					<p>Confirmar senha:</p>
+					<input type="password" id="S3" name="confsenha">
 
-				<div style="margin-bottom: 1em">
-					<input type="checkbox" onclick="mostrarOcultarSenha()">
-					<label>Mostrar/Ocultar senha</label>
-					<br/>
-				</div>
+					<div class="checkbox-div">
+						<input type="checkbox" onclick="mostrarOcultarSenha()">
+						<p>Mostrar/Ocultar senha</p>
+						<br/>
+					</div>
 
-				<input type="submit" name="Cadastrar" value="Cadastrar">
-			</form>
+					<input type="submit" name="Cadastrar" value="Cadastrar">
+				</form>
+			</div><br/><br/>
+			<p class="p-beneficios">Já possui uma conta ? <a class="a-beneficios" href="CheckLogin.php">Entre aqui</a></p>
 		</section>
-
-		<?php include("footer.php"); ?>
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

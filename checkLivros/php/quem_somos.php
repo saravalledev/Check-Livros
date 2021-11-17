@@ -37,9 +37,10 @@ Kaike Santos Coppola
 	<body class="row">
 		<?php include("menu.php")?>
 
-		<section class="col-s-12 col-m-12 col-12 sobre-sec">
+		<section class="col-s-12 col-m-12 col-12 sobre-section">
 
-			<h1>Nossa História</h1><br/><br/>
+			<h2>Nossa História</h2><br/><hr/>
+			<br/><br/>
 			<div class="sobre-container">
 
 				<div class="sobre-itens item-1">
@@ -49,11 +50,10 @@ Kaike Santos Coppola
 					<p>No início, Matheus e Kaike estavam relutantes com a proposta da jornada, porém Hebert convenceu seus companheiros e aceitou a responsabilidade de liderar o grupo. Após uma semana de trabalho, o líder do grupo se deparou com um terrível problema que poderia acabar com a alegria de nossos aventureiros: O servidor. Para aqueles que são leigos e não entendem como funciona a informática aqui vai uma breve explicação: O servidor é a parte vital de qualquer site da internet e sem ele nenhum site ou aplicativo pode ser publicado. </p>
 					<br/>
 					<p>Hebert foi o mais ativo durante a batalha contra o servidor e, dessa forma, após alguns longos e exaustivos dias, o inimigo por fim sucumbiu-se. Logo em seguida, com os problemas já resolvidos, Matheus foi implacável no desenvolvimento front-end do site, com a ajuda de Kaike, eles chegaram a programar até três páginas em uma mesma semana. </p> <p class="p-sobre">Continua...</p>
-					<br/>
 				</div>
 				<div class="sobre-itens item-2">
 					<h2>Nossa Visão</h2><br/>
-					<p>O portal Check Livros possuí como visão o desejo de facilitar a vida do público leitor durante a escolha e entendimento de livros, ou seja, nosso site preza pela: </p><br/>
+					<p>O portal Check Livros possui como visão o desejo de facilitar a vida do público leitor durante a escolha e entendimento de livros, ou seja, nosso site preza pela: </p><br/>
 					<ul>
 						<li><p>Praticidade</p></li><br/>
 						<li><p>Interatividade</p></li><br/>

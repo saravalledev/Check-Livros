@@ -45,9 +45,12 @@ $search = $_GET['search'] ?? "";
 	<body>
 		<?php include("menu.php"); ?>
 
-		<h1 class="gen-h1">Escolha um livro e desfrute...</h1>
-
-		<section class="col-s-12 col-m-12 col-12 gen-container">
+		
+		<section class="col-s-12 col-m-12 col-12 resultados-container">
+			<h2>Livros e Resenhas</h2><br/><hr/>
+			<br/><br/>
+			
+			<div class="flex-livros">
 			<?php
 			$conexao = mysqli_connect("localhost","root", "", "check_livros");
 			mysqli_set_charset($conexao, 'utf8');
@@ -61,43 +64,43 @@ $search = $_GET['search'] ?? "";
 				while($linha = mysqli_fetch_array($result)){
 
 					$imge = $linha['img_href'];
-					?>
-					<div class="livro-resultado">
-						<img class="capa" src="<?php echo $imge;?>"/> 
-					</div>
-					<?php
+			?>
+			<div class="livro-resultado">
+				<img class="capa" src="<?php echo $imge;?>"/> 
+			</div>
+			<?php
 				}
 			}
 
 			//--------------- Publica a ressenha EXPORTAR---------------//
 			if(isset($_POST['Publicar'])){
-					
+
 				$resenha = addslashes($_POST['nova_resenha']);
 				$idlivro = $_SESSION['id_livro'];
-				
+
 				//echo $resenha;
-				
+
 				if(!empty($resenha)){
 
 					if($u->cad_resenha($idlivro, $username, $resenha)){
-						?>
-						<div class="msg-geral msg-sucesso">
-							<p>Sugestão enviada com sucesso :)</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral msg-sucesso">
+				<p>Sugestão enviada com sucesso :)</p>
+			</div>
+			<?php
 					}else{
-						?>
-						<div class="msg-geral mgs-erro">
-							<p>Perdão, houve um erro ao enviar sua resenha... </p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral mgs-erro">
+				<p>Perdão, houve um erro ao enviar sua resenha... </p>
+			</div>
+			<?php
 					}
 				}else{
-					?>
-					<div class="msg-geral mgs-erro">
-						<p> Preencha todos os campos! </p>
-					</div>
-					<?php
+			?>
+			<div class="msg-geral mgs-erro">
+				<p> Preencha todos os campos! </p>
+			</div>
+			<?php
 				}
 			}
 
@@ -110,16 +113,16 @@ $search = $_GET['search'] ?? "";
 				while($linha = mysqli_fetch_array($result)){
 
 					$imge = $linha['img_href'];
-					?>
-					<div class="livro-resultado">
-						<img class="capa" src="<?php echo $imge;?>"/>
-					</div>
-					<?php
+			?>
+			<div class="livro-resultado">
+				<img class="capa" src="<?php echo $imge;?>"/>
+			</div>
+			<?php
 				}
 			}
 			//--------------- Btn like ---------------//
 			if(isset($_POST['like'])){
-						
+
 				$id_resenha;
 				$like = 1;
 				$deslike = 0;
@@ -131,16 +134,16 @@ $search = $_GET['search'] ?? "";
 				$id_resenha;
 				$deslike = 1;
 				$like = 0;
-				
+
 				$u-> cad_like_des();
 			}
 			?>
 
+			</div>
 		</section>
 
 		<?php include("footer.php"); ?>
 
-		<!--Por questões de relevancia do google, é mais correto colocar o modal no final da página, para que não seja confundido como parte mais importante -->
 		<section id="modal_resenha" class="modal_container">
 
 			<div class="modal" style="border: 0.1em solid #EDB91C;">
@@ -159,25 +162,25 @@ $search = $_GET['search'] ?? "";
 
 						$imge = $linha['img_href'];
 						$t_livro = $linha['titulo_livro'];
-						?>
+					?>
 
-						<div class="div_capa">
-							<img class="capa_modal" onclick=" iniciaModal(modalID)" src="<?php echo $imge;?>"/>
-						</div>
-						<br/>
-						<br/>
-						<div class="dados-livro">
+					<div class="div_capa">
+						<img class="capa_modal" onclick=" iniciaModal(modalID)" src="<?php echo $imge;?>"/>
+					</div>
+					<br/>
+					<br/>
+					<div class="dados-livro">
 						<?php
-							echo "<p>Titulo: ".$linha['titulo_livro']."</p>";
-							echo "<p>Autor: ".$linha['autor']."</p>";
-							echo "<p>Editora: ".$linha['editora']."</p>";
-							echo "<p>Ano de publicação: ".$linha['ano_publicado']."</p>";
+						echo "<p>Titulo: ".$linha['titulo_livro']."</p>";
+						echo "<p>Autor: ".$linha['autor']."</p>";
+						echo "<p>Editora: ".$linha['editora']."</p>";
+						echo "<p>Ano de publicação: ".$linha['ano_publicado']."</p>";
 						?>
-						</div>
-						<br/><hr/><br/><br/>
-						<h2>Escreva uma nova resenha</h2>
+					</div>
+					<br/><hr/><br/><br/>
+					<h2>Escreva uma nova resenha</h2>
 
-						<?php
+					<?php
 					}
 
 					$idlivro = $_SESSION['id_livro'];
@@ -185,13 +188,13 @@ $search = $_GET['search'] ?? "";
 					//--------------- Busca o resenha no Modal---------------//
 					$sql2 = "SELECT * FROM resenhas WHERE id_livro = '$idlivro'";
 					$result2 = mysqli_query($conexao, $sql2);
-					
+
 					?>
 					<div class="div_nova_resenha">
 						<br>
 						<form name="form_nova_resenha" action="" method="POST">
 							<?php  
-								echo "<h2>@".$username."</h2>";
+							echo "<h2>@".$username."</h2>";
 							?>
 							<textarea type="text" required rows="10" name="nova_resenha"></textarea>
 							<input type="submit" name="Publicar" value="Publicar">
@@ -205,8 +208,8 @@ $search = $_GET['search'] ?? "";
 
 						$_SESSION['id_resenha'] = $linha2['id_resenha'];
 
-						?>
-						<br/><br/>
+					?>
+					<br/><br/>
 					<div class="resenha-user">
 						<?php
 						echo "<br/><h2>@".$linha2['username']."</h2><br/><br/>";
@@ -214,13 +217,13 @@ $search = $_GET['search'] ?? "";
 						?>
 
 						<form action="" method="POST">
-							<button type="submit" class="btn_machete" name="like" id="like" onclick="changeBtnCollor(1)"><i class="far fa-thumbs-up"></i></button>
+							<button type="submit" class="btn_likes" name="like" id="like" onclick="changeBtnCollor(1)"><i class="far fa-thumbs-up"></i></button>
 							&nbsp;&nbsp;&nbsp;
-							<button type="submit" class="btn_machete" name="deslike" id="deslike" onclick="changeBtnCollor(2)"><i class="far fa-thumbs-down" style="transform: scaleX(-1);"></i></button>
+							<button type="submit" class="btn_likes" name="deslike" id="deslike" onclick="changeBtnCollor(2)"><i class="far fa-thumbs-down" style="transform: scaleX(-1);"></i></button>
 						</form>
 					</div>
 					<?php
-					
+
 					}
 					$id_resenha = $_SESSION['id_resenha'];
 					?>

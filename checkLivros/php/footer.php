@@ -1,6 +1,6 @@
 <footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<img class="img_f" src="../img/Check-LivrosB.png">
+				<img class="img_logo_foot" src="../img/Check-LivrosB.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
@@ -12,11 +12,11 @@
 					<li><a href="fale_conosco.php" class="a-footer">CONTATO</a></li>
 				</ul>	
 				<ul>
-					<li><a href="perfil.php" class="a-footer">MINHA CONTA</a></li>
+					<li><a href="CheckLogin.php" class="a-footer">MINHA CONTA</a></li>
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-footer'>CADASTRO | LOGIN</a>";
+							echo "<a href='CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
 						}
 						?>
 					</li>

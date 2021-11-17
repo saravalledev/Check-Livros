@@ -39,9 +39,9 @@ if($_SESSION['username'] != ""){
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="index.php" class="logo-menu"><img src="img/LogoSemNome.png" style="width: 100%"></a></li>
-					<li class="img_m">
+					<li class="li-titulo">
 						<a href="index.php" class="logo-menu">
-							<img src="img/Titulosemfundo.png" class="img_l">
+							<img src="img/Titulosemfundo.png" class="img_titulo">
 						</a>
 					</li>
 					<li><a href="php/generos.php" class="a-desk">GÊNEROS</a></li>
@@ -50,13 +50,13 @@ if($_SESSION['username'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='php/CheckLogin.php' class='a-desk'>CONTA</a>";
 						}else{
 							echo "
 									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair <i class='fas fa-sign-out-alt'></i></a>
 										</li>
 									</ul>
 									";
@@ -73,7 +73,7 @@ if($_SESSION['username'] != ""){
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="index.php" class="nav-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="index.php" class="nav-mobile-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li class="search-container">
 						<form action="php/resultado.php" method="get">
@@ -86,7 +86,7 @@ if($_SESSION['username'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-tablets'>CONTA</a>";
+							echo "<a href='php/CheckLogin.php' class='a-tablets'>CONTA</a>";
 						}else{
 							echo "<a href='php/perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
 									<li><a href='php/sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
@@ -105,14 +105,26 @@ if($_SESSION['username'] != ""){
 
 				<div class="mySlides fade">
 					<img src="img/imagem1.jpg">
+					<div class="legenda-slide">
+						<h1>Entretenimento e Conhecimento</h1>
+						<i class="fas fa-check icon-slide"></i>
+					</div>
 				</div>
 
 				<div class="mySlides fade">
 					<img src="img/cafe_livros.jpg">
+					<div class="legenda-slide">
+						<h1>Tranquilidade na hora de conhecer livros</h1>
+						<i class="fas fa-check icon-slide"></i>
+					</div>
 				</div>
 
 				<div class="mySlides fade">
 					<img src="img/city.jpg">
+					<div class="legenda-slide">
+						<h1>Interatividade em comunidade</h1>
+						<i class="fas fa-check icon-slide"></i>
+					</div>
 				</div>
 
 				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -125,9 +137,9 @@ if($_SESSION['username'] != ""){
 			</div>
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 beneficios-container">
+		<section class="col-s-12 col-m-12 col-12 beneficios-section">
 			<h1>"É preciso que a leitura seja um ato de amor" <br>Paulo Freire</h1>
-			<div class="beneficios">
+			<div class="beneficios-container">
 
 				<div class="beneficios-itens">
 					<h2>Por Que Check Livros ?</h2><br/>
@@ -143,34 +155,34 @@ if($_SESSION['username'] != ""){
 
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 autores-container">
+		<section class="col-s-12 col-m-12 col-12 ranking-container">
 			<h1>Ranking de Livros</h1><br/>
-			<div class="autores-div">
+			<div class="ranking-positions">
 				<h2>1º</h2>
 				<p>Lorem Ipsum</p>
 			</div><br/>
-			<div class="autores-div">
+			<div class="ranking-positions">
 				<h2>2º</h2>
 				<p>Lorem Ipsum</p>
 			</div><br/>
-			<div class="autores-div">
+			<div class="ranking-positions">
 				<h2>3º</h2>
 				<p>Lorem Ipsum</p>
 			</div>
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 ajuda-sec">
+		<section class="col-s-12 col-m-12 col-12 tutorial-section">
 			<h1>Tutorial</h1><br/><br/>
-			<div class="ajuda-container">
-				<div class="ajuda-item">
+			<div class="tutorial-container">
+				<div class="tutorial-item">
 					<h2>Passo 1 -</h2><br/>
 					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="php/cad_log.php">Saiba mais...</a></p>
 				</div>
-				<div class="ajuda-item">
+				<div class="tutorial-item">
 					<h2>Passo 2 -</h2><br/>
 					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="php/generos.php">Gêneros</a> literários para explorar os mais diversos assuntos</p>
 				</div>
-				<div class="ajuda-item">
+				<div class="tutorial-item">
 					<h2>Passo 3 -</h2><br/>
 					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="php/fale_conosco.php">Fale conosco</a></p>
 				</div>
@@ -179,7 +191,7 @@ if($_SESSION['username'] != ""){
 
 		<footer  class="col-s-12 col-m-12 col-12 footer">
 			<aside class="col-s-12 col-m-4 col-3 logo-container">
-				<img class="img_f" src="img/Check-LivrosB.png">
+				<img class="img_logo_foot" src="img/Check-LivrosB.png">
 			</aside>
 			<nav class="col-s-12 col-m-8 col-5 footer-nav">
 				<ul>
@@ -191,11 +203,11 @@ if($_SESSION['username'] != ""){
 					<li><a href="php/fale_conosco.php" class="a-footer">CONTATO</a></li>
 				</ul>
 				<ul>
-					<li><a href="php/perfil.php" class="a-footer">MINHA CONTA</a></li>
+					<li><a href="php/CheckLogin.php" class="a-footer">MINHA CONTA</a></li>
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-footer'>CADASTRO | LOGIN</a>";
+							echo "<a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
 						}
 						?>
 					</li>

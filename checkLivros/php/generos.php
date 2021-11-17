@@ -37,45 +37,77 @@ if($_SESSION['username'] != ""){
 	<body class="row">
 		<?php include("menu.php");?>
 
-		<h1 class="gen-h1">Selecione um Gênero Literário</h1>
+		<section class="col-s-12 col-m-12 col-12 generos-container">
 
-		<section class="col-s-12 col-m-12 col-12 gen-container">
+			<h2>Gêneros Literários</h2><br/><hr/>
+			<br/><br/>
 
-			<a href="resultado.php?genero=cienciashumanas">
-				<img src="../img/generos/generos_Ciencias-Humanas2.jpg"/>
-			</a>
+			<div class="generos-flex">
+				
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Ciências Humanas</p></div>
+				<a href="resultado.php?genero=cienciashumanas">
+					<img src="../img/generos/humanas.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=cienciasexatas">
-				<img src="../img/generos/generos_Ciencias-Exatas.jpg"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Ciências Exatas</p></div>
+				<a href="resultado.php?genero=cienciasexatas">
+					<img src="../img/generos/exatas.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=cienciasbiologicas">
-				<img src="../img/generos/generos_ciencias-biologicas.jpg"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Ciências Biológicas</p></div>
+				<a href="resultado.php?genero=cienciasbiologicas">
+					<img src="../img/generos/biologicas.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=literaturanacional">
-				<img src="../img/generos/generos_Lit-Nacional.png"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Literatura Nacional</p></div>
+				<a href="resultado.php?genero=literaturanacional">
+					<img src="../img/generos/MachadoAssisF.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=literaturainfantojuvenil">
-				<img src="../img/generos/generos_Lit-InfantoJuvenil.jpg"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Literatura Infantojuvenil</p></div>
+				<a href="resultado.php?genero=literaturainfantojuvenil">
+					<img src="../img/generos/juvenil.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=literaturaestrangeira">
-				<img src="../img/generos/generos_Lit-Estrangeira.jpg"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Literatura Estrangeira</p></div>
+				<a href="resultado.php?genero=literaturaestrangeira">
+					<img src="../img/generos/estrangeira.jpg"/>
+				</a>
+			</div>
+			
+			<div class="generos-item">
+				<div class="legenda-genero"><p>HQs e Mangás</p></div>
+				<a href="resultado.php?genero=hqsemangas">
+					<img src="../img/generos/hqs.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=hqsemangas">
-				<img src="../img/generos/generos_HKS-Mangas.jpg"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Autoajuda</p></div>
+				<a href="resultado.php?genero=autoajuda">
+					<img src="../img/generos/autoajuda.jpg"/>
+				</a>
+			</div>
 
-			<a href="resultado.php?genero=autoajuda">
-				<img src="../img/generos/generos_Autoajuda.jpg"/>
-			</a>
-
-			<a href="resultado.php?genero=outros">
-				<img src="../img/generos/Outros-.png"/>
-			</a>
+			<div class="generos-item">
+				<div class="legenda-genero"><p>Outros Livros</p></div>
+				<a href="resultado.php?genero=outros">
+					<img src="../img/generos/outros.jpg"/>
+				</a>
+			</div>
+			
+			</div>
 
 		</section>
 

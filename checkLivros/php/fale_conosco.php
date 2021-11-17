@@ -11,15 +11,15 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-	session_start();
-	if($_SESSION['username'] != ""){
-		$username = $_SESSION['username'];
-	} else {
-		$_SESSION['username'] = "";
-		$username = $_SESSION['username'];
-	}
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
+session_start();
+if($_SESSION['username'] != ""){
+	$username = $_SESSION['username'];
+} else {
+	$_SESSION['username'] = "";
+	$username = $_SESSION['username'];
+}
+require_once 'CheckUsuarios.php';
+$u = new Usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -39,7 +39,7 @@ Kaike Santos Coppola
 	<body class="row">
 		<?php include("menu.php");?>
 
-		<section class="col-s-12 col-m-12 col-12 container fade" id="contato-container">
+		<section class="col-s-12 col-m-12 col-12 contato-container fade" id="contato-container">
 			<?php
 			if(isset($_POST['enviar_form1'])){
 				$nome = addslashes($_POST['nome1']);
@@ -51,24 +51,24 @@ Kaike Santos Coppola
 					$u->conectar("check_livros","localhost","root","");
 					//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
 					if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
-						?>
-						<div class="msg-geral msg-sucesso">
-							<p>Sugestão enviada com sucesso :)</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral msg-sucesso">
+				<p>Sugestão enviada com sucesso :)</p>
+			</div>
+			<?php
 					}else{
-						?>
-						<div class="msg-geral msg-erro">
-							<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
+			</div>
+			<?php
 					}
 				}else{
-					?>
-					<div class="msg-geral msg-erro">
-						<p>Preencha todos os campos!</p>
-					</div>
-					<?php
+			?>
+			<div class="msg-geral msg-erro">
+				<p>Preencha todos os campos!</p>
+			</div>
+			<?php
 				}
 			}
 
@@ -102,13 +102,14 @@ Kaike Santos Coppola
 				}
 			}
 			?>
-			<h1 class="form-title">Em que podemos ajudar ?</h1><br/><br/>
+			<h2>Em que podemos ajudar ?</h2><br/><hr/>
+			<br/><br/>
 			<div class="sugerir-div" onclick="enableContactForm(1)">
 				<div>
 					<h2 class="sugerir-text">Sugestão de Livros</h2>
 					<p>Aponte livros que ainda não constam em nossa plataforma</p>
 				</div>
-				<div>
+				<div style="display: contents;">
 					<i class="fas fa-check icon-contato"></i>
 				</div>
 			</div><br/><br/>
@@ -118,27 +119,26 @@ Kaike Santos Coppola
 					<h2 class="sugerir-text">Ajude-nos a melhorar o Check Livros</h2>
 					<p>Avalie-nos agora mesmo</p>
 				</div>
-				<div>
+				<div style="display: contents;">
 					<i class="fas fa-check icon-contato"></i>
 				</div>
-			</div><br/><br/>
+			</div>
 
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 container fade" id="form-1">
-
+		<section class="col-s-12 col-m-12 col-12 form-container fade" id="form-1">
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
-			<h1 class="form-title">Sugestão de livros</h1><br/><br/>
+			<h1>Sugestão de livros</h1><br/><br/>
 
 			<form action="fale_conosco.php" method="post">
 
-				<label for="nome">Nome:</label>
+				<p>Nome:<p>
 				<input type="text" name="nome1" placeholder="Nome completo" required>
 
-				<label for="email">E-mail:</label>
+				<p>E-mail:</p>
 				<input type="email" name="email1" placeholder="E-mail" required>
 
-				<label for="genero">Gênero do livro:</label>
+				<p>Gênero do livro:</p>
 				<select name="genero">
 					<option>Ciências Humanas e sociais</option>
 					<option>Ciências Exatas</option>
@@ -151,34 +151,32 @@ Kaike Santos Coppola
 					<option>Outros</option>
 				</select>
 
-				<label for="sugestao">Sugestão de livro:</label>
+				<p>Sugestão de livro:<p>
 				<input type="text" name="sugestao" placeholder="Nome do livro" required>
 
 				<input type="submit" value="Enviar" name="enviar_form1">
 
 			</form>
-
 		</section>
 
-		<section class="col-s-12 col-m-12 col-12 container fade" id="form-2">
+		<section class="col-s-12 col-m-12 col-12 form-container fade" id="form-2">
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
-			<h1 class="form-title">Críticas e elogios</h1><br/><br/>
+			<h1>Críticas e elogios</h1><br/><br/>
 
 			<form action="fale_conosco.php" method="post">
 
-				<label for="nome">Nome:</label>
+				<p>Nome:</p>
 				<input type="text" name="nome2" placeholder="Nome completo" required>
 
-				<label for="email">E-mail:</label>
+				<p>E-mail:</p>
 				<input type="email" name="email2" placeholder="E-mail" required>
 
-				<label for="feedback">Feedback:</label>
+				<p>Feedback:</p>
 				<textarea name="feedback" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
 
 				<input type="submit" value="Enviar" name="enviar_form2">
 
 			</form>
-
 		</section>
 
 		<?php include("footer.php"); ?>

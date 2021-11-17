@@ -30,11 +30,10 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 
 	<body class="row">
 		<?php 
-			$username = "";
-			include("menu.php"); 
+		$username = "";
 		?>
 
-		<section class="col-s-12 col-m-12 col-s-12 cad-sec">
+		<section class="col-s-12 col-m-12 col-s-12 cad-section">
 			<?php
 			session_start();
 			if (isset ($_POST["Logar"])) {
@@ -50,11 +49,11 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 					$numlinha=mysqli_num_rows($result);
 
 					if ($numlinha <= 0) {
-						?>
-						<div class="msg-erro msg-geral ">
-							<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
-						</div>
-						<?php
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
+			</div>
+			<?php
 					}else{
 						while ($linha = mysqli_fetch_array($result)){
 
@@ -65,43 +64,44 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 								header("location: ../index.php");
 
 							}else{ 
-								?>
-								<div class="msg-erro msg-geral ">
-									<p>Falha no login. Senha incorreta ou vazia...</p>
-								</div>
-								<?php
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Falha no login. Senha incorreta ou vazia...</p>
+			</div>
+			<?php
 							}
 						}
 					}
 				}else{
-					?>
-					<div class="msg-erro msg-geral ">
-						<p>Preencha todos os campos, por gentileza!</p>
-					</div>
-					<?php
+			?>
+			<div class="msg-erro msg-geral ">
+				<p>Preencha todos os campos, por gentileza!</p>
+			</div>
+			<?php
 				}
 			}
 			?>
 			<br/>
-			<h1>Bem-vindo ao Check Livros</h1>
-			<br/><br/>
-			<form name="form-log" method="post" action="">
+			<div class="cad-div">
+				<h1>Bem-vindo ao Check Livros</h1>
+				<br/><br/>
+				<form name="form-log" method="post" action="">
 
-				<label for="email">E-mail:</label>
-				<input type="email" name="email" maxlength="40">
+					<p>E-mail:</p>
+					<input type="email" name="email" maxlength="40">
 
-				<label for="senha">Senha:</label>
-				<input type="password" id="pwd" name="senha">
+					<p>Senha:</p>
+					<input type="password" id="pwd" name="senha">
 
-				<div style="margin-bottom: 1em">
-					<input type="checkbox" onclick="mostrarOcultarSenha()">
-					<label>Mostrar/Ocultar senha</label><br/>
-				</div>
-				<input type="submit" name="Logar" value="Login">
-			</form>
+					<div class="checkbox-div">
+						<input type="checkbox" onclick="mostrarOcultarSenha()">
+						<p>Mostrar/Ocultar senha</p>
+					</div>
+					<input type="submit" name="Logar" value="Login">
+				</form>
+			</div><br/><br/>
+			<p class="p-beneficios">Ainda não possui uma conta ? <a class="a-beneficios" href="CheckCadastro.php">Cadastre-se aqui</a></p>
 		</section>
-
-		<?php include("footer.php"); ?>
 	</body>
 	<script type="text/javascript" src="../js/functions.js"></script> 
 </html>

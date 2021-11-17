@@ -2,9 +2,9 @@
 			<nav id="nav-desktop">
 				<ul id="desktopLinks">
 					<li><a href="../index.php" class="logo-menu"><img src="../img/LogoSemNome.png" style="width: 100%"></a></li>
-					<li class="img_m">
+					<li class="li-titulo">
 						<a href="../index.php" class="logo-menu">
-							<img src="../img/Titulosemfundo.png" class="img_l">
+							<img src="../img/Titulosemfundo.png" class="img_titulo">
 						</a>
 					</li>
 					<li><a href="generos.php" class="a-desk">GÊNEROS</a></li>
@@ -13,7 +13,7 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='CheckLogin.php' class='a-desk'>CONTA</a>";
 						}else{
 							echo "
 									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
@@ -36,7 +36,7 @@
 			</nav>
 
 			<nav id="nav-mobile-tablets">
-				<a href="../index.php" class="nav-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
+				<a href="../index.php" class="nav-mobile-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li class="search-container">
 						<form action="resultado.php" method="get">
@@ -49,7 +49,7 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-tablets'>CONTA</a>";
+							echo "<a href='CheckLogin.php' class='a-tablets'>CONTA</a>";
 						}else{
 							echo "<a href='perfil.php' class='a-tablets'>Olá, ".$username."</a></li>
 									<li><a href='sairlog.php' class='a-tablets'>Sair&nbsp;<i class='fas fa-sign-out-alt'></i></a>";
