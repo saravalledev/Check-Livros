@@ -96,7 +96,7 @@ if($_SESSION['tipo_conta'] != ""){
 			<div class="generos-item">
 				<div class="legenda-genero"><p>HQs e Mangás</p></div>
 				<a href="resultado.php?genero=hqsemangas">
-					<img src="../img/generos/hqs.jpg"/>
+					<img src="../img/generos/hqs_mangas.jpg"/>
 				</a>
 			</div>
 

@@ -57,7 +57,7 @@ if($_SESSION['tipo_conta'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='php/CheckLogin.php' class='a-desk'>CONTA</a>";
 						}else{
 							if($type_cont == "adm"){
 								echo "
@@ -67,7 +67,7 @@ if($_SESSION['tipo_conta'] != ""){
 											<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
 										<li>
 										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='php/sairlog.php' class='a-desk a-sub'>Sair</a>
 										</li>
 									</ul>
 									";
@@ -107,26 +107,26 @@ if($_SESSION['tipo_conta'] != ""){
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='php/cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='php/CheckLogin.php' class='a-tablets'>CONTA</a>";
 						}else{
 							if($type_cont == "adm"){
 								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
+											<a href='php/adm.php' class='a-tablets'>Administrativa</a>
 										<li>
 										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='php/sairlog.php' class='a-tablets'>Sair</a>
 										</li>
 									</ul>
 									";
 							}else{
 								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='php/sairlog.php' class='a-tablets'>Sair</a>
 										</li>
 									</ul>
 									";
@@ -145,7 +145,7 @@ if($_SESSION['tipo_conta'] != ""){
 			<div class="slideshow-container">
 
 				<div class="mySlides fade">
-					<img src="img/imagem1.jpg">
+					<img src="img/entretenimento.jpg">
 					<div class="legenda-slide">
 						<h1>Entretenimento e Conhecimento</h1>
 						<i class="fas fa-check icon-slide"></i>
@@ -153,7 +153,7 @@ if($_SESSION['tipo_conta'] != ""){
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/cafe_livros.jpg">
+					<img src="img/cafe.jpg">
 					<div class="legenda-slide">
 						<h1>Tranquilidade na hora de conhecer livros</h1>
 						<i class="fas fa-check icon-slide"></i>
@@ -161,7 +161,7 @@ if($_SESSION['tipo_conta'] != ""){
 				</div>
 
 				<div class="mySlides fade">
-					<img src="img/city.jpg">
+					<img src="img/cidade.jpg">
 					<div class="legenda-slide">
 						<h1>Interatividade em comunidade</h1>
 						<i class="fas fa-check icon-slide"></i>

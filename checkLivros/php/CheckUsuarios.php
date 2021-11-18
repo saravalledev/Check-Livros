@@ -50,14 +50,19 @@ Class Usuario{
 
 			return false; 
 
-		} else {    
-			$sql = $pdo->prepare("INSERT INTO usuario (username, email, senha) VALUE (:n, :e, :s)");
+		} else {   
+			
+			$sql = "INSERT INTO usuario (username, email, senha) VALUE ('$username', '$email', '$senha')";
+			
+			$result = mysqli_query($conexao, $sql);
+			return true;
+			/*$sql = $pdo->prepare("INSERT INTO usuario (username, email, senha) VALUE (:n, :e, :s)");
 
 			$sql->bindValue(":n",$username);
 			$sql->bindValue(":e",$email);
 			$sql->bindValue(":s",md5($senha)); 
 			$sql->execute();
-			return true;
+			return true;*/
 		}
 		
 	}

@@ -65,7 +65,7 @@ $search = $_GET['search'] ?? "";
 			//--------------- Busca o genero ---------------//
 			if(isset($_GET['genero'])){
 
-				$sql = "SELECT * FROM livro WHERE genero_livro = '$genero'";
+				$sql = "SELECT * FROM livros WHERE genero_livro = '$genero'";
 				$result = mysqli_query($conexao,$sql);
 
 				while($linha = mysqli_fetch_array($result)){
@@ -114,7 +114,7 @@ $search = $_GET['search'] ?? "";
 			//--------------- Busca o titulo_livro na Barra ---------------//
 			if(isset($_GET['search'])){
 
-				$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
+				$sql = "SELECT * FROM livros WHERE titulo_livro LIKE ('%$search%')";
 				$result = mysqli_query($conexao,$sql);
 
 				while($linha = mysqli_fetch_array($result)){
@@ -160,7 +160,7 @@ $search = $_GET['search'] ?? "";
 					<?php 
 
 					//--------------- Busca o Livro ---------------//
-					$sql = "SELECT * FROM livro WHERE titulo_livro LIKE ('%$search%')";
+					$sql = "SELECT * FROM livros WHERE titulo_livro LIKE ('%$search%')";
 					$result = mysqli_query($conexao,$sql);
 
 					while($linha = mysqli_fetch_array($result)){

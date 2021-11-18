@@ -44,34 +44,34 @@ $username = "";
 
 			if(!empty($username) && !empty($email) && !empty($senha) && !empty($confsenha)){
 
-				$u->conectar("check_livros","localhost","root","");
-
+				$conexao = mysqli_connect("localhost","root", "", "check_livros");
+				
 				if($senha == $confsenha){
-
+						
 					if($u->cadastrar($username, $email, $senha)){
 
 						header("Location: CheckLogin.php");
 					}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Email já cadastrado!</p>
-		</div>
-		<?php
+							?>
+							<div class="msg-geral msg-erro">
+								<p>Email já cadastrado!</p>
+							</div>
+							<?php
 					}
 
 				}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Senha e Confirmar Senha não correspondem!</p>
-		</div>
-		<?php
+					?>
+					<div class="msg-geral msg-erro">
+						<p>Senha e Confirmar Senha não correspondem!</p>
+					</div>
+					<?php
 				}
 			}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Preencha todos os campos!</p>
-		</div>
-		<?php
+				?>
+				<div class="msg-geral msg-erro">
+					<p>Preencha todos os campos!</p>
+				</div>
+				<?php
 			}
 		}
 		?>

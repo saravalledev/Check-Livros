@@ -13,7 +13,7 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='CheckLogin.php' class='a-desk'>CONTA</a>";
 						}else{
 							if($type_cont == "adm"){
 								echo "
@@ -23,7 +23,7 @@
 											<a href='adm.php' class='a-desk a-sub'>Administrativa</a>
 										<li>
 										<li>
-											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='sairlog.php' class='a-desk a-sub'>Sair</a>
 										</li>
 									</ul>
 									";
@@ -32,7 +32,7 @@
 									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='sairlog.php' class='a-desk a-sub'>Sair</a>
 										</li>
 									</ul>
 									";
@@ -63,26 +63,26 @@
 					<li>
 						<?php
 						if($username == ""){
-							echo "<a href='cad_log.php' class='a-desk'>CONTA</a>";
+							echo "<a href='CheckLogin.php' class='a-tablets'>CONTA</a>";
 						}else{
 							if($type_cont == "adm"){
 								echo "
-									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<a href='perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='adm.php' class='a-desk a-sub'>Administrativa</a>
+											<a href='adm.php' class='a-tablets'>Administrativa</a>
 										<li>
 										<li>
-											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='sairlog.php' class='a-tablets'>Sair</a>
 										</li>
 									</ul>
 									";
 							}else{
 								echo "
-									<a href='perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+									<a href='perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
 									<ul class='submenu'>
 										<li>
-											<a href='sairlog.php' class='a-desk  a-sub'>Sair</a>
+											<a href='sairlog.php' class='a-tablets'>Sair</a>
 										</li>
 									</ul>
 									";
