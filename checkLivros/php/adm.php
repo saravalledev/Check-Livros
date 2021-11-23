@@ -37,6 +37,7 @@ if($_SESSION['tipo_conta'] != ""){
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Administrador Check Livros</title>
 
+		<script src="https://kit.fontawesome.com/deeb6da8f1.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../css/estilos_gerais.css"/>
 		<link rel="stylesheet" href="../css/estilo_desktop.css"/>
 		<link rel="stylesheet" href="../css/estilo_tablet.css"/>
@@ -114,7 +115,7 @@ if($_SESSION['tipo_conta'] != ""){
 
 				<p>Editora:</p>
 				<input type="text" name="editora">
-				
+
 				<p>Genero do livro:</p>
 				<select name="genero">
 					<option value="cienciashumanas">Ciências humanas</option>
@@ -143,4 +144,5 @@ if($_SESSION['tipo_conta'] != ""){
 		include("footer.php");
 		?>
 	</body>
+	<script type="text/javascript" src="../js/functions.js"></script>
 </html>

@@ -590,6 +590,7 @@ Kaike Santos Coppola
 	}
 
 	/* ----------------- ⬇⬇ adm - página ⬇⬇ -------------------------*/
+	
 	.adm-section {
 		padding: 5% 15%;
 	}
@@ -600,5 +601,35 @@ Kaike Santos Coppola
 		margin-top: 0.9em;
 		margin-bottom: 1.5em;
 	}
-	
+
+	/* ----------------- ⬇⬇ perfil - página ⬇⬇ -------------------------*/
+	.perfil-section {
+		background-image: url(../img/pexels-pixabay-271816.jpg);
+		background-repeat: no-repeat;
+		background-position: 0 35%;
+		background-size: cover;
+		width: 100%;
+		padding: 15%;
+		border-bottom: 0.1em solid #EDB91C;
+		position: relative;
+	}
+	.img-div {
+		display: flex;
+		align-items: flex-end;
+		position: absolute;
+		bottom: 0;
+		left: 2.5%;
+		color: white;
+	}
+	.img-div h1 {
+		margin-bottom: 2%;
+	}
+	.avatar-perfil {
+		width: 13%;
+		height: auto;
+	}
+	.resenhas-produzidas-container, .information-container {
+		padding: 5%;
+	}
+
 }
