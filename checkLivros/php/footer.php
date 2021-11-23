@@ -15,6 +15,7 @@
 					<li><a href="CheckLogin.php" class="a-footer">MINHA CONTA</a></li>
 					<li>
 						<?php
+						//------------------ Verifica a existencia de Usuário logado------------------//
 						if($username == ""){
 							echo "<a href='CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
 						}
@@ -24,6 +25,7 @@
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">
 				<br/>
+				<!------------------ Redes Sociais ------------------>
 				<a href="#"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
 				<a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
 				<a href="#"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;

@@ -11,20 +11,21 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
+	session_start();
+	//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+		if($_SESSION['username'] != ""){
+			$username = $_SESSION['username'];
+		} else {
+			$_SESSION['username'] = "";
+			$username = $_SESSION['username'];
+		}
 
-if($_SESSION['tipo_conta'] != ""){
-	$type_cont = $_SESSION['tipo_conta'];
-}else{
-	$_SESSION['tipo_conta'] = "";
-	$type_cont = $_SESSION['tipo_conta'];
-}
+		if($_SESSION['tipo_conta'] != ""){
+			$type_cont = $_SESSION['tipo_conta'];
+		}else{
+			$_SESSION['tipo_conta'] = "";
+			$type_cont = $_SESSION['tipo_conta'];
+		}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -43,78 +44,78 @@ if($_SESSION['tipo_conta'] != ""){
 
 	<body class="row">
 		<?php include("menu.php");?>
+		<!------------------ Imagens emissoras de paremetros por GET para Gêneros ------------------>
+			<section class="col-s-12 col-m-12 col-12 generos-container">
 
-		<section class="col-s-12 col-m-12 col-12 generos-container">
+				<h2>Gêneros Literários</h2><br/><hr/>
+				<br/><br/>
 
-			<h2>Gêneros Literários</h2><br/><hr/>
-			<br/><br/>
+				<div class="generos-flex">
+					
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Ciências Humanas</p></div>
+					<a href="resultado.php?genero=cienciashumanas">
+						<img src="../img/generos/humanas.jpg"/>
+					</a>
+				</div>
 
-			<div class="generos-flex">
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Ciências Exatas</p></div>
+					<a href="resultado.php?genero=cienciasexatas">
+						<img src="../img/generos/exatas.jpg"/>
+					</a>
+				</div>
+
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Ciências Biológicas</p></div>
+					<a href="resultado.php?genero=cienciasbiologicas">
+						<img src="../img/generos/biologicas.jpg"/>
+					</a>
+				</div>
+
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Literatura Nacional</p></div>
+					<a href="resultado.php?genero=literaturanacional">
+						<img src="../img/generos/MachadoAssisF.jpg"/>
+					</a>
+				</div>
+
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Literatura Infantojuvenil</p></div>
+					<a href="resultado.php?genero=literaturainfantojuvenil">
+						<img src="../img/generos/juvenil.jpg"/>
+					</a>
+				</div>
+
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Literatura Estrangeira</p></div>
+					<a href="resultado.php?genero=literaturaestrangeira">
+						<img src="../img/generos/estrangeira.jpg"/>
+					</a>
+				</div>
 				
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Ciências Humanas</p></div>
-				<a href="resultado.php?genero=cienciashumanas">
-					<img src="../img/generos/humanas.jpg"/>
-				</a>
-			</div>
+				<div class="generos-item">
+					<div class="legenda-genero"><p>HQs e Mangás</p></div>
+					<a href="resultado.php?genero=hqsemangas">
+						<img src="../img/generos/hqs_mangas.jpg"/>
+					</a>
+				</div>
 
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Ciências Exatas</p></div>
-				<a href="resultado.php?genero=cienciasexatas">
-					<img src="../img/generos/exatas.jpg"/>
-				</a>
-			</div>
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Autoajuda</p></div>
+					<a href="resultado.php?genero=autoajuda">
+						<img src="../img/generos/autoajuda.jpg"/>
+					</a>
+				</div>
 
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Ciências Biológicas</p></div>
-				<a href="resultado.php?genero=cienciasbiologicas">
-					<img src="../img/generos/biologicas.jpg"/>
-				</a>
-			</div>
-
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Literatura Nacional</p></div>
-				<a href="resultado.php?genero=literaturanacional">
-					<img src="../img/generos/MachadoAssisF.jpg"/>
-				</a>
-			</div>
-
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Literatura Infantojuvenil</p></div>
-				<a href="resultado.php?genero=literaturainfantojuvenil">
-					<img src="../img/generos/juvenil.jpg"/>
-				</a>
-			</div>
-
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Literatura Estrangeira</p></div>
-				<a href="resultado.php?genero=literaturaestrangeira">
-					<img src="../img/generos/estrangeira.jpg"/>
-				</a>
-			</div>
-			
-			<div class="generos-item">
-				<div class="legenda-genero"><p>HQs e Mangás</p></div>
-				<a href="resultado.php?genero=hqsemangas">
-					<img src="../img/generos/hqs_mangas.jpg"/>
-				</a>
-			</div>
-
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Autoajuda</p></div>
-				<a href="resultado.php?genero=autoajuda">
-					<img src="../img/generos/autoajuda.jpg"/>
-				</a>
-			</div>
-
-			<div class="generos-item">
-				<div class="legenda-genero"><p>Outros Livros</p></div>
-				<a href="resultado.php?genero=outros">
-					<img src="../img/generos/outros.jpg"/>
-				</a>
-			</div>
-			
-			</div>
+				<div class="generos-item">
+					<div class="legenda-genero"><p>Outros Livros</p></div>
+					<a href="resultado.php?genero=outros">
+						<img src="../img/generos/outros.jpg"/>
+					</a>
+				</div>
+				
+				</div>
 
 		</section>
 

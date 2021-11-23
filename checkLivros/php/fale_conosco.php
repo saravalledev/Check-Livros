@@ -11,22 +11,23 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-session_start();
-	if($_SESSION['username'] != ""){
-		$username = $_SESSION['username'];
-	} else {
-		$_SESSION['username'] = "";
-		$username = $_SESSION['username'];
-	}
-	
-	if($_SESSION['tipo_conta'] != ""){
-		$type_cont = $_SESSION['tipo_conta'];
-	}else{
-		$_SESSION['tipo_conta'] = "";
-		$type_cont = $_SESSION['tipo_conta'];
-	}
-	require_once 'CheckUsuarios.php';
-	$u = new Usuario;
+	session_start();
+		//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+			if($_SESSION['username'] != ""){
+				$username = $_SESSION['username'];
+			} else {
+				$_SESSION['username'] = "";
+				$username = $_SESSION['username'];
+			}
+			
+			if($_SESSION['tipo_conta'] != ""){
+				$type_cont = $_SESSION['tipo_conta'];
+			}else{
+				$_SESSION['tipo_conta'] = "";
+				$type_cont = $_SESSION['tipo_conta'];
+			}
+		require_once 'CheckUsuarios.php';
+		$u = new Usuario;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -48,67 +49,71 @@ session_start();
 
 		<section class="col-s-12 col-m-12 col-12 contato-container fade" id="contato-container">
 			<?php
-			if(isset($_POST['enviar_form1'])){
-				$nome = addslashes($_POST['nome1']);
-				$email = addslashes($_POST['email1']);
-				$genero = addslashes($_POST['genero']);
-				$sugestao = addslashes($_POST['sugestao']);
+			//------------------ Verifica o Cadastro de Sugestões  ------------------//
+				if(isset($_POST['enviar_form1'])){
+					$nome = addslashes($_POST['nome1']);
+					$email = addslashes($_POST['email1']);
+					$genero = addslashes($_POST['genero']);
+					$sugestao = addslashes($_POST['sugestao']);
 
-				if(!empty($nome) && !empty($email) && !empty($sugestao)){
-					$u->conectar("check_livros","localhost","root","");
-					//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
-					if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
-			?>
-			<div class="msg-geral msg-sucesso">
-				<p>Sugestão enviada com sucesso :)</p>
-			</div>
-			<?php
+					if(!empty($nome) && !empty($email) && !empty($sugestao)){
+						
+						require("conexao.php");
+						
+						if($u->cad_sugestao($nome, $email, $genero, $sugestao)){
+							?>
+							<div class="msg-geral msg-sucesso">
+								<p>Sugestão enviada com sucesso :)</p>
+							</div>
+							<?php
+						}else{
+							?>
+							<div class="msg-geral msg-erro">
+								<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
+							</div>
+							<?php
+						}
 					}else{
-			?>
-			<div class="msg-geral msg-erro">
-				<p>Perdão, erro ao enviar sua sugestão. Envie novamente mais tarde, por gentileza!</p>
-			</div>
-			<?php
+						?>
+						<div class="msg-geral msg-erro">
+							<p>Preencha todos os campos!</p>
+						</div>
+						<?php
 					}
-				}else{
-			?>
-			<div class="msg-geral msg-erro">
-				<p>Preencha todos os campos!</p>
-			</div>
-			<?php
 				}
-			}
 
-			if(isset($_POST['enviar_form2'])){
-				$nome = addslashes($_POST['nome2']);
-				$email = addslashes($_POST['email2']);
-				$feedback = addslashes($_POST['feedback']);
+			//------------------ Verifica o Cadastro de FeedBacks  ------------------//
+				if(isset($_POST['enviar_form2'])){
+					$nome = addslashes($_POST['nome2']);
+					$email = addslashes($_POST['email2']);
+					$feedback = addslashes($_POST['feedback']);
 
-				if(!empty($nome) && !empty($email) && !empty($feedback)){
-					$u->conectar("check_livros","localhost","root","");
-					//Verificaremos se é ele mesmo que está sugerindo?(pelo nome)
-					if($u->cad_feedback($nome, $email, $feedback)){
-			?>
-			<div class="msg-geral msg-sucesso">
-				<p>Feedback enviada com sucesso :)</p>
-			</div>
-			<?php
+					if(!empty($nome) && !empty($email) && !empty($feedback)){
+						
+						require("conexao.php");
+
+						if($u->cad_feedback($nome, $email, $feedback)){
+								?>
+								<div class="msg-geral msg-sucesso">
+									<p>Feedback enviado com sucesso :)</p>
+								</div>
+								<?php
+						}else{
+							?>
+							<div class="msg-geral msg-erro">
+								<p>Perdão, erro ao enviar seu feedback. Envie novamente mais tarde, por gentileza!</p>
+							</div>
+							<?php
+						}
 					}else{
-			?>
-			<div class="msg-geral msg-erro">
-				<p>Perdão, erro ao enviar seu feedback. Envie novamente mais tarde, por gentileza!</p>
-			</div>
-			<?php
+						?>
+						<div class="msg-geral msg-erro">
+							<p>Preencha todos os campos!</p>
+						</div>
+						<?php
 					}
-				}else{
-			?>
-			<div class="msg-geral msg-erro">
-				<p>Preencha todos os campos!</p>
-			</div>
-			<?php
 				}
-			}
-			?>
+				?>
 			<h2>Em que podemos ajudar ?</h2><br/><hr/>
 			<br/><br/>
 			<div class="sugerir-div" onclick="enableContactForm(1)">
@@ -137,53 +142,55 @@ session_start();
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1>Sugestão de livros</h1><br/><br/>
 
-			<form action="fale_conosco.php" method="post">
+			<!------------------ Formulário de Cadastro de Sugestões ------------------>
+				<form action="fale_conosco.php" method="post">
 
-				<p>Nome:<p>
-				<input type="text" name="nome1" placeholder="Nome completo" required>
+					<p>Nome:<p>
+					<input type="text" name="nome1" placeholder="Nome completo" required>
 
-				<p>E-mail:</p>
-				<input type="email" name="email1" placeholder="E-mail" required>
+					<p>E-mail:</p>
+					<input type="email" name="email1" placeholder="E-mail" required>
 
-				<p>Gênero do livro:</p>
-				<select name="genero">
-					<option>Ciências Humanas e sociais</option>
-					<option>Ciências Exatas</option>
-					<option>Ciências Biológicas</option>
-					<option>Literatura Estrangeira</option>
-					<option>Literatura Infantojuvenil</option>
-					<option>Literatura Nacional</option>
-					<option>Autoajuda</option>
-					<option>HQs</option>
-					<option>Outros</option>
-				</select>
+					<p>Gênero do livro:</p>
+					<select name="genero">
+						<option value="cienciashumanas">Ciências Humanas e sociais</option>
+						<option value="cienciasexatas">Ciências Exatas</option>
+						<option value="cienciasbiologicas">Ciências Biológicas</option>
+						<option value="literaturaestrangeira">Literatura Estrangeira</option>
+						<option value="literaturainfantojuvenil">Literatura Infantojuvenil</option>
+						<option value="literaturanacional">Literatura Nacional</option>
+						<option value="autoajuda">Autoajuda</option>
+						<option value="hqsemangas">HQs</option>
+						<option value="outros">Outros</option>
+					</select>
 
-				<p>Sugestão de livro:<p>
-				<input type="text" name="sugestao" placeholder="Nome do livro" required>
+					<p>Sugestão de livro:<p>
+					<input type="text" name="sugestao" placeholder="Nome do livro" required>
 
-				<input type="submit" value="Enviar" name="enviar_form1">
+					<input type="submit" value="Enviar" name="enviar_form1">
 
-			</form>
+				</form>
 		</section>
 
 		<section class="col-s-12 col-m-12 col-12 form-container fade" id="form-2">
 			<button class="voltar-btn" onclick="enableContactForm(3)"><i class="fas fa-arrow-left"></i></button><br/>
 			<h1>Críticas e elogios</h1><br/><br/>
 
-			<form action="fale_conosco.php" method="post">
+			<!------------------ Formulário de Cadastro de FeedBacks ------------------>
+				<form action="fale_conosco.php" method="post">
 
-				<p>Nome:</p>
-				<input type="text" name="nome2" placeholder="Nome completo" required>
+					<p>Nome:</p>
+					<input type="text" name="nome2" placeholder="Nome completo" required>
 
-				<p>E-mail:</p>
-				<input type="email" name="email2" placeholder="E-mail" required>
+					<p>E-mail:</p>
+					<input type="email" name="email2" placeholder="E-mail" required>
 
-				<p>Feedback:</p>
-				<textarea name="feedback" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
+					<p>Feedback:</p>
+					<textarea name="feedback" placeholder="Escreva sua crítica ou elogio" rows="10" required></textarea>
 
-				<input type="submit" value="Enviar" name="enviar_form2">
+					<input type="submit" value="Enviar" name="enviar_form2">
 
-			</form>
+				</form>
 		</section>
 
 		<?php include("footer.php"); ?>

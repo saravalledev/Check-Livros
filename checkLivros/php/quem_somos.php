@@ -12,19 +12,20 @@ Kaike Santos Coppola
 ----------------------------------------------------------------------------------------------------------->
 <?php
 	session_start();
-	if($_SESSION['username'] != ""){
-		$username = $_SESSION['username'];
-	} else {
-		$_SESSION['username'] = "";
-		$username = $_SESSION['username'];
-	}
-	
-	if($_SESSION['tipo_conta'] != ""){
-		$type_cont = $_SESSION['tipo_conta'];
-	}else{
-		$_SESSION['tipo_conta'] = "";
-		$type_cont = $_SESSION['tipo_conta'];
-	}
+	//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+		if($_SESSION['username'] != ""){
+			$username = $_SESSION['username'];
+		} else {
+			$_SESSION['username'] = "";
+			$username = $_SESSION['username'];
+		}
+		
+		if($_SESSION['tipo_conta'] != ""){
+			$type_cont = $_SESSION['tipo_conta'];
+		}else{
+			$_SESSION['tipo_conta'] = "";
+			$type_cont = $_SESSION['tipo_conta'];
+		}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
