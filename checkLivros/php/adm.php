@@ -1,20 +1,18 @@
 <!------------------------------------------------------------------------------------------------------
 Nome do projeto: Check Livros
 Descrição: 
-
 Autores:
-
 Turma: 3TID
 Matheus Felix Carlos                                                         Versão: 1.0                    
 Hebert Victor Saravalle                                                      Data:20/06/21
 Kaike Santos Coppola 
-
 ----------------------------------------------------------------------------------------------------------->
 <?php
 require_once 'CheckUsuarios.php';
 $u = new Usuario;
 
 session_start();
+//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
 if($_SESSION['username'] != ""){
 	$username = $_SESSION['username'];
 } else {
@@ -44,12 +42,11 @@ if($_SESSION['tipo_conta'] != ""){
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 	<body class="row">
-		<?php 
-		include("menu.php");
-		?>
+		<?php include("menu.php");	?>
+
 		<section class="col-s-12 col-m-12 col-s-12 adm-section">
 			<?php
-
+			//------------------ Verifica o Cadastro de livros ------------------//
 			if (isset ($_POST["Cadastrar"])) {
 
 				$titulo= addslashes($_POST['titulo']);
@@ -57,12 +54,11 @@ if($_SESSION['tipo_conta'] != ""){
 				$editora= addslashes($_POST['editora']);
 				$ano_publi= addslashes($_POST['ano_publi']);
 				$genero= addslashes($_POST['genero']);
+				$img_capa = "../img/capa_livro/".$_POST['img'];
 
-				//echo $titulo, $autor, $editora, $ano_publi, $genero;
-				if(!empty($titulo) && !empty($autor) && !empty($editora) && !empty($ano_publi) && !empty($genero)){ 
+				if(!empty($titulo) && !empty($autor) && !empty($editora) && !empty($ano_publi) && !empty($img_capa) && !empty($genero)){ 
+
 					$conexao= mysqli_connect("localhost","root","","check_livros");
-
-					//echo "ok";
 					$sql = "SELECT * FROM livros";
 					$result = mysqli_query($conexao,$sql);
 
@@ -75,8 +71,8 @@ if($_SESSION['tipo_conta'] != ""){
 			</div>
 			<?php
 						}else{
-							//echo "ok";
-							if($u->cad_livro($titulo, $autor, $editora, $ano_publi, $genero)){
+
+							if($u->cad_livro($titulo, $autor, $editora, $ano_publi, $img_capa, $genero)){
 
 			?>
 			<div class="msg-geral msg-sucesso">
@@ -86,11 +82,13 @@ if($_SESSION['tipo_conta'] != ""){
 							}else{
 			?>
 			<div class="msg-geral msg-erro">
-				<p>Email já cadastrado!</p>
+				<p>Livro já cadastrado! Tente outra obra...   :)</p>
 			</div>
 			<?php
 							}
 						}
+						break;
+
 					}
 				}else{
 			?>
@@ -105,6 +103,7 @@ if($_SESSION['tipo_conta'] != ""){
 			<h2>Cadastrar Livros</h2><br/><hr/>
 			<br/><br/>
 
+			<!------------------ Formulario de cadastro de livros  ------------------>
 			<form name="form-adm" method="POST">
 
 				<p>Título do livro:</p>
