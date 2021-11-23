@@ -11,20 +11,21 @@ Kaike Santos Coppola
 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
+	session_start();
+	//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+		if($_SESSION['username'] != ""){
+			$username = $_SESSION['username'];
+		} else {
+			$_SESSION['username'] = "";
+			$username = $_SESSION['username'];
+		}
 
-if($_SESSION['tipo_conta'] != ""){
-	$type_cont = $_SESSION['tipo_conta'];
-}else{
-	$_SESSION['tipo_conta'] = "";
-	$type_cont = $_SESSION['tipo_conta'];
-}
+		if($_SESSION['tipo_conta'] != ""){
+			$type_cont = $_SESSION['tipo_conta'];
+		}else{
+			$_SESSION['tipo_conta'] = "";
+			$type_cont = $_SESSION['tipo_conta'];
+		}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -56,32 +57,33 @@ if($_SESSION['tipo_conta'] != ""){
 					<li><a href="php/quem_somos.php" class="a-desk">SOBRE</a></li>
 					<li>
 						<?php
-						if($username == ""){
-							echo "<a href='php/CheckLogin.php' class='a-desk'>CONTA</a>";
-						}else{
-							if($type_cont == "adm"){
-								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
-									<ul class='submenu'>
-										<li>
-											<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
-										<li>
-										<li>
-											<a href='php/sairlog.php' class='a-desk a-sub'>Sair</a>
-										</li>
-									</ul>
-									";
+						//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+							if($username == ""){
+								echo "<a href='php/CheckLogin.php' class='a-desk'>CONTA</a>";
 							}else{
-								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
-									<ul class='submenu'>
-										<li>
-											<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
-										</li>
-									</ul>
-									";
+								if($type_cont == "adm"){
+									echo "
+										<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+										<ul class='submenu'>
+											<li>
+												<a href='php/adm.php' class='a-desk a-sub'>Administrativa</a>
+											<li>
+											<li>
+												<a href='php/sairlog.php' class='a-desk a-sub'>Sair</a>
+											</li>
+										</ul>
+										";
+								}else{
+									echo "
+										<a href='php/perfil.php' id='a-1-sub' class='a-desk'>Olá, ".$username."</a>
+										<ul class='submenu'>
+											<li>
+												<a href='php/sairlog.php' class='a-desk  a-sub'>Sair</a>
+											</li>
+										</ul>
+										";
+								}
 							}
-						}
 						?>
 					</li>
 					<li class="search-container">
@@ -106,32 +108,33 @@ if($_SESSION['tipo_conta'] != ""){
 					<li><a href="php/quem_somos.php" class="a-tablets">SOBRE</a></li>
 					<li>
 						<?php
-						if($username == ""){
-							echo "<a href='php/CheckLogin.php' class='a-tablets'>CONTA</a>";
-						}else{
-							if($type_cont == "adm"){
-								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
-									<ul class='submenu'>
-										<li>
-											<a href='php/adm.php' class='a-tablets'>Administrativa</a>
-										<li>
-										<li>
-											<a href='php/sairlog.php' class='a-tablets'>Sair</a>
-										</li>
-									</ul>
-									";
+						//------------------ Verifica a Existencia de Usernames ou Tipo de Conta ------------------//
+							if($username == ""){
+								echo "<a href='php/CheckLogin.php' class='a-tablets'>CONTA</a>";
 							}else{
-								echo "
-									<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
-									<ul class='submenu'>
-										<li>
-											<a href='php/sairlog.php' class='a-tablets'>Sair</a>
-										</li>
-									</ul>
-									";
+								if($type_cont == "adm"){
+									echo "
+										<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
+										<ul class='submenu'>
+											<li>
+												<a href='php/adm.php' class='a-tablets'>Administrativa</a>
+											<li>
+											<li>
+												<a href='php/sairlog.php' class='a-tablets'>Sair</a>
+											</li>
+										</ul>
+										";
+								}else{
+									echo "
+										<a href='php/perfil.php' id='a-1-sub' class='a-tablets'>Olá, ".$username."</a>
+										<ul class='submenu'>
+											<li>
+												<a href='php/sairlog.php' class='a-tablets'>Sair</a>
+											</li>
+										</ul>
+										";
+								}
 							}
-						}
 						?>
 					</li>
 				</ul>
@@ -247,14 +250,16 @@ if($_SESSION['tipo_conta'] != ""){
 					<li><a href="php/CheckLogin.php" class="a-footer">MINHA CONTA</a></li>
 					<li>
 						<?php
-						if($username == ""){
-							echo "<a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
-						}
+						//------------------ Verifica a Existencia de Usernames ------------------//
+							if($username == ""){
+								echo "<a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
+							}
 						?>
 					</li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">
+				<!------------------ Redes Sociais ------------------>
 				<br/>
 				<a href="#"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
 				<a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
