@@ -495,7 +495,7 @@ Kaike Santos Coppola
 	/* --------------- ⬇⬇ Estilos cadastro - login ⬇⬇ -----------------------*/
 
 	.cad-section {
-		padding: 5% 20%;
+		padding: 2.5% 20%;
 	}
 	.cad-div {
 		border: 0.1em solid #edb91c;
@@ -527,6 +527,9 @@ Kaike Santos Coppola
 		background-color: rgba(202, 63, 63, 0.287);
 		color: rgb(255, 47, 47);
 		border: 0.1em solid rgb(218, 3, 3);
+	}
+	.img-cad {
+		width: 13%;
 	}
 
 	/* ----------------- ⬇⬇ Resultados ⬇⬇ -------------------------*/
