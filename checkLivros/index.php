@@ -87,7 +87,7 @@ Kaike Santos Coppola
 						?>
 					</li>
 					<li class="search-container">
-						<form action="php/resultado.php" method="GET">
+						<form action="php/livros.php" method="GET">
 							<input type="text" placeholder="Buscar livros..." name="search">
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
@@ -99,7 +99,7 @@ Kaike Santos Coppola
 				<a href="index.php" class="nav-mobile-logo" style="padding: 0;"><img src="img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li class="search-container">
-						<form action="php/resultado.php" method="get">
+						<form action="php/livros.php" method="get">
 							<input type="text" placeholder="Buscar livros..." name="search">
 						</form>
 					</li>
@@ -148,17 +148,17 @@ Kaike Santos Coppola
 			<div class="slideshow-container">
 
 				<div class="mySlides fade">
-					<img src="img/entretenimento.jpg">
-					<div class="legenda-slide">
-						<h1>Entretenimento e Conhecimento</h1>
-						<i class="fas fa-check icon-slide"></i>
-					</div>
-				</div>
-
-				<div class="mySlides fade">
 					<img src="img/cafe.jpg">
 					<div class="legenda-slide">
 						<h1>Tranquilidade na hora de conhecer livros</h1>
+						<i class="fas fa-check icon-slide"></i>
+					</div>
+				</div>
+				
+					<div class="mySlides fade">
+					<img src="img/entretenimento.jpg">
+					<div class="legenda-slide">
+						<h1>Entretenimento e Conhecimento</h1>
 						<i class="fas fa-check icon-slide"></i>
 					</div>
 				</div>
@@ -186,12 +186,12 @@ Kaike Santos Coppola
 			<div class="beneficios-container">
 
 				<div class="beneficios-itens">
-					<h2>Por Que Check Livros ?</h2><br/>
-					<p>Em razão do grande número de livros publicados, torna-se difícil a escolha de um bom exemplar. Sendo assim, surge a plataforma Check Livros com a finalidade de ajudar os leitores durante a busca por um bom livro e para promover a interação entre a comunidade literária.</p>
+					<h2>Caro Leitor</h2><br/>
+					<p>Temos muita empatia com aqueles que apreciam uma boa leitura ou querem conhecer mais livros, independente da sua motivação. Nós, da Check Livros, estamos aqui para auxiliá-los nessa jornada. Neste site disponibilizamos diversas resenhas dos mais variados livros para todos os gostos. É resenha que não acaba mais. Todas são produzidas por nossa comunidade de grandes leitores e escritores como você. </p>
 				</div>
 				<div class="beneficios-itens">
-					<h2>Quem Somos</h2><br/>
-					<p>A história do Check Livros começou em 2021 e desde então os desenvolvedores, Hebert, Matheus e Kaike, enfrentaram diversos desafios na construção deste magnífico portal de resenhas. De começo, os estudantes de Tecnologia da Informação (TI) foram assolados pela terrível ...</p>
+					<h2>Por Que Check Livros ?</h2><br/>
+					<p>Promovendo a interação entre a comunidade literária brasileira, a partir do entendimento sobre os livros pertencentes aos presentes gêneros literários, surge o Check Livros, que tem como objetivo facilitar a vida do leitor a fim de otimizar o tempo para o conhecimento e consumo de livros. E a melhor forma de fazer isso é através de boas resenhas.</p>
 				</div>
 			</div>
 			<br/>
@@ -219,16 +219,16 @@ Kaike Santos Coppola
 			<h1>Tutorial</h1><br/><br/>
 			<div class="tutorial-container">
 				<div class="tutorial-item">
-					<h2>Passo 1 -</h2><br/>
-					<p>É necessário ter um cadastro e estar logado no Check Livros para poder avaliar e publicar novas resenhas. <a href="php/cad_log.php">Saiba mais...</a></p>
+					<h2>Cadastra-se</h2><br/>
+					<p>Possuir um cadastro e estar efetivamente logado é obrigatório caso queira inserir novas resenhas. No menu superior, clique na aba <a href="php/CheckLogin.php">conta</a> e faça parte agora da nossa esplêndida comunidade de leitores brasileiros. </p>
 				</div>
 				<div class="tutorial-item">
-					<h2>Passo 2 -</h2><br/>
-					<p>Caso você não saiba o livro que deseja consultar, visite nossa página de <a href="php/generos.php">Gêneros</a> literários para explorar os mais diversos assuntos</p>
+					<h2>Leia</h2><br/>
+					<p>Os livros encontram-se na aba <a href="php/generos.php">gêneros</a>, separados em 9 categorias, as quais estão as respectivas resenhas e informações sobre os livros, acesse-a para encontrar o  exemplar de sua escolha. </p>
 				</div>
 				<div class="tutorial-item">
-					<h2>Passo 3 -</h2><br/>
-					<p>Para reclamações, sugestôes ou elogios sobre nossa plataforma, entre em contato através de nossa página <a href="php/fale_conosco.php">Fale conosco</a></p>
+					<h2>Escreva</h2><br/>
+					<p>Após estar logado e conectado, crie uma resenha. Partindo da aba gêneros, escolha um gênero literário ou realize a busca por algum livro, clique na respectiva capa e crie sua resenha ou avalie outras já existentes. </p>
 				</div>
 			</div>
 		</section>

@@ -101,13 +101,13 @@ $username = "";
 				<form method="POST" action="">
 
 					<p>Nome de usuário:</p>
-					<input type="text" required min="3" name="username">
+					<input type="text" required min="3" name="username" placeholder="Digite no mínimo 3 letras ou números">
 
 					<p>E-mail:</p>
-					<input type="email" name="email">
+					<input type="email" name="email"  placeholder="Digite um email válido">
 
 					<p>Senha:</p>
-					<input type="password" id="pwd" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="32">
+					<input type="password" id="pwd" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="32" placeholder="letras maiúsculas, minúsculas e números">
 
 					<p>Confirmar senha:</p>
 					<input type="password" id="S3" name="confsenha">

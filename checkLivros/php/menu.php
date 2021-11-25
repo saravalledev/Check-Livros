@@ -41,7 +41,7 @@
 						?>
 					</li>
 					<li class="search-container">
-						<form action="resultado.php" method="GET">
+						<form action="livros.php" method="GET">
 							<input type="text" placeholder="Buscar livros..." name="search">
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
@@ -53,7 +53,7 @@
 				<a href="../index.php" class="nav-mobile-logo" style="padding: 0;"><img src="../img/LogoSemNome.png" style="width: 100%"></a>
 				<ul id="mobileLinks">
 					<li class="search-container">
-						<form action="resultado.php" method="get">
+						<form action="livros.php" method="get">
 							<input type="text" placeholder="Buscar livros..." name="search">
 						</form>
 					</li>

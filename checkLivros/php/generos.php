@@ -54,63 +54,63 @@ Kaike Santos Coppola
 					
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Ciências Humanas</p></div>
-					<a href="resultado.php?genero=cienciashumanas">
+					<a href="livros.php?genero=cienciashumanas">
 						<img src="../img/generos/humanas.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Ciências Exatas</p></div>
-					<a href="resultado.php?genero=cienciasexatas">
+					<a href="livros.php?genero=cienciasexatas">
 						<img src="../img/generos/exatas.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Ciências Biológicas</p></div>
-					<a href="resultado.php?genero=cienciasbiologicas">
+					<a href="livros.php?genero=cienciasbiologicas">
 						<img src="../img/generos/biologicas.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Literatura Nacional</p></div>
-					<a href="resultado.php?genero=literaturanacional">
+					<a href="livros.php?genero=literaturanacional">
 						<img src="../img/generos/MachadoAssisF.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Literatura Infantojuvenil</p></div>
-					<a href="resultado.php?genero=literaturainfantojuvenil">
+					<a href="livros.php?genero=literaturainfantojuvenil">
 						<img src="../img/generos/juvenil.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Literatura Estrangeira</p></div>
-					<a href="resultado.php?genero=literaturaestrangeira">
+					<a href="livros.php?genero=literaturaestrangeira">
 						<img src="../img/generos/estrangeira.jpg"/>
 					</a>
 				</div>
 				
 				<div class="generos-item">
 					<div class="legenda-genero"><p>HQs e Mangás</p></div>
-					<a href="resultado.php?genero=hqsemangas">
+					<a href="livros.php?genero=hqsemangas">
 						<img src="../img/generos/hqs_mangas.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Autoajuda</p></div>
-					<a href="resultado.php?genero=autoajuda">
+					<a href="livros.php?genero=autoajuda">
 						<img src="../img/generos/autoajuda.jpg"/>
 					</a>
 				</div>
 
 				<div class="generos-item">
 					<div class="legenda-genero"><p>Outros Livros</p></div>
-					<a href="resultado.php?genero=outros">
+					<a href="livros.php?genero=outros">
 						<img src="../img/generos/outros.jpg"/>
 					</a>
 				</div>

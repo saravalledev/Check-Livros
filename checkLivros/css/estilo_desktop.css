@@ -166,16 +166,6 @@ Kaike Santos Coppola
 	.container {
 		padding: 5% 15%;
 	}
-	.modal::-webkit-scrollbar {
-		width: 15px;
-	}
-	::-webkit-scrollbar-track {
-		background: white;
-	}
-	::-webkit-scrollbar-thumb {
-		background: #18546E;
-		border-radius: 8px;
-	}
 
 	/* ----------------- ⬇⬇ index - home ⬇⬇ -------------------------*/
 
@@ -530,6 +520,7 @@ Kaike Santos Coppola
 	}
 	.img-cad {
 		width: 13%;
+		margin: 0 43.5%;
 	}
 
 	/* ----------------- ⬇⬇ Resultados ⬇⬇ -------------------------*/
@@ -542,72 +533,30 @@ Kaike Santos Coppola
 		flex-wrap: wrap;
 		justify-content: space-around;
 	}
+	.livro-resultado {
+		display: contents;
+		cursor: pointer;
+	}
 	.resultados-container img {
 		width: 20%;
 		height: auto;
 		margin-bottom: 3%;
 		box-shadow: 0.3125em 0.625em 1.125em #888888;
 	}
-	.livro-resultado {
-		display: contents;
-		cursor: pointer;
-	}
-	.modal_container {
-		display: none; 
-		position: fixed; 
-		z-index: 1;
-		left: 0;
-		top: 0;
-		width: 100%; 
-		height: 100%; 
-		background-color: rgba(0,0,0,0.4); 
-	}
-	.modal {
-		background-color: #fefefe;
-		margin: 5% auto; 
-		overflow: auto;
-		border: 0.1em solid #888;
-		width: 85%; 
-	}
-	.modal-content {
-		padding: 2% 5%;
-	}
-	.modal h3 {
-		text-align: center;
-	}
-	#btn_fechar {
-		position: fixed;
-		right: 4.3%;
-		top: 9.5%;
-		background-color: #EDB91C;
-		color: white;
-		cursor: pointer;
-		border-radius: 10%;
-		font-size: 1.5em;
-		border: 0;
-		padding: 0.3% 1% 0.5% 1%;
-		font-weight: bold;
-	}
-	#btn_fechar:hover {
-		background-color: #ED734C;
-	}
-	.modal_container.mostrar {
+	.resenhas-container {
+		padding: 9% 5%;
 		display: flex;
+		justify-content: space-between;
 	}
-	.div_capa {
-		display: contents;
-		margin: 0 auto;
+	.img-container {
+		width: 35%;
 	}
-	.capa_modal {
-		width: 20%;
+	.img-container img {
+		width: 80%;
 		height: auto;
-		margin: 0 40%;
 	}
-	.dados-livro {
-		background-color: #247BA0;
-		padding: 2%;
-		box-shadow: 0.3125em 0.625em 1.125em #888888;
-		color: white;
+	.resenhas-div {
+		width: 65%;
 	}
 	.resenha-user {
 		background-color: white;
@@ -618,11 +567,14 @@ Kaike Santos Coppola
 	.resenha-user p {
 		text-indent: 0.5em;
 	}
-	.btn_likes {
-		display: contents;
-		border: 0;
-		cursor: pointer;
+	.dados-livro {
+		background-color: #247BA0;
+		width: 80%;
+		padding: 2%;
+		box-shadow: 0.3125em 0.625em 1.125em #888888;
+		color: white;
 	}
+	
 
 	/* ----------------- ⬇⬇ adm - página ⬇⬇ -------------------------*/
 
