@@ -286,7 +286,7 @@ Kaike Santos Coppola
 		background-color: #247ba0;
 		padding: 6% 10% 7% 10%;
 	}
-	.ranking-container h1 {
+	.h1-ranking-container {
 		color: white;
 		text-align: center;
 		margin-bottom: 2%;
@@ -297,6 +297,15 @@ Kaike Santos Coppola
 		padding: 2.5% 5%;
 		display: flex;
 		justify-content: space-between;
+	}
+	.ranking-positions h2 {
+		font-family: Verdana, sans-serif;;
+		font-weight: bold;
+	}
+	.ranking-positions p {
+		font-family: Georgia, serif;
+		font-weight: 400;
+		font-size: 1.2em;
 	}
 	/* -------------------------------- */
 
@@ -574,7 +583,7 @@ Kaike Santos Coppola
 		box-shadow: 0.3125em 0.625em 1.125em #888888;
 		color: white;
 	}
-	
+
 
 	/* ----------------- ⬇⬇ adm - página ⬇⬇ -------------------------*/
 
@@ -596,7 +605,7 @@ Kaike Santos Coppola
 		background-position: 0 35%;
 		background-size: cover;
 		width: 100%;
-	  padding: 15%;
+		padding: 15%;
 		box-shadow: 0.2em 0.1em 2em black;
 		border-bottom: 0.1em solid #EDB91C;
 		position: relative;

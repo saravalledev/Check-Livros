@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Out-2021 às 02:16
+-- Tempo de geração: 26-Nov-2021 às 00:06
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 8.0.9
 
@@ -39,50 +39,48 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id_feedback`, `nome`, `email`, `feedback_site`) VALUES
-(1, 'Eutesto2', 'teste2@teste2.com', 'bom'),
-(2, 'Eutesto3', 'teste3@teste3.com', 'Acho que o Kaike come demais!'),
-(3, 'Eutesto4', 'teste4@teste4.com', 'A YAS FALA DEMAIS');
+(7, 'Eutesto2', 'teste2@teste2.com', 'a'),
+(8, 'Eutesto1', 'teste@teste.com', 'Falta alguma coisa...'),
+(9, 'Eutesto1', 'teste@teste.com', 'Falta alguma coisa...'),
+(10, 'Eutesto2', 'teste2@teste2.com', 'hhhhhhhhhhhhug');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `livro`
+-- Estrutura da tabela `livros`
 --
 
-CREATE TABLE `livro` (
+CREATE TABLE `livros` (
   `id_livro` int(11) NOT NULL,
   `titulo_livro` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `autor` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `editora` varchar(30) COLLATE utf8_bin DEFAULT NULL,
   `ano_publicado` int(4) DEFAULT NULL,
-  `img_href` varchar(50) COLLATE utf8_bin NOT NULL,
-  `genero_livro` varchar(20) COLLATE utf8_bin NOT NULL
+  `img_href` varchar(1000) COLLATE utf8_bin NOT NULL,
+  `genero_livro` varchar(50) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Extraindo dados da tabela `livro`
+-- Extraindo dados da tabela `livros`
 --
 
-INSERT INTO `livro` (`id_livro`, `titulo_livro`, `autor`, `editora`, `ano_publicado`, `img_href`, `genero_livro`) VALUES
-(1, 'Pequeno Príncipe', 'Alguém', 'A melhor editora', 1999, 'foto.jpg', 'juven'),
-(3, 'titulo2', 'autor2', 'editora2', 2, 'foto2.jpg', 'CE'),
-(5, 'Natureza', 'Eu N', 'Eu E', 2021, '../img/capa_livro/img-pequeno-principe.jpg', 'bio'),
-(6, 'A Matemática ', 'Math', 'Ma', 1999, 'fotomat.jpg', 'exat'),
-(7, 'Pantanal', 'Jovam Pan', 'Pan Mérica', 2000, '../img/capa_livro/img-pequeno-principe.jpg', 'bio'),
-(8, 'Arara', 'Joao', 'Jazira', 2001, '../img/capa_livro/img-pequeno-principe.jpg', 'bio'),
-(9, 'Homem Primata', 'John', 'Oracle', 2012, 'fotoHuman.png', 'human');
+INSERT INTO `livros` (`id_livro`, `titulo_livro`, `autor`, `editora`, `ano_publicado`, `img_href`, `genero_livro`) VALUES
+(1, 'O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 'Pé da letra', 1943, '../img/capa_livro/img-pequeno-principe.jpg', 'literaturainfantojuvenil'),
+(10, 'A menina que roubava livros', 'Markus Zusak', 'Presença', 2005, '../img/capa_livro/capa-a-menina-que-roubava-livros.png', 'literaturaestrangeira'),
+(16, 'A Arte da Sabedoria', 'Baltasar Gracián', 'Editora Novo Século', 2020, '../img/capa_livro/capa-a-arte-da-sabedoria.jpg', 'cienciashumanas'),
+(65, 'Dom Quixote', 'Miguel de Cervantes', 'Penguin-Companhia', 2012, '../img/capa_livro/capa-dom-quixote.jpg', 'literaturaestrangeira');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `resenha`
+-- Estrutura da tabela `resenhas`
 --
 
-CREATE TABLE `resenha` (
+CREATE TABLE `resenhas` (
   `id_resenha` int(11) NOT NULL,
-  `id_livro` int(11) DEFAULT NULL,
-  `username` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `resenha` varchar(1000) COLLATE utf8_bin DEFAULT NULL
+  `id_livro` int(11) NOT NULL,
+  `username` varchar(20) COLLATE utf8_bin NOT NULL,
+  `resenha` varchar(1000) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -99,20 +97,6 @@ CREATE TABLE `sugestoes_livros` (
   `sugestoes` varchar(100) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Extraindo dados da tabela `sugestoes_livros`
---
-
-INSERT INTO `sugestoes_livros` (`id_sugestoes`, `nome`, `email`, `genero_livro`, `sugestoes`) VALUES
-(1, 'Eutesto1', 'teste@teste.com', 'HQs', 'DC Origens'),
-(2, 'Eutesto1', 'teste@teste.com', 'Autoajuda', 'Miranha'),
-(3, 'Eutesto1', 'teste@teste.com', 'Autoajuda', 'Miranha'),
-(4, 'Eutesto2', 'teste2@teste2.com', 'Ciências Biológicas', 'Procurando Nemo'),
-(5, 'Eutesto2', 'teste2@teste2.com', 'Literatura Infantoju', 'Marcelinho'),
-(6, 'Eutesto4', 'teste4@teste4.com', 'Ciências Biológicas', 'Bolinhas'),
-(7, 'Eutesto4', 'teste4@teste4.com', 'Ciências Biológicas', 'Bolinhas'),
-(8, 'Eutesto4', 'teste4@teste4.com', 'Ciências Biológicas', 'Bolinhas');
-
 -- --------------------------------------------------------
 
 --
@@ -121,6 +105,7 @@ INSERT INTO `sugestoes_livros` (`id_sugestoes`, `nome`, `email`, `genero_livro`,
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
+  `tipo_conta` varchar(20) COLLATE utf8_bin NOT NULL,
   `username` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `senha` varchar(50) COLLATE utf8_bin DEFAULT NULL
@@ -130,11 +115,9 @@ CREATE TABLE `usuario` (
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `username`, `email`, `senha`) VALUES
-(23, 'Eutesto1', 'teste@teste.com', 'e8ef061c45fbc6b42c1512e7eead4cb7'),
-(24, 'Eutesto2', 'teste2@teste2.com', 'f5307bfce937fe1e76fb7153336ffffa'),
-(25, 'Eutesto3', 'teste3@teste3.com', '327893a3bebce23991becf0b7c78bcbf'),
-(26, 'Eutesto4', 'teste4@teste4.com', '2c51c7409829db0917f996c58ddec45f');
+INSERT INTO `usuario` (`id_usuario`, `tipo_conta`, `username`, `email`, `senha`) VALUES
+(59, 'adm', 'Eutesto1', 'teste@teste.com', 'e8ef061c45fbc6b42c1512e7eead4cb7'),
+(60, '', 'Eutesto2', 'teste2@teste2.com', 'f5307bfce937fe1e76fb7153336ffffa');
 
 --
 -- Índices para tabelas despejadas
@@ -147,15 +130,15 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id_feedback`);
 
 --
--- Índices para tabela `livro`
+-- Índices para tabela `livros`
 --
-ALTER TABLE `livro`
+ALTER TABLE `livros`
   ADD PRIMARY KEY (`id_livro`);
 
 --
--- Índices para tabela `resenha`
+-- Índices para tabela `resenhas`
 --
-ALTER TABLE `resenha`
+ALTER TABLE `resenhas`
   ADD PRIMARY KEY (`id_resenha`);
 
 --
@@ -178,31 +161,31 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id_feedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_feedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de tabela `livro`
+-- AUTO_INCREMENT de tabela `livros`
 --
-ALTER TABLE `livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `livros`
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- AUTO_INCREMENT de tabela `resenha`
+-- AUTO_INCREMENT de tabela `resenhas`
 --
-ALTER TABLE `resenha`
-  MODIFY `id_resenha` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `resenhas`
+  MODIFY `id_resenha` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `sugestoes_livros`
 --
 ALTER TABLE `sugestoes_livros`
-  MODIFY `id_sugestoes` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_sugestoes` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

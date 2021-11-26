@@ -160,16 +160,6 @@ Kaike Santos Coppola
 	.container {
 		padding: 5% 10%;
 	}
-	.modal::-webkit-scrollbar {
-		width: 15px;
-	}
-	::-webkit-scrollbar-track {
-		background: white;
-	}
-	::-webkit-scrollbar-thumb {
-		background: #18546E;
-		border-radius: 8px;
-	}
 
 	/* ----------------- ⬇⬇ index - home ⬇⬇ -------------------------*/
 
@@ -263,6 +253,8 @@ Kaike Santos Coppola
 	}
 	.beneficios-container p {
 		text-align: justify;
+		text-indent: 0.2em;
+		line-height: 1.5em;
 	}
 	.beneficios-itens {
 		width: 50%;
@@ -289,10 +281,10 @@ Kaike Santos Coppola
 		background-color: #247ba0;
 		padding: 10%;
 	}
-	.ranking-container h1 {
+	.h1-ranking-container {
 		color: white;
 		text-align: center;
-		margin-bottom: 4%;
+		margin-bottom: 2%;
 	}
 	.ranking-positions {
 		background-color: white;
@@ -301,6 +293,16 @@ Kaike Santos Coppola
 		display: flex;
 		justify-content: space-between;
 	}
+	.ranking-positions h2 {
+		font-family: Verdana, sans-serif;;
+		font-weight: bold;
+	}
+	.ranking-positions p {
+		font-family: Georgia, serif;
+		font-weight: 400;
+		font-size: 1.1em;
+	}
+	
 	/* -------------------------------- */
 
 	.tutorial-section {
@@ -321,6 +323,14 @@ Kaike Santos Coppola
 		padding: 2%;
 		text-align: justify;
 		margin-bottom: 8%;
+	}
+	.tutorial-item a {
+		font-family: Verdana, sans-serif;
+	}
+	.tutorial-section p, a {
+		text-align: justify;
+		text-indent: 0.3em;
+		line-height: 1.5em;
 	}
 
 	/* ----------------- ⬇⬇ Gêneros de livros ⬇⬇ -------------------------*/

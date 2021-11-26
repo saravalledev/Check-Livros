@@ -200,18 +200,18 @@ Kaike Santos Coppola
 		</section>
 
 		<section class="col-s-12 col-m-12 col-12 ranking-container">
-			<h1>Ranking de Livros</h1><br/>
+			<h1 class="h1-ranking-container">Melhores Livros Nacionais</h1><br/>
 			<div class="ranking-positions">
 				<h2>1º</h2>
-				<p>Lorem ipsum</p>
+				<p>Grande sertão Veredas - João Guimarães Rosa</p>
 			</div><br/>
 			<div class="ranking-positions">
 				<h2>2º</h2>
-				<p>Lorem Ipsum</p>
+				<p>Memórias póstumas de Brás Cubas - Machado de Assis</p>
 			</div><br/>
 			<div class="ranking-positions">
 				<h2>3º</h2>
-				<p>Lorem Ipsum</p>
+				<p>Dom Casmurro - Machado de Assis</p>
 			</div>
 		</section>
 
