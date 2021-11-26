@@ -1,8 +1,9 @@
 <div class="flex-livros">
 	<?php
-
+	
 	//--------------- Busca pelo genero ---------------//
 	if(isset($_GET['genero'])){
+		$_SESSION['genero'] = $_GET['genero'];
 
 		$sql = "SELECT * FROM livros WHERE genero_livro = '$genero'";
 		$result = mysqli_query($conexao,$sql);
@@ -23,7 +24,7 @@
 
 	//--------------- Busca o titulo pela Barra de pesquisa ---------------//
 	if(isset($_GET['search'])){
-
+		$_SESSION['search'] = $_GET['search'];
 		$sql = "SELECT * FROM livros WHERE titulo_livro LIKE ('%$search%')";
 		$result = mysqli_query($conexao,$sql);
 

@@ -77,7 +77,13 @@ $livro = $_GET['livro'];
 				</div>
 			</div>
 			<div class="resenhas-div">
-				<h2>Resenhas</h2><br/><hr/>
+				<h2><a href="livros.php?<?php 
+					if ($_SESSION['genero']) {
+						echo "genero=".$_SESSION['genero'];
+					} else {
+						echo "search=".$_SESSION['search'];
+					}
+					?>" style="color: black;"><i class="fas fa-arrow-left"></i></a>&nbsp;&nbsp;Resenhas</h2><br/><hr/>
 				<br/>
 
 				<div class="div_nova_resenha">

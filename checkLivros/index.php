@@ -203,7 +203,7 @@ Kaike Santos Coppola
 			<h1>Ranking de Livros</h1><br/>
 			<div class="ranking-positions">
 				<h2>1º</h2>
-				<p>Lorem Ipsum</p>
+				<p>Lorem ipsum</p>
 			</div><br/>
 			<div class="ranking-positions">
 				<h2>2º</h2>
@@ -247,23 +247,22 @@ Kaike Santos Coppola
 					<li><a href="php/fale_conosco.php" class="a-footer">CONTATO</a></li>
 				</ul>
 				<ul>
-					<li><a href="php/CheckLogin.php" class="a-footer">MINHA CONTA</a></li>
-					<li>
 						<?php
 						//------------------ Verifica a Existencia de Usernames ------------------//
 							if($username == ""){
-								echo "<a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a>";
+								echo "<li> <a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a> </li>";
+							}else{
+								echo "<li><a href='php/perfil.php' class='a-footer'>MINHA CONTA</a></li>";
 							}
 						?>
-					</li>
 				</ul>
 			</nav>
 			<aside class="col-s-12 col-m-12 col-4 redes-container">
 				<!------------------ Redes Sociais ------------------>
 				<br/>
-				<a href="#"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
-				<a href="#"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
+				<a href="https://www.facebook.com/Check-Livros-100464832481149"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;
+				<a href="https://instagram.com/check.livros?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;
+				<a href="https://www.linkedin.com/in/check-livros-719a5a226/"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
 				<a href="https://github.com/Kira01010110/Check-Livros.git"><i class="fab fa-github"></i></a>
 			</aside>
 		</footer>
