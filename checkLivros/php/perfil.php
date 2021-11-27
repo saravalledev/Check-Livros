@@ -58,22 +58,20 @@ if($_SESSION['tipo_conta'] != ""){
 				<?php
 				
 					if($type_cont == ""){
-						echo "Conta: Usuário <br><br>";
+						echo "<p>Conta: Usuário</p> <br/>";
 					}else{
-						echo "Conta: Administradora <br><br>";
+						echo "<p>Conta: Administradora</p> <br/>";
 					}
 					$sql = "SELECT * FROM usuario WHERE username = '$username'";
 					$result = mysqli_query($conexao,$sql);
 
 					while($linha = mysqli_fetch_array($result)){
 					
-						echo "Username: ".$linha['username']."<br>";
-						echo "Email: ".$linha['email']."<br>";
+						echo "<p>Username: ".$linha['username']."</p><br>";
+						echo "<p>Email: ".$linha['email']."</p><br>";
 						
 					}
 				?>
-			
-				<br/><br/>
 			</section>
 			<section class="col-s-12 col-m-8 col-8 resenhas-produzidas-container">
 
