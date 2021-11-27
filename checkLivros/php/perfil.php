@@ -41,7 +41,10 @@ if($_SESSION['tipo_conta'] != ""){
 		<link rel="stylesheet" href="../css/estilo_mobile.css"/>
 	</head>
 	<body>
-		<?php include("menu.php")?>
+		<?php 
+			include("menu.php"); 
+			require("conexao.php");
+		?>
 		<section class="col-s-12 col-m-12 col-12 perfil-section"> 
 			<div class="img-div">
 				<img src="../img/avatarP.png" class="avatar-perfil" alt="avatar ícone"/>
@@ -51,15 +54,48 @@ if($_SESSION['tipo_conta'] != ""){
 
 		<div class="row">
 			<section class="col-s-12 col-m-4 col-4 information-container">
-				<h2>Informações</h2><br/><hr/>
+				<h2>Informações</h2><br/><hr/><br>
+				<?php
+				
+					if($type_cont == ""){
+						echo "Conta: Usuário <br><br>";
+					}else{
+						echo "Conta: Administradora <br><br>";
+					}
+					$sql = "SELECT * FROM usuario WHERE username = '$username'";
+					$result = mysqli_query($conexao,$sql);
+
+					while($linha = mysqli_fetch_array($result)){
+					
+						echo "Username: ".$linha['username']."<br>";
+						echo "Email: ".$linha['email']."<br>";
+						
+					}
+				?>
+			
 				<br/><br/>
 			</section>
 			<section class="col-s-12 col-m-8 col-8 resenhas-produzidas-container">
-				<h2>Suas resenhas</h2><br/><hr/>
+
+				<h2>Suas resenhas</h2><br/><hr/><br>
+				<?php 
+				$sql = "SELECT resenha FROM resenhas WHERE username = '$username'";
+				$result = mysqli_query($conexao, $sql);
+
+				while($linha = mysqli_fetch_array($result)){
+					?>
+					<div class="resenha-user">
+						<?php
+						echo "<p>".$linha['resenha']."</p><br/>";
+						?>
+					</div>
+					<br/><br/>
+					<?php
+				}
+				?>
 				<br/><br/>
 				
-				<!-- php vem aqui embaixo (tirar os brs) -->
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				
 			</section>
 		</div>
 

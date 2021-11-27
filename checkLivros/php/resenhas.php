@@ -50,11 +50,12 @@ $livro = $_GET['livro'];
 	</head>
 	<body class="row">
 		<?php 
-	include("menu.php");
+			include("menu.php");
 			require("conexao.php");
 
 			$sql = "SELECT * FROM livros WHERE titulo_livro = '$livro'";
 			$result = mysqli_query($conexao,$sql);
+
 			while($linha = mysqli_fetch_array($result)){
 				$autor = $linha['autor'];
 				$editora = $linha['editora'];
@@ -96,7 +97,7 @@ $livro = $_GET['livro'];
 						<?php  
 						echo "<h2>@".$username."</h2>";
 						?>
-						<textarea type="text" required rows="10" name="nova_resenha"></textarea>
+						<textarea type="text" required rows="10" name="nova_resenha" placeholder="Escreva o título do livro antes de iniciar sua Resenha, por gentileza:"></textarea>
 						<input type="submit" name="Publicar" value="Publicar">
 						<br/><br/><br/>
 						<hr/><br/>
