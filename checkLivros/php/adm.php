@@ -58,44 +58,44 @@ if($_SESSION['tipo_conta'] != ""){
 
 				if(!empty($titulo) && !empty($autor) && !empty($editora) && !empty($ano_publi) && !empty($img_capa) && !empty($genero)){ 
 
-					$conexao= mysqli_connect("localhost","root","","check_livros");
+				    require("conexao.php");
 					$sql = "SELECT * FROM livros";
 					$result = mysqli_query($conexao,$sql);
 
 					while($linha = mysqli_fetch_array($result)){
 
 						if ($linha['titulo_livro'] == $titulo) {
-			?>
-			<div class="msg-erro msg-geral ">
-				<p>Livro já cadastrado. <br>Por favor, insira outro livro ;)</p>
-			</div>
-			<?php
+                			?>
+                			<div class="msg-erro msg-geral ">
+                				<p>Livro já cadastrado. <br>Por favor, insira outro livro ;)</p>
+                			</div>
+                			<?php
 						}else{
 
 							if($u->cad_livro($titulo, $autor, $editora, $ano_publi, $img_capa, $genero)){
 
-			?>
-			<div class="msg-geral msg-sucesso">
-				<p>Livro cadastrado com sucesso!<br> Agora é só aproveitar SZ</p>
-			</div>
-			<?php
-							}else{
-			?>
-			<div class="msg-geral msg-erro">
-				<p>Livro já cadastrado! Tente outra obra...   :)</p>
-			</div>
-			<?php
-							}
+                    			?>
+                    			<div class="msg-geral msg-sucesso">
+                    				<p>Livro cadastrado com sucesso!<br> Agora é só aproveitar SZ</p>
+                    			</div>
+                    			<?php
+    							}else{
+                        			?>
+                        			<div class="msg-geral msg-erro">
+                        				<p>Livro já cadastrado! Tente outra obra...   :)</p>
+                        			</div>
+                        			<?php
+							    }
 						}
 						break;
 
 					}
 				}else{
-			?>
-			<div class="msg-erro msg-geral ">
-				<p>Preencha todos os campos, por gentileza!</p>
-			</div>
-			<?php
+        			?>
+        			<div class="msg-erro msg-geral ">
+        				<p>Preencha todos os campos, por gentileza!</p>
+        			</div>
+        			<?php
 				}
 			}
 
@@ -107,7 +107,7 @@ if($_SESSION['tipo_conta'] != ""){
 			<form name="form-adm" method="POST">
 
 				<p>Título do livro:</p>
-				<input type="text" name="titulo" maxlength="40">
+				<input type="text" name="titulo">
 
 				<p>Autor:</p>
 				<input type="text" name="autor">

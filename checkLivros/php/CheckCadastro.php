@@ -68,27 +68,27 @@ $username = "";
 							header("Location: CheckLogin.php");
 
 						}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Erro ao enviar as informações. <br> Confica o formulário e tente novamente!</p>
-		</div>
-		<?php
+                    		?>
+                    		<div class="msg-geral msg-erro">
+                    			<p>Erro ao enviar as informações. <br> Confica o formulário e tente novamente!</p>
+                    		</div>
+                    		<?php
 						}
 
 					}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Senha e Confirmar Senha não correspondem!</p>
-		</div>
-		<?php
+                		?>
+                		<div class="msg-geral msg-erro">
+                			<p>Senha e Confirmar Senha não correspondem!</p>
+                		</div>
+                		<?php
 					}
 				}
 			}else{
-		?>
-		<div class="msg-geral msg-erro">
-			<p>Preencha todos os campos!</p>
-		</div>
-		<?php
+        		?>
+        		<div class="msg-geral msg-erro">
+        			<p>Preencha todos os campos!</p>
+        		</div>
+        		<?php
 			}
 		}
 		?>

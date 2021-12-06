@@ -47,8 +47,7 @@ if($_SESSION['tipo_conta'] != ""){
 		?>
 		<section class="col-s-12 col-m-12 col-12 perfil-section"> 
 			<div class="img-div">
-				<img src="../img/avatarP.png" class="avatar-perfil" alt="avatar ícone"/>
-				<h1>&nbsp;&nbsp;&nbsp;<?php echo "@".$username; ?></h1>
+				<h1><?php echo "@".$username; ?></h1>
 			</div> 
 		</section>
 

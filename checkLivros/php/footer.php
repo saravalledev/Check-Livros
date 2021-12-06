@@ -15,9 +15,9 @@
 					<?php
 						//------------------ Verifica a Existencia de Usernames ------------------//
 							if($username == ""){
-								echo "<li> <a href='php/CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a> </li>";
+								echo "<li> <a href='CheckLogin.php' class='a-footer'>CADASTRO | LOGIN</a> </li>";
 							}else{
-								echo "<li><a href='php/perfil.php' class='a-footer'>MINHA CONTA</a></li>";
+								echo "<li><a href='perfil.php' class='a-footer'>MINHA CONTA</a></li>";
 							}
 						?>
 				</ul>

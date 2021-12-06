@@ -52,11 +52,11 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 					$numlinha=mysqli_num_rows($result);
 
 					if ($numlinha <= 0) {
-			?>
-			<div class="msg-erro msg-geral ">
-				<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
-			</div>
-			<?php
+            			?>
+            			<div class="msg-erro msg-geral ">
+            				<p>Email não cadastrado. Cheque o campo, <br>por favor!</p>
+            			</div>
+            			<?php
 					}else{
 						while ($linha = mysqli_fetch_array($result)){
 
@@ -68,20 +68,20 @@ https://www.youtube.com/watch?v=et-j0z-tbk4&list=PLYGFJHWj9BYq5zosbRaY7XM5vM0ISL
 								header("location: ../index.php");
 
 							}else{ 
-			?>
-			<div class="msg-erro msg-geral ">
-				<p>Falha no login. Senha incorreta ou vazia...</p>
-			</div>
-			<?php
+                    			?>
+                    			<div class="msg-erro msg-geral ">
+                    				<p>Falha no login. Senha incorreta ou vazia...</p>
+                    			</div>
+                    			<?php
 							}
 						}
 					}
 				}else{
-			?>
-			<div class="msg-erro msg-geral ">
-				<p>Preencha todos os campos, por gentileza!</p>
-			</div>
-			<?php
+        			?>
+        			<div class="msg-erro msg-geral ">
+        				<p>Preencha todos os campos, por gentileza!</p>
+        			</div>
+        			<?php
 				}
 			}
 			?>

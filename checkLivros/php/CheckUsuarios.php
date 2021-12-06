@@ -31,7 +31,7 @@ Class Usuario{
 	//------------------ Cadastrar Sugestão de Livros  ------------------//
 		function cad_sugestao($nome, $email, $genero, $sugestao){
 		
-		$conexao = mysqli_connect("localhost","root", "", "check_livros");
+	    require('conexao.php');
 		$sql = "INSERT INTO sugestoes_livros (nome, email, genero_livro, sugestoes) VALUE ('$nome', '$email', '$genero', '$sugestao')";
 
 		$result = mysqli_query($conexao, $sql);
@@ -42,9 +42,8 @@ Class Usuario{
 	//------------------ Cadastrar FeedBack  ------------------//
 		function cad_feedback($nome, $email, $feedback){
 		
-			$conexao = mysqli_connect("localhost","root", "", "check_livros");
-			$sql = "INSERT INTO feedback (nome, email, feedback_site) VALUE ('$nome', '$email', '$feedback')";
-
+            require('conexao.php');
+            $sql = "INSERT INTO feedback (nome, email, feedback_site) VALUE ('$nome', '$email', '$feedback')";
 			$result = mysqli_query($conexao, $sql);
 			return true;
 		}
@@ -53,7 +52,7 @@ Class Usuario{
 
 		function cad_resenha( $idlivro, $username, $resenha){
 
-			$conexao = mysqli_connect("localhost","root", "", "check_livros");
+			require('conexao.php');
 			$sql = "INSERT INTO resenhas (id_livro, username, resenha) VALUES ('$idlivro', '$username', '$resenha')";
 
 			$result = mysqli_query($conexao, $sql);
@@ -67,6 +66,20 @@ Class Usuario{
 			require('conexao.php');
 			$sql = "INSERT INTO livros (titulo_livro, autor, editora, ano_publicado, img_href, genero_livro) 
 			VALUES ('$titulo', '$autor', '$editora', '$ano_publi', '$img_capa', '$genero')";
+
+			$result = mysqli_query($conexao, $sql);
+			return true;
+		}
+
+	//------------------ Editar resenha ------------------//
+		
+		function ed_resenha($ed_resenha){
+			
+			
+			$id = $_SESSION['id_resenha'];
+
+			require('conexao.php');
+			$sql = "UPDATE resenhas SET resenha = '$ed_resenha' WHERE id_resenha = '$id'";
 
 			$result = mysqli_query($conexao, $sql);
 			return true;

@@ -243,6 +243,7 @@ Kaike Santos Coppola
 		color: white;
 		margin-top: 12%;
 	}
+	
 	/* -------------------------------- */
 
 	.beneficios-section {
@@ -280,6 +281,7 @@ Kaike Santos Coppola
 		text-decoration: underline;
 		color: skyblue;
 	}
+	
 	/* -------------------------------- */
 
 	.ranking-container {
@@ -307,6 +309,7 @@ Kaike Santos Coppola
 		font-weight: 400;
 		font-size: 1.2em;
 	}
+	
 	/* -------------------------------- */
 
 	.tutorial-section {
@@ -583,7 +586,10 @@ Kaike Santos Coppola
 		box-shadow: 0.3125em 0.625em 1.125em #888888;
 		color: white;
 	}
-
+	.a-dell{
+		color:black;
+		float: right;
+	}
 
 	/* ----------------- ⬇⬇ adm - página ⬇⬇ -------------------------*/
 
@@ -611,15 +617,14 @@ Kaike Santos Coppola
 		position: relative;
 	}
 	.img-div {
-		display: flex;
-		align-items: flex-end;
 		position: absolute;
 		bottom: 0;
-		left: 2.5%;
+		left: 4.5%;
 		color: white;
 	}
 	.img-div h1 {
-		margin-bottom: 2%;
+	    
+		margin-bottom: 5%;
 	}
 	.avatar-perfil {
 		width: 18%;

@@ -55,7 +55,7 @@ $search = $_GET['search'] ?? "";
 
 			<!-- buscas por genêro e pela barra de busca -->
 			<?php 
-			require("conexao.php");
+			require('conexao.php');
 			require("phps_resultados/buscas.php"); 
 			?>
 

@@ -75,5 +75,7 @@ function changeBtnCollor(x){
 	}
 }
 
-
-
+function indentForm(resenha){
+	var textoResenha = resenha.nova_resenha.value;
+	resenha.nova_resenha.value = textoResenha.replace(/\n/g,"<br>");
+}

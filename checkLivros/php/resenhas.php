@@ -14,25 +14,25 @@ Fontes:
 (Relacionamento do tables) 
 ----------------------------------------------------------------------------------------------------------->
 <?php
-require_once 'CheckUsuarios.php';
-$u = new Usuario;
+	require_once 'CheckUsuarios.php';
+	$u = new Usuario;
 
-session_start();
-if($_SESSION['username'] != ""){
-	$username = $_SESSION['username'];
-} else {
-	$_SESSION['username'] = "";
-	$username = $_SESSION['username'];
-}
+	session_start();
+	if($_SESSION['username'] != ""){
+		$username = $_SESSION['username'];
+	} else {
+		$_SESSION['username'] = "";
+		$username = $_SESSION['username'];
+	}
 
-if($_SESSION['tipo_conta'] != ""){
-	$type_cont = $_SESSION['tipo_conta'];
-}else{
-	$_SESSION['tipo_conta'] = "";
-	$type_cont = $_SESSION['tipo_conta'];
-}
+	if($_SESSION['tipo_conta'] != ""){
+		$type_cont = $_SESSION['tipo_conta'];
+	}else{
+		$_SESSION['tipo_conta'] = "";
+		$type_cont = $_SESSION['tipo_conta'];
+	}
 
-$livro = $_GET['livro'];
+	$livro = $_GET['livro'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -93,7 +93,7 @@ $livro = $_GET['livro'];
 					require("phps_resultados/publi_resenha.php");
 					if($username != ""){
 					?>
-					<form name="form_nova_resenha" action="" method="POST">
+					<form name="form_nova_resenha" action="" method="POST" onsubmit="return indentForm(this)">
 						<?php  
 						echo "<h2>@".$username."</h2>";
 						?>
@@ -112,20 +112,29 @@ $livro = $_GET['livro'];
 				$result = mysqli_query($conexao, $sql);
 
 				while($linha = mysqli_fetch_array($result)){
-				?>
-				<div class="resenha-user">
-					<?php
-					echo "<br/><h2>@".$linha['username']."</h2><br/>";
-					echo "<p>".$linha['resenha']."</p><br/>";
+
+					$id = $linha['id_resenha'];
+					$resenha = $linha['resenha'];
+
 					?>
-				</div>
-				<br/><br/>
-				<?php
+					<div class="resenha-user">
+						
+						<?php
+						if($linha['username']==$username){
+							
+							echo "<a href='deletar.php?id=$id&livro=$livro' class='a-dell'><i class='fas fa-trash-alt'></i></a>";
+							echo "<a href='editar.php?resenha=$resenha&livro=$livro&id=$id' class='a-dell'><i class='fas fa-edit'></i></a>";
+						}
+						echo "<br/><h2>@".$linha['username']."</h2><br/>";
+						echo "<p>".$linha['resenha']."</p><br/>";
+						?>
+					</div>
+					<br/><br/>
+					<?php
 				}
 				?>
 			</div>
 		</section>
-
 
 		<?php include("footer.php"); ?>
 	</body>

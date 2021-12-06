@@ -203,11 +203,11 @@ Kaike Santos Coppola
 			<h1 class="h1-ranking-container">Melhores Livros Nacionais</h1><br/>
 			<div class="ranking-positions">
 				<h2>1º</h2>
-				<p>Grande sertão Veredas - João Guimarães Rosa</p>
+				<p>Grande Sertão Veredas - João Guimarães Rosa</p>
 			</div><br/>
 			<div class="ranking-positions">
 				<h2>2º</h2>
-				<p>Memórias póstumas de Brás Cubas - Machado de Assis</p>
+				<p>Memórias Póstumas de Brás Cubas - Machado de Assis</p>
 			</div><br/>
 			<div class="ranking-positions">
 				<h2>3º</h2>
@@ -219,8 +219,19 @@ Kaike Santos Coppola
 			<h1>Tutorial</h1><br/><br/>
 			<div class="tutorial-container">
 				<div class="tutorial-item">
-					<h2>Cadastra-se</h2><br/>
-					<p>Possuir um cadastro e estar efetivamente logado é obrigatório caso queira inserir novas resenhas. No menu superior, clique na aba <a href="php/CheckLogin.php">conta</a> e faça parte agora da nossa esplêndida comunidade de leitores brasileiros. </p>
+					<h2>Cadastre-se</h2><br/>
+					<p>Possuir um cadastro e estar efetivamente logado é obrigatório caso queira inserir novas resenhas. No menu superior, clique na aba 
+					
+						<?php
+						//------------------ Verifica a Existencia de Usernames ------------------//
+							if($username == ""){
+								echo "<a href='php/CheckLogin.php'>conta</a> ";
+							}else{
+								echo "<a href='php/perfil.php'>conta</a>";
+							}
+						?>
+					
+					e faça parte agora da nossa esplêndida comunidade de leitores brasileiros. </p>
 				</div>
 				<div class="tutorial-item">
 					<h2>Leia</h2><br/>

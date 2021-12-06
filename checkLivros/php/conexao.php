@@ -1,4 +1,6 @@
-<?php   
-$conexao = mysqli_connect("localhost","root", "", "check_livros");  
-mysqli_set_charset($conexao, 'utf8');
+<?php
+	$conexao = mysqli_connect("localhost","root", "", "check_livros");
+	if (!$conexao){
+	    echo "Erro na conexão!!!";
+	}
 ?>
